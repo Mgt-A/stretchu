@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "language": "fr",
+  "exercises": {
+    "respiration-cotes": {
+      "name": "Respiration costale lente",
+      "steps": [
+        "Assieds-toi droit, mains posées sur les cuisses.",
+        "Inspire 4 s par le nez, ventre puis côtes s'ouvrent sans forcer.",
+        "Expire 6 s doucement. Arrête si tu sens une douleur."
+      ]
+    },
+    "ouverture-douce": {
+      "name": "Ouverture douce de la poitrine",
+      "steps": [
+        "Debout, bras le long du corps, épaules relâchées.",
+        "Tourne les paumes vers l'avant et ouvre un peu les épaules.",
+        "Respire lentement, sans appuyer sur les côtes ni aller jusqu'à la douleur."
+      ]
+    },
+    "Chin_Tucks": {
+      "name": "Menton rentré",
+      "steps": [
+        "Assieds-toi ou tiens-toi droit, regard à l'horizontale.",
+        "Fais glisser le menton vers l'arrière, sans baisser la tête.",
+        "Tiens 3 s en respirant lentement, relâche, recommence."
+      ]
+    },
+    "Side_Neck_Stretch": {
+      "name": "Inclinaison de la nuque",
+      "steps": [
+        "Épaules relâchées, incline doucement l'oreille vers l'épaule.",
+        "Sans tirer sur la tête : le poids de la tête suffit.",
+        "Respire lentement, change de côté à mi-temps."
+      ]
+    },
+    "Elbow_Circles": {
+      "name": "Cercles de coudes",
+      "steps": [
+        "Mains sur les épaules, coudes à hauteur d'épaules.",
+        "Dessine de petits cercles lents avec les coudes.",
+        "Expire en ouvrant, inspire en refermant. Garde le mouvement souple."
+      ]
+    },
+    "Wall_Slides": {
+      "name": "Glissé le long du mur",
+      "steps": [
+        "Dos, tête et bras contre le mur, coudes pliés.",
+        "Fais glisser les bras vers le haut aussi loin que c'est confortable.",
+        "Redescends lentement, sans cambrer le bas du dos."
+      ]
+    },
+    "Upward_Stretch": {
+      "name": "Grandir vers le plafond",
+      "steps": [
+        "Debout, mains jointes au-dessus de la tête.",
+        "Grandis doucement vers le haut, sans cambrer le dos.",
+        "Respire lentement, redescends sans à-coup."
+      ]
+    },
+    "Standing_Pelvic_Tilt": {
+      "name": "Bascule du bassin",
+      "steps": [
+        "Pieds écartés largeur de hanches, genoux souples.",
+        "Bascule le bassin d'avant en arrière, lentement.",
+        "Cherche un dos long et détendu, respire calmement."
+      ]
+    },
+    "Thoracic_Extension_Foam_Roller": {
+      "name": "Ouverture du haut du dos sur rouleau",
+      "steps": [
+        "Allongé, rouleau sous les omoplates, genoux pliés, mains derrière la tête.",
+        "Laisse le haut du dos s'ouvrir doucement sur le rouleau.",
+        "Respire lentement, ne force jamais l'amplitude, évite le bas du dos."
+      ]
+    },
+    "Childs_Pose": {
+      "name": "Posture de l'enfant",
+      "steps": [
+        "À quatre pattes, assieds-toi sur les talons, bras allongés devant toi.",
+        "Pose le front au sol et laisse le dos se relâcher.",
+        "Respire dans le dos, sans pousser sur les bras."
+      ]
+    },
+    "Standing_Hip_Flexors": {
+      "name": "Hanche à l'avant, debout",
+      "steps": [
+        "Debout, un pied devant l'autre, genoux souples.",
+        "Pousse doucement le bassin vers l'avant, dos droit.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Kneeling_Hip_Flexor": {
+      "name": "Hanche à genoux",
+      "steps": [
+        "Un genou au sol sur un tapis, l'autre pied devant.",
+        "Avance doucement le bassin jusqu'à sentir l'avant de la hanche.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Chair_Leg_Extended_Stretch": {
+      "name": "Jambe tendue sur chaise",
+      "steps": [
+        "Assis sur le bord d'une chaise, dos droit.",
+        "Tends une jambe, pointe de pied vers toi, sans bloquer le genou.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "respiration-ventrale": {
+      "name": "Respiration ventrale",
+      "steps": [
+        "Assieds-toi droit, une main sur le ventre.",
+        "Inspire par le nez : seul le ventre se gonfle, les côtes restent souples.",
+        "Expire lentement par la bouche, sans forcer, 5 à 6 fois."
+      ]
+    },
+    "respiration-carree": {
+      "name": "Respiration carrée",
+      "steps": [
+        "Assis ou debout, épaules relâchées.",
+        "Inspire 4 s, retiens 4 s sans crisper, expire 4 s, pause 4 s.",
+        "Si tu sens une gêne dans la poitrine, raccourcis les temps."
+      ]
+    },
+    "Shoulder_Circles": {
+      "name": "Cercles d'épaules",
+      "steps": [
+        "Bras relâchés, épaules détendues, assis ou debout.",
+        "Roule les épaules vers l'avant, le haut, l'arrière, le bas, lentement.",
+        "Inverse le sens à mi-temps, sans forcer."
+      ]
+    },
+    "Shoulder_Raise": {
+      "name": "Haussements d'épaules",
+      "steps": [
+        "Bras relâchés le long du corps.",
+        "Monte les épaules vers les oreilles en inspirant.",
+        "Laisse-les retomber d'un coup doux en expirant."
+      ]
+    },
+    "Overhead_Stretch": {
+      "name": "Grandir bras entrelacés",
+      "steps": [
+        "Debout, doigts entrelacés, paumes vers le plafond.",
+        "Étire les bras vers le haut, épaules basses, sans cambrer.",
+        "Respire lentement, relâche avant toute gêne."
+      ]
+    },
+    "Triceps_Stretch": {
+      "name": "Arrière du bras",
+      "steps": [
+        "Passe une main derrière la tête, coude vers le plafond.",
+        "Saisis ce coude de l'autre main et tire très doucement.",
+        "Reste 15 s, respire, change de bras."
+      ]
+    },
+    "Arm_Circles": {
+      "name": "Cercles de bras",
+      "steps": [
+        "Debout, bras tendus sur les côtés à hauteur d'épaules.",
+        "Dessine de petits cercles lents, puis inverse le sens.",
+        "Respire normalement, garde les épaules basses."
+      ]
+    },
+    "Elbows_Back": {
+      "name": "Coudes en arrière",
+      "steps": [
+        "Debout, mains dans le bas du dos, coudes vers l'extérieur.",
+        "Ramène doucement les coudes vers l'arrière, sans forcer.",
+        "Respire lentement, relâche avant toute gêne dans la poitrine."
+      ]
+    },
+    "One_Arm_Against_Wall": {
+      "name": "Bras contre le mur",
+      "steps": [
+        "Debout, un avant-bras plié contre un mur ou un montant de porte.",
+        "Penche-toi doucement vers ce bras, jusqu'à un étirement léger sur le côté.",
+        "Reste 15 s, respire, change de bras."
+      ]
+    },
+    "Doorway_Pec_Stretch_Low": {
+      "name": "Ouverture légère dans une porte",
+      "steps": [
+        "Dans une porte, pose l'avant-bras sur le montant, coude sous l'épaule.",
+        "Avance très légèrement, buste droit, jusqu'à sentir un étirement doux.",
+        "Reste 15 s sans douleur, change de côté."
+      ]
+    },
+    "Pelvic_Tilt_Into_Bridge": {
+      "name": "Bascule du bassin au sol",
+      "steps": [
+        "Allongé, pieds au sol, talons sous les genoux.",
+        "Décolle seulement le bassin pour allonger le bas du dos.",
+        "Respire lentement, redescends vertèbre par vertèbre."
+      ]
+    },
+    "Knee_Across_The_Body": {
+      "name": "Genou croisé, torsion douce",
+      "steps": [
+        "Allongé, jambe droite tendue, plie la gauche et croise-la vers la droite.",
+        "Laisse le genou descendre seul, le genou n'a pas besoin de toucher le sol.",
+        "Respire lentement, reste sans forcer, change de côté."
+      ]
+    },
+    "Side-Lying_Floor_Stretch": {
+      "name": "Étirement allongé sur le côté",
+      "steps": [
+        "Allongé sur le côté, genou du dessous plié devant toi.",
+        "Étire le bras du dessus au-dessus de la tête, sans tirer fort.",
+        "Respire lentement 15 s, change de côté."
+      ]
+    },
+    "Lower_Back-SMR": {
+      "name": "Bas du dos sur rouleau",
+      "steps": [
+        "Assis, rouleau sous le bas du dos, bras croisés devant toi.",
+        "Roule tout doucement, poids sur le bas du dos (jamais sur les côtes).",
+        "Arrête à la moindre douleur."
+      ]
+    },
+    "Couch_Stretch": {
+      "name": "Avant de cuisse contre le mur",
+      "steps": [
+        "À genoux face à un mur, le pied arrière posé contre le mur.",
+        "Place le bassin au-dessus du genou arrière, buste droit.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Ninety_Ninety_Hip_Switch": {
+      "name": "Bascule des hanches à 90°",
+      "steps": [
+        "Assis au sol, une jambe pliée à 90° devant, l'autre sur le côté.",
+        "Garde le buste grand, les deux fesses au sol.",
+        "Fais basculer les genoux de l'autre côté, lentement."
+      ]
+    },
+    "Ankle_Circles": {
+      "name": "Cercles de cheville",
+      "steps": [
+        "Debout, tiens-toi à un support solide.",
+        "Soulève un pied et dessine un grand cercle avec le gros orteil.",
+        "Inverse le sens, change de pied."
+      ]
+    },
+    "Knee_Circles": {
+      "name": "Cercles de genoux",
+      "steps": [
+        "Debout, pieds joints, mains sur les genoux.",
+        "Fais de petits cercles lents avec les genoux.",
+        "Respire normalement, change de sens à mi-temps."
+      ]
+    },
+    "Standing_Soleus_And_Achilles_Stretch": {
+      "name": "Mollets en fente légère",
+      "steps": [
+        "Debout, un pied un peu devant l'autre, talon arrière au sol.",
+        "Plie les deux genoux, sans décoller le talon arrière.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Seated_Floor_Hamstring_Stretch": {
+      "name": "Arrière de cuisse assis au sol",
+      "steps": [
+        "Assis, une jambe tendue, l'autre pied contre l'intérieur de la cuisse.",
+        "Penche-toi depuis les hanches, dos long, jusqu'à un étirement léger.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Standing_Hip_Circles": {
+      "name": "Cercles de hanche debout",
+      "steps": [
+        "Debout sur une jambe, une main sur un support.",
+        "Lève l'autre genou à 90° et ouvre la hanche en grand cercle.",
+        "Reste lent et fluide, change de jambe."
+      ]
+    },
+    "Wrist_Circles": {
+      "name": "Cercles de poignets",
+      "steps": [
+        "Debout ou assis, bras devant toi, poignets souples.",
+        "Dessine de petits cercles avec les poignets.",
+        "Inverse le sens à mi-temps."
+      ]
+    },
+    "Hamstring_Stretch": {
+      "name": "Arrière de cuisse au bandeau",
+      "steps": [
+        "Allongé, une jambe en l'air, bandeau sous l'avant du pied.",
+        "Tire doucement sur le bandeau, genou presque tendu.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "IT_Band_and_Glute_Stretch": {
+      "name": "Fessier et côté de cuisse au bandeau",
+      "steps": [
+        "Allongé, bandeau autour d'un pied, jambe tendue.",
+        "Amène la jambe vers le côté opposé, sans décoller les épaules.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Seated_Hamstring_and_Calf_Stretch": {
+      "name": "Jambe et mollet assis au bandeau",
+      "steps": [
+        "Assis, jambes tendues, bandeau autour d'un pied.",
+        "Penche-toi un peu, tire sur le bandeau pour ramener les orteils vers toi.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Standing_Hamstring_and_Calf_Stretch": {
+      "name": "Jambe et mollet debout au bandeau",
+      "steps": [
+        "Debout, un pied devant avec le bandeau autour, jambe presque tendue.",
+        "Penche-toi légèrement, orteils relevés, en tirant sur le bandeau.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "90_90_Hamstring": {
+      "name": "Arrière de cuisse à 90°",
+      "steps": [
+        "Allongé sur le dos, hanches et genoux pliés à 90°, mollets posés sur une chaise ou contre le mur.",
+        "Tends doucement une jambe vers le plafond, seulement aussi loin que c'est confortable.",
+        "Respire lentement 15 s, puis change de jambe."
+      ]
+    },
+    "Adductor": {
+      "name": "Intérieur de cuisse sur rouleau",
+      "steps": [
+        "Allongé sur le ventre, une jambe pliée sur le côté, l'intérieur de la cuisse sur un rouleau.",
+        "Roule lentement le long de la cuisse, en évitant le genou et l'aine.",
+        "Marque une pause sur les zones sensibles en respirant, puis change de jambe."
+      ]
+    },
+    "Adductor_Groin": {
+      "name": "Aine à quatre pattes",
+      "steps": [
+        "À quatre pattes, glisse une jambe sur le côté, pied à plat.",
+        "Recule lentement les hanches jusqu'à sentir un étirement léger à l'intérieur de la cuisse.",
+        "Respire 15 s, reviens doucement, change de côté."
+      ]
+    },
+    "All_Fours_Quad_Stretch": {
+      "name": "Avant de cuisse à quatre pattes",
+      "steps": [
+        "À quatre pattes, ramène un talon vers la fesse et attrape le pied de la main du même côté.",
+        "Garde les hanches à niveau et le dos long.",
+        "Reste 15 s sans tirer fort, puis change de jambe."
+      ]
+    },
+    "Ankle_On_The_Knee": {
+      "name": "Hanche en position du quatre",
+      "steps": [
+        "Assis droit sur une chaise, pose une cheville sur le genou opposé.",
+        "Penche-toi depuis les hanches, dos long, jusqu'à sentir l'extérieur de la hanche.",
+        "Reste 15 s en respirant lentement, puis change de jambe."
+      ]
+    },
+    "Calf_Stretch_Elbows_Against_Wall": {
+      "name": "Mollet, avant-bras contre le mur",
+      "steps": [
+        "Debout face à un mur, avant-bras appuyés dessus, un pied en arrière, talon au sol.",
+        "Plie le genou avant et penche-toi doucement jusqu'à sentir le mollet arrière.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Calf_Stretch_Hands_Against_Wall": {
+      "name": "Mollet, mains contre le mur",
+      "steps": [
+        "Debout à une longueur de bras d'un mur, mains dessus, un pied en arrière, talon au sol.",
+        "Garde la jambe arrière tendue et appuie le talon au sol.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Calves-SMR": {
+      "name": "Mollets sur rouleau",
+      "steps": [
+        "Assis, un rouleau sous les mollets, mains derrière toi.",
+        "Soulève le bassin et roule lentement de la cheville jusque sous le genou.",
+        "Ralentis sur les zones sensibles en respirant, puis passe sur une jambe à la fois si tu veux."
+      ]
+    },
+    "Cat_Stretch": {
+      "name": "Dos rond du chat",
+      "steps": [
+        "À quatre pattes, mains sous les épaules, genoux sous les hanches.",
+        "Expire et arrondis le dos vers le plafond, menton vers la poitrine.",
+        "Inspire et reviens à un dos plat. Recommence lentement."
+      ]
+    },
+    "Chair_Lower_Back_Stretch": {
+      "name": "Bas du dos assis",
+      "steps": [
+        "Assis sur une chaise, pieds à plat, genoux écartés.",
+        "Laisse la tête et le buste descendre entre les genoux, bras relâchés.",
+        "Respire lentement 15 s, puis remonte vertèbre par vertèbre."
+      ]
+    },
+    "Chest_Stretch_on_Stability_Ball": {
+      "name": "Ouverture de poitrine sur ballon",
+      "steps": [
+        "Assis sur un ballon de gym, avance les pieds et allonge-toi en arrière jusqu'à ce que le ballon soutienne le haut du dos.",
+        "Laisse les bras s'ouvrir sur les côtés, paumes vers le haut.",
+        "Respire lentement 15 s et redresse-toi doucement."
+      ]
+    },
+    "Chin_To_Chest_Stretch": {
+      "name": "Menton vers la poitrine",
+      "steps": [
+        "Assis ou debout, dos droit, épaules relâchées.",
+        "Descends lentement le menton vers la poitrine jusqu'à sentir l'arrière de la nuque s'allonger.",
+        "Respire 15 s, puis relève la tête lentement."
+      ]
+    },
+    "Dancers_Stretch": {
+      "name": "Torsion allongée",
+      "steps": [
+        "Allongé sur le dos, bras ouverts sur les côtés, un genou plié, pied au sol.",
+        "Laisse le genou opposé tomber de l'autre côté du corps, épaules au sol.",
+        "Respire lentement 15 s, puis change de côté."
+      ]
+    },
+    "Dynamic_Back_Stretch": {
+      "name": "Dos en mouvement",
+      "steps": [
+        "Debout, pieds écartés largeur de hanches, bras relâchés.",
+        "Balance doucement les bras en croix devant la poitrine puis ouvre-les, en tournant un peu le haut du corps.",
+        "Garde un mouvement petit et fluide, respire normalement."
+      ]
+    },
+    "Dynamic_Chest_Stretch": {
+      "name": "Poitrine en mouvement",
+      "steps": [
+        "Debout, bras tendus devant toi à hauteur d'épaules.",
+        "Ouvre les bras sur les côtés vers l'arrière, aussi loin que c'est confortable, puis ramène-les devant.",
+        "Bouge lentement avec le souffle : inspire en ouvrant, expire en refermant."
+      ]
+    },
+    "Groin_and_Back_Stretch": {
+      "name": "Papillon assis",
+      "steps": [
+        "Assis au sol, plantes des pieds l'une contre l'autre, genoux ouverts sur les côtés.",
+        "Tiens tes pieds et allonge le dos en te penchant à peine vers l'avant.",
+        "Respire 15 s sans appuyer sur les genoux."
+      ]
+    },
+    "Hamstring-SMR": {
+      "name": "Arrière de cuisse sur rouleau",
+      "steps": [
+        "Assis, un rouleau sous les cuisses, mains au sol derrière toi.",
+        "Soulève le bassin et roule lentement des ischions jusqu'au-dessus des genoux.",
+        "Ralentis sur les zones sensibles en respirant."
+      ]
+    },
+    "Hug_A_Ball": {
+      "name": "Câlin au ballon",
+      "steps": [
+        "À genoux devant un ballon de gym, pose la poitrine et les bras dessus.",
+        "Laisse les bras entourer le ballon et le dos s'arrondir et se relâcher.",
+        "Respire lentement 20 s, en t'enfonçant un peu plus à chaque expiration."
+      ]
+    },
+    "Hug_Knees_To_Chest": {
+      "name": "Genoux dans les bras",
+      "steps": [
+        "Allongé sur le dos, genoux pliés.",
+        "Ramène les deux genoux vers la poitrine et tiens-les avec les mains.",
+        "Respire lentement 15 s, puis relâche doucement."
+      ]
+    },
+    "Iliotibial_Tract-SMR": {
+      "name": "Côté de cuisse sur rouleau",
+      "steps": [
+        "Allongé sur le côté, un rouleau sous l'extérieur de la cuisse, avant-bras au sol, l'autre pied devant pour l'équilibre.",
+        "Roule lentement entre la hanche et le dessus du genou.",
+        "Ralentis sur les zones sensibles en respirant, puis change de côté."
+      ]
+    },
+    "Kneeling_Forearm_Stretch": {
+      "name": "Avant-bras à genoux",
+      "steps": [
+        "À quatre pattes, paumes au sol, doigts tournés vers les genoux.",
+        "Recule lentement jusqu'à sentir un étirement léger le long des avant-bras.",
+        "Reste 15 s et relâche dès la moindre gêne."
+      ]
+    },
+    "Latissimus_Dorsi-SMR": {
+      "name": "Flanc du dos sur rouleau",
+      "steps": [
+        "Allongé sur le côté, un rouleau sous la zone de l'aisselle, le bras du dessous allongé devant toi.",
+        "Roule lentement de quelques centimètres le long du flanc du dos.",
+        "Respire lentement, puis change de côté."
+      ]
+    },
+    "Leg-Up_Hamstring_Stretch": {
+      "name": "Arrière de cuisse jambe levée",
+      "steps": [
+        "Allongé sur le dos, lève une jambe et tiens-la derrière la cuisse ou le mollet avec les deux mains.",
+        "Garde l'autre jambe détendue au sol et le genou souple.",
+        "Reste 15 s en respirant lentement, puis change de jambe."
+      ]
+    },
+    "Looking_At_Ceiling": {
+      "name": "Regard vers le plafond",
+      "steps": [
+        "Debout, mains posées dans le bas du dos.",
+        "Lève le menton et regarde vers le haut, lentement, aussi loin que c'est confortable.",
+        "Reste quelques respirations, puis ramène le regard devant toi."
+      ]
+    },
+    "Middle_Back_Stretch": {
+      "name": "Milieu du dos",
+      "steps": [
+        "Assis ou debout, joins les mains devant toi à hauteur de poitrine.",
+        "Arrondis le haut du dos et pousse les mains devant jusqu'à sentir la zone entre les omoplates.",
+        "Respire lentement 15 s, puis relâche."
+      ]
+    },
+    "On_Your_Side_Quad_Stretch": {
+      "name": "Avant de cuisse allongé sur le côté",
+      "steps": [
+        "Allongé sur le côté, genou du dessous plié pour l'équilibre.",
+        "Plie l'autre genou et tiens la cheville, talon vers la fesse.",
+        "Garde les genoux proches, reste 15 s, puis change de côté."
+      ]
+    },
+    "One_Knee_To_Chest": {
+      "name": "Un genou vers la poitrine",
+      "steps": [
+        "Allongé sur le dos, jambes tendues, ou un genou plié si c'est plus confortable.",
+        "Ramène un genou vers la poitrine avec les deux mains.",
+        "Reste 15 s en respirant lentement, puis change de jambe."
+      ]
+    },
+    "Piriformis-SMR": {
+      "name": "Fessier sur rouleau",
+      "steps": [
+        "Assis sur un rouleau, une cheville posée sur le genou opposé, mains derrière toi.",
+        "Penche-toi un peu du côté de la jambe croisée et roule lentement sur la fesse.",
+        "Ralentis sur les zones sensibles en respirant, puis change de côté."
+      ]
+    },
+    "Pyramid": {
+      "name": "Dos allongé sur ballon",
+      "steps": [
+        "À genoux derrière un ballon de gym, pose les avant-bras dessus.",
+        "Fais rouler le ballon un peu vers l'avant en laissant la poitrine descendre vers le sol.",
+        "Respire 15 s et reviens lentement."
+      ]
+    },
+    "Quadriceps-SMR": {
+      "name": "Avant de cuisse sur rouleau",
+      "steps": [
+        "Allongé sur le ventre, un rouleau sous les cuisses, appuyé sur les avant-bras.",
+        "Roule lentement de la hanche jusqu'au-dessus du genou.",
+        "Ralentis sur les zones sensibles en respirant."
+      ]
+    },
+    "Rhomboids-SMR": {
+      "name": "Haut du dos sur rouleau",
+      "steps": [
+        "Allongé sur le dos, un rouleau sous les omoplates, genoux pliés, bras croisés sur la poitrine.",
+        "Soulève un peu le bassin et roule de quelques centimètres vers le haut et le bas.",
+        "Reste sur le haut du dos, loin de la nuque et du bas du dos, et respire."
+      ]
+    },
+    "Runners_Stretch": {
+      "name": "Fente du coureur",
+      "steps": [
+        "Fais un pas en avant en fente, mains sur la cuisse avant ou sur une chaise.",
+        "Garde la jambe arrière tendue et pousse le talon arrière vers le sol.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Seated_Calf_Stretch": {
+      "name": "Mollet assis",
+      "steps": [
+        "Assis au sol ou sur une chaise, une jambe tendue devant toi.",
+        "Ramène les orteils vers toi, genou souple.",
+        "Reste 15 s en respirant lentement, puis change de jambe."
+      ]
+    },
+    "Seated_Overhead_Stretch": {
+      "name": "Grandir assis",
+      "steps": [
+        "Assis droit sur une chaise, doigts entrelacés.",
+        "Tourne les paumes vers le plafond et étire-toi vers le haut, épaules basses.",
+        "Respire lentement 15 s et relâche."
+      ]
+    },
+    "Shoulder_Stretch": {
+      "name": "Épaule en travers de la poitrine",
+      "steps": [
+        "Amène un bras en travers de la poitrine à hauteur d'épaule.",
+        "Tiens-le juste au-dessus du coude avec l'autre main et tire doucement vers toi.",
+        "Reste 15 s en respirant, puis change de bras."
+      ]
+    },
+    "Side_Lying_Groin_Stretch": {
+      "name": "Intérieur de cuisse allongé sur le côté",
+      "steps": [
+        "Allongé sur le côté, la jambe du dessus pliée, genou posé sur un coussin ou au sol devant toi.",
+        "Allonge la jambe du dessous et laisse-la se détendre.",
+        "Respire 15 s, puis change de côté."
+      ]
+    },
+    "Side_Wrist_Pull": {
+      "name": "Poignet tiré sur le côté",
+      "steps": [
+        "Debout, attrape un poignet avec l'autre main devant toi.",
+        "Tire doucement ce poignet sur le côté en descendant, pour allonger le bras et le côté de la nuque.",
+        "Reste 15 s, puis change de côté."
+      ]
+    },
+    "Spinal_Stretch": {
+      "name": "Torsion assise",
+      "steps": [
+        "Assis droit sur une chaise, pieds à plat, une main sur le dossier.",
+        "Tourne lentement la poitrine d'un côté, les deux hanches restent sur la chaise.",
+        "Reste 15 s en respirant lentement, puis tourne de l'autre côté."
+      ]
+    },
+    "Standing_Gastrocnemius_Calf_Stretch": {
+      "name": "Mollet debout",
+      "steps": [
+        "Debout face à un mur, un pied en arrière, talon au sol, jambe tendue.",
+        "Penche-toi vers l'avant jusqu'à sentir le mollet arrière.",
+        "Reste 15 s, respire, change de jambe."
+      ]
+    },
+    "Standing_Lateral_Stretch": {
+      "name": "Inclinaison latérale debout",
+      "steps": [
+        "Debout, pieds écartés largeur de hanches, un bras tendu au-dessus de la tête.",
+        "Penche-toi lentement du côté opposé en allongeant tout le flanc.",
+        "Reste 15 s, puis change de côté."
+      ]
+    },
+    "Standing_Toe_Touches": {
+      "name": "Penché en avant debout",
+      "steps": [
+        "Debout, pieds écartés largeur de hanches, genoux légèrement pliés.",
+        "Penche-toi en avant depuis les hanches et laisse les bras pendre vers le sol.",
+        "Respire lentement 15 s, puis remonte lentement."
+      ]
+    },
+    "The_Straddle": {
+      "name": "Grand écart assis, en douceur",
+      "steps": [
+        "Assis au sol, jambes ouvertes en V confortable.",
+        "Avance les mains devant toi, dos long, seulement aussi loin que c'est facile.",
+        "Respire 15 s et remonte lentement."
+      ]
+    },
+    "Torso_Rotation": {
+      "name": "Rotation du buste sur ballon",
+      "steps": [
+        "Allongé avec le haut du dos sur un ballon de gym, pieds écartés, bras tendus vers le haut.",
+        "Tourne lentement d'un côté, les hanches restent immobiles.",
+        "Reviens au centre et tourne de l'autre côté, en respirant lentement."
+      ]
+    },
+    "Tricep_Side_Stretch": {
+      "name": "Triceps incliné sur le côté",
+      "steps": [
+        "Lève un bras et plie le coude, main derrière la tête.",
+        "Penche-toi doucement du côté opposé, le coude pointe vers le haut.",
+        "Reste 15 s, puis change de bras."
+      ]
+    },
+    "Upper_Back_Stretch": {
+      "name": "Haut du dos",
+      "steps": [
+        "Joins les mains devant toi et arrondis le haut du dos.",
+        "Laisse la tête descendre et éloigne les mains de toi.",
+        "Respire dans le haut du dos 15 s, puis relâche."
+      ]
+    },
+    "Worlds_Greatest_Stretch": {
+      "name": "Le meilleur étirement du monde",
+      "steps": [
+        "Fais un grand pas en fente et pose les deux mains au sol à l'intérieur du pied avant.",
+        "Tourne la poitrine vers le genou avant et lève ce bras vers le plafond.",
+        "Respire quelques secondes, reviens lentement, puis change de côté."
+      ]
+    },
+    "Band_Pull_Apart": {
+      "name": "Écarter l'élastique",
+      "steps": [
+        "Tiens une bande élastique légère devant toi à hauteur de poitrine, mains écartées largeur d'épaules.",
+        "Écarte la bande en rapprochant les omoplates, les bras restent tendus.",
+        "Reviens lentement et recommence avec le souffle, épaules basses."
+      ]
+    },
+    "External_Rotation_with_Band": {
+      "name": "Rotation externe de l'épaule à l'élastique",
+      "steps": [
+        "Tiens une bande légère à deux mains, coude plié à 90° et collé au flanc.",
+        "Tourne l'avant-bras vers l'extérieur lentement, le coude reste en place.",
+        "Reviens lentement. Fais les répétitions avec un bras, puis avec l'autre."
+      ]
+    },
+    "Internal_Rotation_with_Band": {
+      "name": "Rotation interne de l'épaule à l'élastique",
+      "steps": [
+        "Tiens une bande légère, coude plié à 90° et collé au flanc.",
+        "Tourne l'avant-bras vers l'intérieur, devant le ventre, lentement, le coude reste en place.",
+        "Reviens lentement. Fais les répétitions avec un bras, puis avec l'autre."
+      ]
+    },
+    "Kettlebell_Pirate_Ships": {
+      "name": "Bateau pirate au kettlebell",
+      "steps": [
+        "Debout, tiens un kettlebell léger par l'anse à deux mains.",
+        "Dessine devant toi un grand arc lent, d'un côté à l'autre, au-dessus de la tête.",
+        "Garde un mouvement fluide, dans une amplitude confortable."
+      ]
+    },
+    "Physioball_Hip_Bridge": {
+      "name": "Pont de hanches sur ballon",
+      "steps": [
+        "Allongé sur le dos, talons sur un ballon de gym, genoux pliés.",
+        "Soulève lentement le bassin jusqu'à former une ligne des épaules aux genoux.",
+        "Reste une respiration et redescends avec contrôle."
+      ]
+    }
+  }
+}

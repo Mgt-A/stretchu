@@ -1,0 +1,17 @@
+{
+  "exercicesExclus" : [
+
+  ],
+  "progression" : {
+    "cyclesTermines" : 0,
+    "hallOfFame" : [
+
+    ],
+    "xp" : 35936
+  },
+  "schemaVersion" : 1,
+  "streak" : {
+    "pausesDuJour" : 2,
+    "serie" : 5
+  }
+}

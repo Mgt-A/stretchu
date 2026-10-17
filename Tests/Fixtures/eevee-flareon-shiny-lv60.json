@@ -1,0 +1,18 @@
+{
+  "progression": {
+    "cycles": [
+      {
+        "branchDex": 136,
+        "lineId": "eevee",
+        "shiny": true
+      }
+    ],
+    "xp": 360000
+  },
+  "schemaVersion": 4,
+  "streak": {
+    "breaksToday": 3,
+    "count": 10,
+    "history": []
+  }
+}

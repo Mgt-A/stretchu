@@ -1,0 +1,15 @@
+<svg viewBox="0 0 850 567" xmlns="http://www.w3.org/2000/svg">
+<line x1="40" y1="520" x2="810" y2="520" stroke="#2a2f38" stroke-width="4"/>
+<ellipse cx="430" cy="470" rx="90" ry="22" fill="#4b5563"/>
+<line x1="390.0" y1="450.0" x2="300.0" y2="420.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="300.0" y1="420.0" x2="230.0" y2="460.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="410.0" y1="470.0" x2="310.0" y2="460.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="310.0" y1="460.0" x2="240.0" y2="500.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="500.0" y1="430.0" x2="400.0" y2="460.0" stroke="#8b93a1" stroke-width="21" stroke-linecap="round"/>
+<line x1="500.0" y1="415.0" x2="540.0" y2="380.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="540.0" y1="380.0" x2="560.0" y2="340.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="500.0" y1="445.0" x2="540.0" y2="480.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="540.0" y1="480.0" x2="560.0" y2="520.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<line x1="500.0" y1="430.0" x2="535.0" y2="415.0" stroke="#8b93a1" stroke-width="15" stroke-linecap="round"/>
+<circle cx="560.0" cy="400.0" r="34" fill="#8b93a1"/>
+</svg>

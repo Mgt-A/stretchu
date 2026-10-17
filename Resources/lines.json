@@ -1,0 +1,1778 @@
+{
+  "schemaVersion": 1,
+  "spriteCollabCommit": "aae7a436af894efab3ff24915f0b645bb4907750",
+  "pokeApiSpritesCommit": "289e842364648ec0495ae4ba12f48d5cbfbf670b",
+  "lines": [
+    {
+      "id": "bulbasaur",
+      "species": [
+        {
+          "dex": 1,
+          "slug": "bulbasaur",
+          "names": {
+            "fr": "Bulbizarre",
+            "en": "Bulbasaur"
+          },
+          "level": 1
+        },
+        {
+          "dex": 2,
+          "slug": "ivysaur",
+          "names": {
+            "fr": "Herbizarre",
+            "en": "Ivysaur"
+          },
+          "level": 33
+        },
+        {
+          "dex": 3,
+          "slug": "venusaur",
+          "names": {
+            "fr": "Florizarre",
+            "en": "Venusaur"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "charmander",
+      "species": [
+        {
+          "dex": 4,
+          "slug": "charmander",
+          "names": {
+            "fr": "Salamèche",
+            "en": "Charmander"
+          },
+          "level": 1
+        },
+        {
+          "dex": 5,
+          "slug": "charmeleon",
+          "names": {
+            "fr": "Reptincel",
+            "en": "Charmeleon"
+          },
+          "level": 33
+        },
+        {
+          "dex": 6,
+          "slug": "charizard",
+          "names": {
+            "fr": "Dracaufeu",
+            "en": "Charizard"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "squirtle",
+      "species": [
+        {
+          "dex": 7,
+          "slug": "squirtle",
+          "names": {
+            "fr": "Carapuce",
+            "en": "Squirtle"
+          },
+          "level": 1
+        },
+        {
+          "dex": 8,
+          "slug": "wartortle",
+          "names": {
+            "fr": "Carabaffe",
+            "en": "Wartortle"
+          },
+          "level": 33
+        },
+        {
+          "dex": 9,
+          "slug": "blastoise",
+          "names": {
+            "fr": "Tortank",
+            "en": "Blastoise"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "caterpie",
+      "species": [
+        {
+          "dex": 10,
+          "slug": "caterpie",
+          "names": {
+            "fr": "Chenipan",
+            "en": "Caterpie"
+          },
+          "level": 1
+        },
+        {
+          "dex": 11,
+          "slug": "metapod",
+          "names": {
+            "fr": "Chrysacier",
+            "en": "Metapod"
+          },
+          "level": 33
+        },
+        {
+          "dex": 12,
+          "slug": "butterfree",
+          "names": {
+            "fr": "Papilusion",
+            "en": "Butterfree"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "weedle",
+      "species": [
+        {
+          "dex": 13,
+          "slug": "weedle",
+          "names": {
+            "fr": "Aspicot",
+            "en": "Weedle"
+          },
+          "level": 1
+        },
+        {
+          "dex": 14,
+          "slug": "kakuna",
+          "names": {
+            "fr": "Coconfort",
+            "en": "Kakuna"
+          },
+          "level": 33
+        },
+        {
+          "dex": 15,
+          "slug": "beedrill",
+          "names": {
+            "fr": "Dardargnan",
+            "en": "Beedrill"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "pidgey",
+      "species": [
+        {
+          "dex": 16,
+          "slug": "pidgey",
+          "names": {
+            "fr": "Roucool",
+            "en": "Pidgey"
+          },
+          "level": 1
+        },
+        {
+          "dex": 17,
+          "slug": "pidgeotto",
+          "names": {
+            "fr": "Roucoups",
+            "en": "Pidgeotto"
+          },
+          "level": 33
+        },
+        {
+          "dex": 18,
+          "slug": "pidgeot",
+          "names": {
+            "fr": "Roucarnage",
+            "en": "Pidgeot"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "rattata",
+      "species": [
+        {
+          "dex": 19,
+          "slug": "rattata",
+          "names": {
+            "fr": "Rattata",
+            "en": "Rattata"
+          },
+          "level": 1
+        },
+        {
+          "dex": 20,
+          "slug": "raticate",
+          "names": {
+            "fr": "Rattatac",
+            "en": "Raticate"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "spearow",
+      "species": [
+        {
+          "dex": 21,
+          "slug": "spearow",
+          "names": {
+            "fr": "Piafabec",
+            "en": "Spearow"
+          },
+          "level": 1
+        },
+        {
+          "dex": 22,
+          "slug": "fearow",
+          "names": {
+            "fr": "Rapasdepic",
+            "en": "Fearow"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "ekans",
+      "species": [
+        {
+          "dex": 23,
+          "slug": "ekans",
+          "names": {
+            "fr": "Abo",
+            "en": "Ekans"
+          },
+          "level": 1
+        },
+        {
+          "dex": 24,
+          "slug": "arbok",
+          "names": {
+            "fr": "Arbok",
+            "en": "Arbok"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "pikachu",
+      "species": [
+        {
+          "dex": 25,
+          "slug": "pikachu",
+          "names": {
+            "fr": "Pikachu",
+            "en": "Pikachu"
+          },
+          "level": 1
+        },
+        {
+          "dex": 26,
+          "slug": "raichu",
+          "names": {
+            "fr": "Raichu",
+            "en": "Raichu"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "sandshrew",
+      "species": [
+        {
+          "dex": 27,
+          "slug": "sandshrew",
+          "names": {
+            "fr": "Sabelette",
+            "en": "Sandshrew"
+          },
+          "level": 1
+        },
+        {
+          "dex": 28,
+          "slug": "sandslash",
+          "names": {
+            "fr": "Sablaireau",
+            "en": "Sandslash"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "nidoran-f",
+      "species": [
+        {
+          "dex": 29,
+          "slug": "nidoran-f",
+          "names": {
+            "fr": "Nidoran♀",
+            "en": "Nidoran♀"
+          },
+          "level": 1
+        },
+        {
+          "dex": 30,
+          "slug": "nidorina",
+          "names": {
+            "fr": "Nidorina",
+            "en": "Nidorina"
+          },
+          "level": 33
+        },
+        {
+          "dex": 31,
+          "slug": "nidoqueen",
+          "names": {
+            "fr": "Nidoqueen",
+            "en": "Nidoqueen"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "nidoran-m",
+      "species": [
+        {
+          "dex": 32,
+          "slug": "nidoran-m",
+          "names": {
+            "fr": "Nidoran♂",
+            "en": "Nidoran♂"
+          },
+          "level": 1
+        },
+        {
+          "dex": 33,
+          "slug": "nidorino",
+          "names": {
+            "fr": "Nidorino",
+            "en": "Nidorino"
+          },
+          "level": 33
+        },
+        {
+          "dex": 34,
+          "slug": "nidoking",
+          "names": {
+            "fr": "Nidoking",
+            "en": "Nidoking"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "clefairy",
+      "species": [
+        {
+          "dex": 35,
+          "slug": "clefairy",
+          "names": {
+            "fr": "Mélofée",
+            "en": "Clefairy"
+          },
+          "level": 1
+        },
+        {
+          "dex": 36,
+          "slug": "clefable",
+          "names": {
+            "fr": "Mélodelfe",
+            "en": "Clefable"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "vulpix",
+      "species": [
+        {
+          "dex": 37,
+          "slug": "vulpix",
+          "names": {
+            "fr": "Goupix",
+            "en": "Vulpix"
+          },
+          "level": 1
+        },
+        {
+          "dex": 38,
+          "slug": "ninetales",
+          "names": {
+            "fr": "Feunard",
+            "en": "Ninetales"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "jigglypuff",
+      "species": [
+        {
+          "dex": 39,
+          "slug": "jigglypuff",
+          "names": {
+            "fr": "Rondoudou",
+            "en": "Jigglypuff"
+          },
+          "level": 1
+        },
+        {
+          "dex": 40,
+          "slug": "wigglytuff",
+          "names": {
+            "fr": "Grodoudou",
+            "en": "Wigglytuff"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "zubat",
+      "species": [
+        {
+          "dex": 41,
+          "slug": "zubat",
+          "names": {
+            "fr": "Nosferapti",
+            "en": "Zubat"
+          },
+          "level": 1
+        },
+        {
+          "dex": 42,
+          "slug": "golbat",
+          "names": {
+            "fr": "Nosferalto",
+            "en": "Golbat"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "oddish",
+      "species": [
+        {
+          "dex": 43,
+          "slug": "oddish",
+          "names": {
+            "fr": "Mystherbe",
+            "en": "Oddish"
+          },
+          "level": 1
+        },
+        {
+          "dex": 44,
+          "slug": "gloom",
+          "names": {
+            "fr": "Ortide",
+            "en": "Gloom"
+          },
+          "level": 33
+        },
+        {
+          "dex": 45,
+          "slug": "vileplume",
+          "names": {
+            "fr": "Rafflesia",
+            "en": "Vileplume"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "paras",
+      "species": [
+        {
+          "dex": 46,
+          "slug": "paras",
+          "names": {
+            "fr": "Paras",
+            "en": "Paras"
+          },
+          "level": 1
+        },
+        {
+          "dex": 47,
+          "slug": "parasect",
+          "names": {
+            "fr": "Parasect",
+            "en": "Parasect"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "venonat",
+      "species": [
+        {
+          "dex": 48,
+          "slug": "venonat",
+          "names": {
+            "fr": "Mimitoss",
+            "en": "Venonat"
+          },
+          "level": 1
+        },
+        {
+          "dex": 49,
+          "slug": "venomoth",
+          "names": {
+            "fr": "Aéromite",
+            "en": "Venomoth"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "diglett",
+      "species": [
+        {
+          "dex": 50,
+          "slug": "diglett",
+          "names": {
+            "fr": "Taupiqueur",
+            "en": "Diglett"
+          },
+          "level": 1
+        },
+        {
+          "dex": 51,
+          "slug": "dugtrio",
+          "names": {
+            "fr": "Triopikeur",
+            "en": "Dugtrio"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "meowth",
+      "species": [
+        {
+          "dex": 52,
+          "slug": "meowth",
+          "names": {
+            "fr": "Miaouss",
+            "en": "Meowth"
+          },
+          "level": 1
+        },
+        {
+          "dex": 53,
+          "slug": "persian",
+          "names": {
+            "fr": "Persian",
+            "en": "Persian"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "psyduck",
+      "species": [
+        {
+          "dex": 54,
+          "slug": "psyduck",
+          "names": {
+            "fr": "Psykokwak",
+            "en": "Psyduck"
+          },
+          "level": 1
+        },
+        {
+          "dex": 55,
+          "slug": "golduck",
+          "names": {
+            "fr": "Akwakwak",
+            "en": "Golduck"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "mankey",
+      "species": [
+        {
+          "dex": 56,
+          "slug": "mankey",
+          "names": {
+            "fr": "Férosinge",
+            "en": "Mankey"
+          },
+          "level": 1
+        },
+        {
+          "dex": 57,
+          "slug": "primeape",
+          "names": {
+            "fr": "Colossinge",
+            "en": "Primeape"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "growlithe",
+      "species": [
+        {
+          "dex": 58,
+          "slug": "growlithe",
+          "names": {
+            "fr": "Caninos",
+            "en": "Growlithe"
+          },
+          "level": 1
+        },
+        {
+          "dex": 59,
+          "slug": "arcanine",
+          "names": {
+            "fr": "Arcanin",
+            "en": "Arcanine"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "poliwag",
+      "species": [
+        {
+          "dex": 60,
+          "slug": "poliwag",
+          "names": {
+            "fr": "Ptitard",
+            "en": "Poliwag"
+          },
+          "level": 1
+        },
+        {
+          "dex": 61,
+          "slug": "poliwhirl",
+          "names": {
+            "fr": "Têtarte",
+            "en": "Poliwhirl"
+          },
+          "level": 33
+        },
+        {
+          "dex": 62,
+          "slug": "poliwrath",
+          "names": {
+            "fr": "Tartard",
+            "en": "Poliwrath"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "abra",
+      "species": [
+        {
+          "dex": 63,
+          "slug": "abra",
+          "names": {
+            "fr": "Abra",
+            "en": "Abra"
+          },
+          "level": 1
+        },
+        {
+          "dex": 64,
+          "slug": "kadabra",
+          "names": {
+            "fr": "Kadabra",
+            "en": "Kadabra"
+          },
+          "level": 33
+        },
+        {
+          "dex": 65,
+          "slug": "alakazam",
+          "names": {
+            "fr": "Alakazam",
+            "en": "Alakazam"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "machop",
+      "species": [
+        {
+          "dex": 66,
+          "slug": "machop",
+          "names": {
+            "fr": "Machoc",
+            "en": "Machop"
+          },
+          "level": 1
+        },
+        {
+          "dex": 67,
+          "slug": "machoke",
+          "names": {
+            "fr": "Machopeur",
+            "en": "Machoke"
+          },
+          "level": 33
+        },
+        {
+          "dex": 68,
+          "slug": "machamp",
+          "names": {
+            "fr": "Mackogneur",
+            "en": "Machamp"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "bellsprout",
+      "species": [
+        {
+          "dex": 69,
+          "slug": "bellsprout",
+          "names": {
+            "fr": "Chétiflor",
+            "en": "Bellsprout"
+          },
+          "level": 1
+        },
+        {
+          "dex": 70,
+          "slug": "weepinbell",
+          "names": {
+            "fr": "Boustiflor",
+            "en": "Weepinbell"
+          },
+          "level": 33
+        },
+        {
+          "dex": 71,
+          "slug": "victreebel",
+          "names": {
+            "fr": "Empiflor",
+            "en": "Victreebel"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "tentacool",
+      "species": [
+        {
+          "dex": 72,
+          "slug": "tentacool",
+          "names": {
+            "fr": "Tentacool",
+            "en": "Tentacool"
+          },
+          "level": 1
+        },
+        {
+          "dex": 73,
+          "slug": "tentacruel",
+          "names": {
+            "fr": "Tentacruel",
+            "en": "Tentacruel"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "geodude",
+      "species": [
+        {
+          "dex": 74,
+          "slug": "geodude",
+          "names": {
+            "fr": "Racaillou",
+            "en": "Geodude"
+          },
+          "level": 1
+        },
+        {
+          "dex": 75,
+          "slug": "graveler",
+          "names": {
+            "fr": "Gravalanch",
+            "en": "Graveler"
+          },
+          "level": 33
+        },
+        {
+          "dex": 76,
+          "slug": "golem",
+          "names": {
+            "fr": "Grolem",
+            "en": "Golem"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "ponyta",
+      "species": [
+        {
+          "dex": 77,
+          "slug": "ponyta",
+          "names": {
+            "fr": "Ponyta",
+            "en": "Ponyta"
+          },
+          "level": 1
+        },
+        {
+          "dex": 78,
+          "slug": "rapidash",
+          "names": {
+            "fr": "Galopa",
+            "en": "Rapidash"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "slowpoke",
+      "species": [
+        {
+          "dex": 79,
+          "slug": "slowpoke",
+          "names": {
+            "fr": "Ramoloss",
+            "en": "Slowpoke"
+          },
+          "level": 1
+        },
+        {
+          "dex": 80,
+          "slug": "slowbro",
+          "names": {
+            "fr": "Flagadoss",
+            "en": "Slowbro"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "magnemite",
+      "species": [
+        {
+          "dex": 81,
+          "slug": "magnemite",
+          "names": {
+            "fr": "Magnéti",
+            "en": "Magnemite"
+          },
+          "level": 1
+        },
+        {
+          "dex": 82,
+          "slug": "magneton",
+          "names": {
+            "fr": "Magnéton",
+            "en": "Magneton"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "farfetchd",
+      "species": [
+        {
+          "dex": 83,
+          "slug": "farfetchd",
+          "names": {
+            "fr": "Canarticho",
+            "en": "Farfetch’d"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "doduo",
+      "species": [
+        {
+          "dex": 84,
+          "slug": "doduo",
+          "names": {
+            "fr": "Doduo",
+            "en": "Doduo"
+          },
+          "level": 1
+        },
+        {
+          "dex": 85,
+          "slug": "dodrio",
+          "names": {
+            "fr": "Dodrio",
+            "en": "Dodrio"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "seel",
+      "species": [
+        {
+          "dex": 86,
+          "slug": "seel",
+          "names": {
+            "fr": "Otaria",
+            "en": "Seel"
+          },
+          "level": 1
+        },
+        {
+          "dex": 87,
+          "slug": "dewgong",
+          "names": {
+            "fr": "Lamantine",
+            "en": "Dewgong"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "grimer",
+      "species": [
+        {
+          "dex": 88,
+          "slug": "grimer",
+          "names": {
+            "fr": "Tadmorv",
+            "en": "Grimer"
+          },
+          "level": 1
+        },
+        {
+          "dex": 89,
+          "slug": "muk",
+          "names": {
+            "fr": "Grotadmorv",
+            "en": "Muk"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "shellder",
+      "species": [
+        {
+          "dex": 90,
+          "slug": "shellder",
+          "names": {
+            "fr": "Kokiyas",
+            "en": "Shellder"
+          },
+          "level": 1
+        },
+        {
+          "dex": 91,
+          "slug": "cloyster",
+          "names": {
+            "fr": "Crustabri",
+            "en": "Cloyster"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "gastly",
+      "species": [
+        {
+          "dex": 92,
+          "slug": "gastly",
+          "names": {
+            "fr": "Fantominus",
+            "en": "Gastly"
+          },
+          "level": 1
+        },
+        {
+          "dex": 93,
+          "slug": "haunter",
+          "names": {
+            "fr": "Spectrum",
+            "en": "Haunter"
+          },
+          "level": 33
+        },
+        {
+          "dex": 94,
+          "slug": "gengar",
+          "names": {
+            "fr": "Ectoplasma",
+            "en": "Gengar"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "onix",
+      "species": [
+        {
+          "dex": 95,
+          "slug": "onix",
+          "names": {
+            "fr": "Onix",
+            "en": "Onix"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "drowzee",
+      "species": [
+        {
+          "dex": 96,
+          "slug": "drowzee",
+          "names": {
+            "fr": "Soporifik",
+            "en": "Drowzee"
+          },
+          "level": 1
+        },
+        {
+          "dex": 97,
+          "slug": "hypno",
+          "names": {
+            "fr": "Hypnomade",
+            "en": "Hypno"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "krabby",
+      "species": [
+        {
+          "dex": 98,
+          "slug": "krabby",
+          "names": {
+            "fr": "Krabby",
+            "en": "Krabby"
+          },
+          "level": 1
+        },
+        {
+          "dex": 99,
+          "slug": "kingler",
+          "names": {
+            "fr": "Krabboss",
+            "en": "Kingler"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "voltorb",
+      "species": [
+        {
+          "dex": 100,
+          "slug": "voltorb",
+          "names": {
+            "fr": "Voltorbe",
+            "en": "Voltorb"
+          },
+          "level": 1
+        },
+        {
+          "dex": 101,
+          "slug": "electrode",
+          "names": {
+            "fr": "Électrode",
+            "en": "Electrode"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "exeggcute",
+      "species": [
+        {
+          "dex": 102,
+          "slug": "exeggcute",
+          "names": {
+            "fr": "Noeunoeuf",
+            "en": "Exeggcute"
+          },
+          "level": 1
+        },
+        {
+          "dex": 103,
+          "slug": "exeggutor",
+          "names": {
+            "fr": "Noadkoko",
+            "en": "Exeggutor"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "cubone",
+      "species": [
+        {
+          "dex": 104,
+          "slug": "cubone",
+          "names": {
+            "fr": "Osselait",
+            "en": "Cubone"
+          },
+          "level": 1
+        },
+        {
+          "dex": 105,
+          "slug": "marowak",
+          "names": {
+            "fr": "Ossatueur",
+            "en": "Marowak"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "hitmonlee",
+      "species": [
+        {
+          "dex": 106,
+          "slug": "hitmonlee",
+          "names": {
+            "fr": "Kicklee",
+            "en": "Hitmonlee"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "hitmonchan",
+      "species": [
+        {
+          "dex": 107,
+          "slug": "hitmonchan",
+          "names": {
+            "fr": "Tygnon",
+            "en": "Hitmonchan"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "lickitung",
+      "species": [
+        {
+          "dex": 108,
+          "slug": "lickitung",
+          "names": {
+            "fr": "Excelangue",
+            "en": "Lickitung"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "koffing",
+      "species": [
+        {
+          "dex": 109,
+          "slug": "koffing",
+          "names": {
+            "fr": "Smogo",
+            "en": "Koffing"
+          },
+          "level": 1
+        },
+        {
+          "dex": 110,
+          "slug": "weezing",
+          "names": {
+            "fr": "Smogogo",
+            "en": "Weezing"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "rhyhorn",
+      "species": [
+        {
+          "dex": 111,
+          "slug": "rhyhorn",
+          "names": {
+            "fr": "Rhinocorne",
+            "en": "Rhyhorn"
+          },
+          "level": 1
+        },
+        {
+          "dex": 112,
+          "slug": "rhydon",
+          "names": {
+            "fr": "Rhinoféros",
+            "en": "Rhydon"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "chansey",
+      "species": [
+        {
+          "dex": 113,
+          "slug": "chansey",
+          "names": {
+            "fr": "Leveinard",
+            "en": "Chansey"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "tangela",
+      "species": [
+        {
+          "dex": 114,
+          "slug": "tangela",
+          "names": {
+            "fr": "Saquedeneu",
+            "en": "Tangela"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "kangaskhan",
+      "species": [
+        {
+          "dex": 115,
+          "slug": "kangaskhan",
+          "names": {
+            "fr": "Kangourex",
+            "en": "Kangaskhan"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "horsea",
+      "species": [
+        {
+          "dex": 116,
+          "slug": "horsea",
+          "names": {
+            "fr": "Hypotrempe",
+            "en": "Horsea"
+          },
+          "level": 1
+        },
+        {
+          "dex": 117,
+          "slug": "seadra",
+          "names": {
+            "fr": "Hypocéan",
+            "en": "Seadra"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "goldeen",
+      "species": [
+        {
+          "dex": 118,
+          "slug": "goldeen",
+          "names": {
+            "fr": "Poissirène",
+            "en": "Goldeen"
+          },
+          "level": 1
+        },
+        {
+          "dex": 119,
+          "slug": "seaking",
+          "names": {
+            "fr": "Poissoroy",
+            "en": "Seaking"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "staryu",
+      "species": [
+        {
+          "dex": 120,
+          "slug": "staryu",
+          "names": {
+            "fr": "Stari",
+            "en": "Staryu"
+          },
+          "level": 1
+        },
+        {
+          "dex": 121,
+          "slug": "starmie",
+          "names": {
+            "fr": "Staross",
+            "en": "Starmie"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "mr-mime",
+      "species": [
+        {
+          "dex": 122,
+          "slug": "mr-mime",
+          "names": {
+            "fr": "M. Mime",
+            "en": "Mr. Mime"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "scyther",
+      "species": [
+        {
+          "dex": 123,
+          "slug": "scyther",
+          "names": {
+            "fr": "Insécateur",
+            "en": "Scyther"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "jynx",
+      "species": [
+        {
+          "dex": 124,
+          "slug": "jynx",
+          "names": {
+            "fr": "Lippoutou",
+            "en": "Jynx"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "electabuzz",
+      "species": [
+        {
+          "dex": 125,
+          "slug": "electabuzz",
+          "names": {
+            "fr": "Élektek",
+            "en": "Electabuzz"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "magmar",
+      "species": [
+        {
+          "dex": 126,
+          "slug": "magmar",
+          "names": {
+            "fr": "Magmar",
+            "en": "Magmar"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "pinsir",
+      "species": [
+        {
+          "dex": 127,
+          "slug": "pinsir",
+          "names": {
+            "fr": "Scarabrute",
+            "en": "Pinsir"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "tauros",
+      "species": [
+        {
+          "dex": 128,
+          "slug": "tauros",
+          "names": {
+            "fr": "Tauros",
+            "en": "Tauros"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "magikarp",
+      "species": [
+        {
+          "dex": 129,
+          "slug": "magikarp",
+          "names": {
+            "fr": "Magicarpe",
+            "en": "Magikarp"
+          },
+          "level": 1
+        },
+        {
+          "dex": 130,
+          "slug": "gyarados",
+          "names": {
+            "fr": "Léviator",
+            "en": "Gyarados"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "lapras",
+      "species": [
+        {
+          "dex": 131,
+          "slug": "lapras",
+          "names": {
+            "fr": "Lokhlass",
+            "en": "Lapras"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "ditto",
+      "species": [
+        {
+          "dex": 132,
+          "slug": "ditto",
+          "names": {
+            "fr": "Métamorph",
+            "en": "Ditto"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "eevee",
+      "species": [
+        {
+          "dex": 133,
+          "slug": "eevee",
+          "names": {
+            "fr": "Évoli",
+            "en": "Eevee"
+          },
+          "level": 1
+        }
+      ],
+      "branch": {
+        "level": 50,
+        "options": [
+          {
+            "stone": "water-stone",
+            "stoneNames": {
+              "fr": "Pierre Eau",
+              "en": "Water Stone"
+            },
+            "dex": 134,
+            "slug": "vaporeon",
+            "names": {
+              "fr": "Aquali",
+              "en": "Vaporeon"
+            }
+          },
+          {
+            "stone": "thunder-stone",
+            "stoneNames": {
+              "fr": "Pierre Foudre",
+              "en": "Thunder Stone"
+            },
+            "dex": 135,
+            "slug": "jolteon",
+            "names": {
+              "fr": "Voltali",
+              "en": "Jolteon"
+            }
+          },
+          {
+            "stone": "fire-stone",
+            "stoneNames": {
+              "fr": "Pierre Feu",
+              "en": "Fire Stone"
+            },
+            "dex": 136,
+            "slug": "flareon",
+            "names": {
+              "fr": "Pyroli",
+              "en": "Flareon"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "porygon",
+      "species": [
+        {
+          "dex": 137,
+          "slug": "porygon",
+          "names": {
+            "fr": "Porygon",
+            "en": "Porygon"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "omanyte",
+      "species": [
+        {
+          "dex": 138,
+          "slug": "omanyte",
+          "names": {
+            "fr": "Amonita",
+            "en": "Omanyte"
+          },
+          "level": 1
+        },
+        {
+          "dex": 139,
+          "slug": "omastar",
+          "names": {
+            "fr": "Amonistar",
+            "en": "Omastar"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "kabuto",
+      "species": [
+        {
+          "dex": 140,
+          "slug": "kabuto",
+          "names": {
+            "fr": "Kabuto",
+            "en": "Kabuto"
+          },
+          "level": 1
+        },
+        {
+          "dex": 141,
+          "slug": "kabutops",
+          "names": {
+            "fr": "Kabutops",
+            "en": "Kabutops"
+          },
+          "level": 50
+        }
+      ]
+    },
+    {
+      "id": "aerodactyl",
+      "species": [
+        {
+          "dex": 142,
+          "slug": "aerodactyl",
+          "names": {
+            "fr": "Ptéra",
+            "en": "Aerodactyl"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "snorlax",
+      "species": [
+        {
+          "dex": 143,
+          "slug": "snorlax",
+          "names": {
+            "fr": "Ronflex",
+            "en": "Snorlax"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "articuno",
+      "species": [
+        {
+          "dex": 144,
+          "slug": "articuno",
+          "names": {
+            "fr": "Artikodin",
+            "en": "Articuno"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "zapdos",
+      "species": [
+        {
+          "dex": 145,
+          "slug": "zapdos",
+          "names": {
+            "fr": "Électhor",
+            "en": "Zapdos"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "moltres",
+      "species": [
+        {
+          "dex": 146,
+          "slug": "moltres",
+          "names": {
+            "fr": "Sulfura",
+            "en": "Moltres"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "dratini",
+      "species": [
+        {
+          "dex": 147,
+          "slug": "dratini",
+          "names": {
+            "fr": "Minidraco",
+            "en": "Dratini"
+          },
+          "level": 1
+        },
+        {
+          "dex": 148,
+          "slug": "dragonair",
+          "names": {
+            "fr": "Draco",
+            "en": "Dragonair"
+          },
+          "level": 33
+        },
+        {
+          "dex": 149,
+          "slug": "dragonite",
+          "names": {
+            "fr": "Dracolosse",
+            "en": "Dragonite"
+          },
+          "level": 66
+        }
+      ]
+    },
+    {
+      "id": "mewtwo",
+      "species": [
+        {
+          "dex": 150,
+          "slug": "mewtwo",
+          "names": {
+            "fr": "Mewtwo",
+            "en": "Mewtwo"
+          },
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "mew",
+      "species": [
+        {
+          "dex": 151,
+          "slug": "mew",
+          "names": {
+            "fr": "Mew",
+            "en": "Mew"
+          },
+          "level": 1
+        }
+      ]
+    }
+  ]
+}

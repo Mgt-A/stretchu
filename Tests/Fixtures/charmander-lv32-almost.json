@@ -1,0 +1,17 @@
+{
+  "progression": {
+    "cycles": [
+      {
+        "lineId": "charmander",
+        "shiny": false
+      }
+    ],
+    "xp": 108899
+  },
+  "schemaVersion": 4,
+  "streak": {
+    "breaksToday": 2,
+    "count": 5,
+    "history": []
+  }
+}

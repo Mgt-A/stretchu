@@ -1,0 +1,1971 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "free-exercise-db",
+    "url": "https://github.com/yuhonas/free-exercise-db",
+    "commit": "f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5",
+    "license": "Unlicense"
+  },
+  "exercises": [
+    {
+      "id": "respiration-cotes",
+      "name": "Slow Rib Breathing",
+      "steps": [
+        "Sit tall with your hands resting on your thighs.",
+        "Breathe in through your nose for 4 seconds: belly, then ribs open without effort.",
+        "Breathe out slowly for 6 seconds. Stop if you feel any pain."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [],
+      "images": [],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "ouverture-douce",
+      "name": "Gentle Chest Opener",
+      "steps": [
+        "Stand with your arms by your sides and your shoulders relaxed.",
+        "Turn your palms forward and open your shoulders a little.",
+        "Breathe slowly, without pressing on your ribs or going to the point of pain."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [],
+      "images": [],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Chin_Tucks",
+      "name": "Chin Tucks",
+      "steps": [
+        "Sit or stand tall, eyes looking straight ahead.",
+        "Slide your chin straight back without tilting your head down.",
+        "Hold for 3 seconds while you breathe slowly, release, and repeat."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "neck"
+      ],
+      "images": [
+        "Chin_Tucks/0.svg",
+        "Chin_Tucks/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Side_Neck_Stretch",
+      "name": "Side Neck Stretch",
+      "steps": [
+        "Keep your shoulders relaxed and tilt one ear gently toward the shoulder.",
+        "Don't pull on your head: its own weight is enough.",
+        "Breathe slowly and switch sides halfway through."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "neck"
+      ],
+      "images": [
+        "Side_Neck_Stretch/0.jpg",
+        "Side_Neck_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Elbow_Circles",
+      "name": "Elbow Circles",
+      "steps": [
+        "Place your fingertips on your shoulders, elbows at shoulder height.",
+        "Draw small, slow circles with your elbows.",
+        "Breathe out as you open and in as you close. Keep the movement smooth."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Elbow_Circles/0.jpg",
+        "Elbow_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Wall_Slides",
+      "name": "Wall Slides",
+      "steps": [
+        "Stand with your back, head and arms against a wall, elbows bent.",
+        "Slide your arms up the wall as far as is comfortable.",
+        "Lower slowly without arching your lower back."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Wall_Slides/0.svg",
+        "Wall_Slides/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Upward_Stretch",
+      "name": "Reach for the Ceiling",
+      "steps": [
+        "Stand tall with your hands together above your head.",
+        "Grow gently upward without arching your back.",
+        "Breathe slowly and come back down smoothly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Upward_Stretch/0.jpg",
+        "Upward_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Pelvic_Tilt",
+      "name": "Standing Pelvic Tilt",
+      "steps": [
+        "Stand with your feet hip-width apart and knees soft.",
+        "Tilt your pelvis forward and back, slowly.",
+        "Look for a long, relaxed back and breathe calmly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Standing_Pelvic_Tilt/0.jpg",
+        "Standing_Pelvic_Tilt/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Thoracic_Extension_Foam_Roller",
+      "name": "Upper Back Opener on a Foam Roller",
+      "steps": [
+        "Lie with a foam roller under your shoulder blades, knees bent, hands behind your head.",
+        "Let your upper back open gently over the roller.",
+        "Breathe slowly, never force the movement, and stay away from your lower back."
+      ],
+      "equipment": "foam roll",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "middle back"
+      ],
+      "images": [
+        "Thoracic_Extension_Foam_Roller/0.svg",
+        "Thoracic_Extension_Foam_Roller/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Childs_Pose",
+      "name": "Child's Pose",
+      "steps": [
+        "Start on hands and knees, then sit back on your heels with your arms stretched forward.",
+        "Rest your forehead on the floor and let your back relax.",
+        "Breathe into your back without pushing on your arms."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Childs_Pose/0.jpg",
+        "Childs_Pose/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Hip_Flexors",
+      "name": "Standing Hip Flexor Stretch",
+      "steps": [
+        "Stand with one foot in front of the other, knees soft.",
+        "Gently push your pelvis forward, keeping your back straight.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "Standing_Hip_Flexors/0.jpg",
+        "Standing_Hip_Flexors/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Kneeling_Hip_Flexor",
+      "name": "Kneeling Hip Flexor Stretch",
+      "steps": [
+        "Kneel on a mat with one knee down and the other foot in front.",
+        "Move your pelvis forward gently until you feel the front of the hip.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "Kneeling_Hip_Flexor/0.jpg",
+        "Kneeling_Hip_Flexor/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Chair_Leg_Extended_Stretch",
+      "name": "Seated Leg Extension Stretch",
+      "steps": [
+        "Sit on the edge of a chair with a straight back.",
+        "Straighten one leg with the toes pointing up, without locking the knee.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Chair_Leg_Extended_Stretch/0.jpg",
+        "Chair_Leg_Extended_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "respiration-ventrale",
+      "name": "Belly Breathing",
+      "steps": [
+        "Sit tall with one hand on your belly.",
+        "Breathe in through your nose: only the belly rises, the ribs stay soft.",
+        "Breathe out slowly through your mouth, without effort, 5 to 6 times."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [],
+      "images": [],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "respiration-carree",
+      "name": "Box Breathing",
+      "steps": [
+        "Sit or stand with relaxed shoulders.",
+        "Breathe in for 4 seconds, hold for 4 without tensing, breathe out for 4, pause for 4.",
+        "If you feel any discomfort in your chest, shorten the counts."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [],
+      "images": [],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Shoulder_Circles",
+      "name": "Shoulder Circles",
+      "steps": [
+        "Let your arms hang and your shoulders relax, sitting or standing.",
+        "Roll your shoulders forward, up, back and down, slowly.",
+        "Reverse the direction halfway through, without forcing."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Shoulder_Circles/0.jpg",
+        "Shoulder_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Shoulder_Raise",
+      "name": "Shoulder Shrugs",
+      "steps": [
+        "Let your arms hang by your sides.",
+        "Lift your shoulders toward your ears as you breathe in.",
+        "Let them drop softly as you breathe out."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Shoulder_Raise/0.jpg",
+        "Shoulder_Raise/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Overhead_Stretch",
+      "name": "Interlaced Overhead Stretch",
+      "steps": [
+        "Stand with your fingers interlaced and your palms facing the ceiling.",
+        "Stretch your arms up, shoulders down, without arching.",
+        "Breathe slowly and release before any discomfort."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abdominals"
+      ],
+      "images": [
+        "Overhead_Stretch/0.jpg",
+        "Overhead_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Triceps_Stretch",
+      "name": "Triceps Stretch",
+      "steps": [
+        "Put one hand behind your head, elbow pointing to the ceiling.",
+        "Hold that elbow with the other hand and pull very gently.",
+        "Hold for 15 seconds, breathe, switch arms."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "triceps"
+      ],
+      "images": [
+        "Triceps_Stretch/0.jpg",
+        "Triceps_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Arm_Circles",
+      "name": "Arm Circles",
+      "steps": [
+        "Stand with your arms stretched out to the sides at shoulder height.",
+        "Draw small, slow circles, then reverse the direction.",
+        "Breathe normally and keep your shoulders low."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Arm_Circles/0.jpg",
+        "Arm_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Elbows_Back",
+      "name": "Elbows Back",
+      "steps": [
+        "Stand with your hands on your lower back and elbows out to the sides.",
+        "Gently bring your elbows back, without forcing.",
+        "Breathe slowly and release before any discomfort in your chest."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "chest"
+      ],
+      "images": [
+        "Elbows_Back/0.jpg",
+        "Elbows_Back/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "One_Arm_Against_Wall",
+      "name": "Arm Against the Wall",
+      "steps": [
+        "Stand with one forearm bent against a wall or a door frame.",
+        "Lean gently toward that arm until you feel a light stretch along the side.",
+        "Hold for 15 seconds, breathe, switch arms."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lats"
+      ],
+      "images": [
+        "One_Arm_Against_Wall/0.jpg",
+        "One_Arm_Against_Wall/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Doorway_Pec_Stretch_Low",
+      "name": "Gentle Doorway Chest Stretch",
+      "steps": [
+        "In a doorway, rest your forearm on the frame with your elbow below your shoulder.",
+        "Step forward very slightly, chest upright, until you feel a gentle stretch.",
+        "Hold for 15 seconds without pain, switch sides."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "chest"
+      ],
+      "images": [
+        "Doorway_Pec_Stretch_Low/0.svg",
+        "Doorway_Pec_Stretch_Low/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Pelvic_Tilt_Into_Bridge",
+      "name": "Pelvic Tilt on the Floor",
+      "steps": [
+        "Lie on your back with your feet on the floor and your heels under your knees.",
+        "Lift only your pelvis, to lengthen your lower back.",
+        "Breathe slowly and lower down one vertebra at a time."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Pelvic_Tilt_Into_Bridge/0.jpg",
+        "Pelvic_Tilt_Into_Bridge/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Knee_Across_The_Body",
+      "name": "Knee Across the Body, Gentle Twist",
+      "steps": [
+        "Lie on your back with your right leg straight, bend the left knee and cross it toward the right.",
+        "Let the knee drop by itself: it doesn't need to touch the floor.",
+        "Breathe slowly, stay without forcing, switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "glutes"
+      ],
+      "images": [
+        "Knee_Across_The_Body/0.jpg",
+        "Knee_Across_The_Body/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Side-Lying_Floor_Stretch",
+      "name": "Side-Lying Stretch",
+      "steps": [
+        "Lie on your side with the bottom knee bent in front of you.",
+        "Reach the top arm over your head, without pulling hard.",
+        "Breathe slowly for 15 seconds, switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lats"
+      ],
+      "images": [
+        "Side-Lying_Floor_Stretch/0.jpg",
+        "Side-Lying_Floor_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Lower_Back-SMR",
+      "name": "Lower Back on a Foam Roller",
+      "steps": [
+        "Sit with a foam roller under your lower back, arms crossed in front of you.",
+        "Roll very gently, with the weight on the lower back (never on the ribs).",
+        "Stop at the first sign of pain."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Lower_Back-SMR/0.jpg",
+        "Lower_Back-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Couch_Stretch",
+      "name": "Quad Stretch Against the Wall",
+      "steps": [
+        "Kneel facing away from a wall, with the back foot resting against it.",
+        "Place your pelvis above the back knee, chest upright.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "Couch_Stretch/0.svg",
+        "Couch_Stretch/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Ninety_Ninety_Hip_Switch",
+      "name": "90/90 Hip Switch",
+      "steps": [
+        "Sit on the floor with one leg bent at 90 degrees in front and the other out to the side.",
+        "Keep your chest tall and both buttocks on the floor.",
+        "Switch the knees to the other side, slowly."
+      ],
+      "equipment": null,
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abductors"
+      ],
+      "images": [
+        "Ninety_Ninety_Hip_Switch/0.svg",
+        "Ninety_Ninety_Hip_Switch/1.svg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "stretchu"
+    },
+    {
+      "id": "Ankle_Circles",
+      "name": "Ankle Circles",
+      "steps": [
+        "Stand holding on to something solid.",
+        "Lift one foot and draw a big circle with your big toe.",
+        "Reverse the direction, then switch feet."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Ankle_Circles/0.jpg",
+        "Ankle_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Knee_Circles",
+      "name": "Knee Circles",
+      "steps": [
+        "Stand with your feet together and your hands on your knees.",
+        "Make small, slow circles with your knees.",
+        "Breathe normally and change direction halfway through."
+      ],
+      "equipment": "body only",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Knee_Circles/0.jpg",
+        "Knee_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Soleus_And_Achilles_Stretch",
+      "name": "Calf Stretch in a Short Lunge",
+      "steps": [
+        "Stand with one foot a little in front of the other, back heel on the floor.",
+        "Bend both knees without lifting the back heel.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Standing_Soleus_And_Achilles_Stretch/0.jpg",
+        "Standing_Soleus_And_Achilles_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Seated_Floor_Hamstring_Stretch",
+      "name": "Seated Hamstring Stretch",
+      "steps": [
+        "Sit with one leg straight and the other foot against your inner thigh.",
+        "Lean forward from the hips with a long back until you feel a light stretch.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Seated_Floor_Hamstring_Stretch/0.jpg",
+        "Seated_Floor_Hamstring_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Hip_Circles",
+      "name": "Standing Hip Circles",
+      "steps": [
+        "Stand on one leg with one hand on a support.",
+        "Lift the other knee to 90 degrees and open the hip in a big circle.",
+        "Stay slow and smooth, then switch legs."
+      ],
+      "equipment": "body only",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abductors"
+      ],
+      "images": [
+        "Standing_Hip_Circles/0.jpg",
+        "Standing_Hip_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Wrist_Circles",
+      "name": "Wrist Circles",
+      "steps": [
+        "Sit or stand with your arms in front of you and your wrists loose.",
+        "Draw small circles with your wrists.",
+        "Reverse the direction halfway through."
+      ],
+      "equipment": "body only",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "forearms"
+      ],
+      "images": [
+        "Wrist_Circles/0.jpg",
+        "Wrist_Circles/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Hamstring_Stretch",
+      "name": "Hamstring Stretch with a Band",
+      "steps": [
+        "Lie on your back with one leg up and a band under the ball of the foot.",
+        "Pull gently on the band, with the knee almost straight.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": "bands",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Hamstring_Stretch/0.jpg",
+        "Hamstring_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "IT_Band_and_Glute_Stretch",
+      "name": "Glute and Outer Thigh Stretch with a Band",
+      "steps": [
+        "Lie on your back with a band around one foot and the leg straight.",
+        "Bring the leg toward the opposite side without lifting your shoulders.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": "bands",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "abductors"
+      ],
+      "images": [
+        "IT_Band_and_Glute_Stretch/0.jpg",
+        "IT_Band_and_Glute_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Seated_Hamstring_and_Calf_Stretch",
+      "name": "Seated Leg and Calf Stretch with a Band",
+      "steps": [
+        "Sit with your legs straight and a band around one foot.",
+        "Lean forward a little and pull the band to bring your toes toward you.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": "bands",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Seated_Hamstring_and_Calf_Stretch/0.jpg",
+        "Seated_Hamstring_and_Calf_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Hamstring_and_Calf_Stretch",
+      "name": "Standing Leg and Calf Stretch with a Band",
+      "steps": [
+        "Stand with one foot forward with a band around it and the leg almost straight.",
+        "Lean forward slightly with your toes up, pulling on the band.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": "bands",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Standing_Hamstring_and_Calf_Stretch/0.jpg",
+        "Standing_Hamstring_and_Calf_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "90_90_Hamstring",
+      "name": "90/90 Hamstring Stretch",
+      "steps": [
+        "Lie on your back, hips and knees bent at 90 degrees, calves resting on a chair or the wall.",
+        "Slowly straighten one leg toward the ceiling, only as far as feels comfortable.",
+        "Breathe slowly for 15 seconds, then switch legs."
+      ],
+      "equipment": "body only",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "90_90_Hamstring/0.jpg",
+        "90_90_Hamstring/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Adductor",
+      "name": "Inner Thigh Foam Roll",
+      "steps": [
+        "Lie face down, one leg bent out to the side with the inner thigh on a foam roller.",
+        "Roll slowly along the inner thigh, staying away from the knee and the groin.",
+        "Pause on tender spots while you breathe, then switch legs."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "adductors"
+      ],
+      "images": [
+        "Adductor/0.jpg",
+        "Adductor/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Adductor_Groin",
+      "name": "Kneeling Groin Stretch",
+      "steps": [
+        "On hands and knees, slide one leg out to the side with the foot flat.",
+        "Sit your hips back slowly until you feel a mild stretch on the inner thigh.",
+        "Breathe for 15 seconds, come back gently, switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "adductors"
+      ],
+      "images": [
+        "Adductor_Groin/0.jpg",
+        "Adductor_Groin/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "All_Fours_Quad_Stretch",
+      "name": "All Fours Quad Stretch",
+      "steps": [
+        "On hands and knees, bring one heel toward your buttock and hold the foot with the same-side hand.",
+        "Keep the hips level and the back long.",
+        "Hold for 15 seconds without pulling hard, then switch legs."
+      ],
+      "equipment": "body only",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "All_Fours_Quad_Stretch/0.jpg",
+        "All_Fours_Quad_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Ankle_On_The_Knee",
+      "name": "Figure-Four Hip Stretch",
+      "steps": [
+        "Sit tall on a chair, rest one ankle on the opposite knee.",
+        "Lean forward from the hips with a long back until you feel the outer hip.",
+        "Hold for 15 seconds, breathing slowly, then switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "glutes"
+      ],
+      "images": [
+        "Ankle_On_The_Knee/0.jpg",
+        "Ankle_On_The_Knee/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Calf_Stretch_Elbows_Against_Wall",
+      "name": "Calf Stretch, Forearms on the Wall",
+      "steps": [
+        "Stand facing a wall, forearms on it, one foot back with the heel down.",
+        "Bend the front knee and lean in gently until the back calf stretches.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Calf_Stretch_Elbows_Against_Wall/0.jpg",
+        "Calf_Stretch_Elbows_Against_Wall/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Calf_Stretch_Hands_Against_Wall",
+      "name": "Calf Stretch, Hands on the Wall",
+      "steps": [
+        "Stand an arm's length from a wall, hands on it, one foot back with the heel down.",
+        "Keep the back leg straight and press the heel into the floor.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Calf_Stretch_Hands_Against_Wall/0.jpg",
+        "Calf_Stretch_Hands_Against_Wall/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Calves-SMR",
+      "name": "Calf Foam Roll",
+      "steps": [
+        "Sit with a foam roller under your calves, hands behind you.",
+        "Lift the hips and roll slowly from the ankle to just below the knee.",
+        "Slow down on tender spots and breathe, then switch to one leg at a time if you like."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Calves-SMR/0.jpg",
+        "Calves-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Cat_Stretch",
+      "name": "Cat Stretch",
+      "steps": [
+        "On hands and knees, hands under shoulders, knees under hips.",
+        "Breathe out and round your back toward the ceiling, chin toward the chest.",
+        "Breathe in and come back to a flat back. Repeat slowly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Cat_Stretch/0.jpg",
+        "Cat_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Chair_Lower_Back_Stretch",
+      "name": "Seated Lower Back Stretch",
+      "steps": [
+        "Sit on a chair with your feet flat, knees apart.",
+        "Let your head and chest fold forward between your knees, arms hanging.",
+        "Breathe slowly for 15 seconds, then roll back up one vertebra at a time."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lats"
+      ],
+      "images": [
+        "Chair_Lower_Back_Stretch/0.jpg",
+        "Chair_Lower_Back_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Chest_Stretch_on_Stability_Ball",
+      "name": "Chest Opener on a Gym Ball",
+      "steps": [
+        "Sit on a gym ball, then walk your feet forward and lie back until the ball supports your upper back.",
+        "Let your arms open out to the sides, palms up.",
+        "Breathe slowly for 15 seconds and sit up gently."
+      ],
+      "equipment": "exercise ball",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "chest"
+      ],
+      "images": [
+        "Chest_Stretch_on_Stability_Ball/0.jpg",
+        "Chest_Stretch_on_Stability_Ball/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Chin_To_Chest_Stretch",
+      "name": "Chin to Chest Stretch",
+      "steps": [
+        "Sit or stand tall, shoulders relaxed.",
+        "Lower your chin slowly toward your chest until you feel the back of the neck lengthen.",
+        "Breathe for 15 seconds, then lift your head back up slowly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "neck"
+      ],
+      "images": [
+        "Chin_To_Chest_Stretch/0.jpg",
+        "Chin_To_Chest_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Dancers_Stretch",
+      "name": "Lying Spinal Twist",
+      "steps": [
+        "Lie on your back, arms out to the sides, one knee bent with the foot on the floor.",
+        "Let the opposite knee fall across your body while the shoulders stay on the floor.",
+        "Breathe slowly for 15 seconds, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Dancers_Stretch/0.jpg",
+        "Dancers_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Dynamic_Back_Stretch",
+      "name": "Dynamic Back Stretch",
+      "steps": [
+        "Stand with feet hip-width apart and arms hanging loosely.",
+        "Swing the arms gently across the chest and back out again, turning the upper body a little.",
+        "Keep the movement small and smooth, and breathe normally."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lats"
+      ],
+      "images": [
+        "Dynamic_Back_Stretch/0.jpg",
+        "Dynamic_Back_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Dynamic_Chest_Stretch",
+      "name": "Dynamic Chest Stretch",
+      "steps": [
+        "Stand tall with your arms stretched forward at shoulder height.",
+        "Open your arms out to the sides and back, as far as is comfortable, then bring them forward again.",
+        "Move slowly with the breath: in as you open, out as you close."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "chest"
+      ],
+      "images": [
+        "Dynamic_Chest_Stretch/0.jpg",
+        "Dynamic_Chest_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Groin_and_Back_Stretch",
+      "name": "Seated Butterfly Stretch",
+      "steps": [
+        "Sit on the floor with the soles of your feet together and knees falling out to the sides.",
+        "Hold your feet and lengthen your back, leaning forward only a little.",
+        "Breathe for 15 seconds without pressing on the knees."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "adductors"
+      ],
+      "images": [
+        "Groin_and_Back_Stretch/0.jpg",
+        "Groin_and_Back_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Hamstring-SMR",
+      "name": "Hamstring Foam Roll",
+      "steps": [
+        "Sit with a foam roller under your thighs, hands on the floor behind you.",
+        "Lift the hips and roll slowly from the sit bones to just above the knees.",
+        "Slow down on tender spots and breathe."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Hamstring-SMR/0.jpg",
+        "Hamstring-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Hug_A_Ball",
+      "name": "Hug a Gym Ball",
+      "steps": [
+        "Kneel in front of a gym ball and rest your chest and arms on it.",
+        "Let your arms wrap around the ball and your back round and relax.",
+        "Breathe slowly for 20 seconds, sinking a little more with each breath out."
+      ],
+      "equipment": "exercise ball",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Hug_A_Ball/0.jpg",
+        "Hug_A_Ball/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Hug_Knees_To_Chest",
+      "name": "Hug Knees to Chest",
+      "steps": [
+        "Lie on your back with your knees bent.",
+        "Bring both knees toward your chest and hold them with your hands.",
+        "Breathe slowly for 15 seconds, then release gently."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Hug_Knees_To_Chest/0.jpg",
+        "Hug_Knees_To_Chest/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Iliotibial_Tract-SMR",
+      "name": "Outer Thigh Foam Roll",
+      "steps": [
+        "Lie on one side with a foam roller under the outer thigh, forearm on the floor, other foot in front for balance.",
+        "Roll slowly between the hip and just above the knee.",
+        "Slow down on tender spots, breathe, then switch sides."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "abductors"
+      ],
+      "images": [
+        "Iliotibial_Tract-SMR/0.jpg",
+        "Iliotibial_Tract-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Kneeling_Forearm_Stretch",
+      "name": "Kneeling Forearm Stretch",
+      "steps": [
+        "Kneel on all fours with your palms on the floor, fingers pointing toward your knees.",
+        "Sit back slowly until you feel a mild stretch along the forearms.",
+        "Hold for 15 seconds and ease off at the first sign of discomfort."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "forearms"
+      ],
+      "images": [
+        "Kneeling_Forearm_Stretch/0.jpg",
+        "Kneeling_Forearm_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Latissimus_Dorsi-SMR",
+      "name": "Side Back Foam Roll",
+      "steps": [
+        "Lie on one side with a foam roller under the armpit area, the lower arm stretched out in front.",
+        "Roll slowly a few centimetres up and down along the side of your back.",
+        "Breathe slowly, then switch sides."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lats"
+      ],
+      "images": [
+        "Latissimus_Dorsi-SMR/0.jpg",
+        "Latissimus_Dorsi-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Leg-Up_Hamstring_Stretch",
+      "name": "Leg-Up Hamstring Stretch",
+      "steps": [
+        "Lie on your back and lift one leg, holding behind the thigh or calf with both hands.",
+        "Keep the other leg relaxed on the floor and the knee soft.",
+        "Hold for 15 seconds, breathing slowly, then switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Leg-Up_Hamstring_Stretch/0.jpg",
+        "Leg-Up_Hamstring_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Looking_At_Ceiling",
+      "name": "Looking at the Ceiling",
+      "steps": [
+        "Stand tall with your hands resting on your lower back.",
+        "Lift your chin and look up slowly, as far as feels comfortable.",
+        "Hold for a few breaths, then lower your gaze back to the front."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "Looking_At_Ceiling/0.jpg",
+        "Looking_At_Ceiling/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Middle_Back_Stretch",
+      "name": "Middle Back Stretch",
+      "steps": [
+        "Sit or stand and clasp your hands in front of you at chest height.",
+        "Round the upper back and push the hands away until you feel the area between the shoulder blades.",
+        "Breathe slowly for 15 seconds, then release."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "middle back"
+      ],
+      "images": [
+        "Middle_Back_Stretch/0.jpg",
+        "Middle_Back_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "On_Your_Side_Quad_Stretch",
+      "name": "Side-Lying Quad Stretch",
+      "steps": [
+        "Lie on one side with the bottom knee bent for balance.",
+        "Bend the top knee and hold that ankle, bringing the heel toward your buttock.",
+        "Keep the knees close, hold for 15 seconds, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "On_Your_Side_Quad_Stretch/0.jpg",
+        "On_Your_Side_Quad_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "One_Knee_To_Chest",
+      "name": "One Knee to Chest",
+      "steps": [
+        "Lie on your back with both legs straight, or one knee bent for comfort.",
+        "Hug one knee toward your chest with both hands.",
+        "Hold for 15 seconds, breathing slowly, then switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "glutes"
+      ],
+      "images": [
+        "One_Knee_To_Chest/0.jpg",
+        "One_Knee_To_Chest/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Piriformis-SMR",
+      "name": "Glute Foam Roll",
+      "steps": [
+        "Sit on a foam roller with one ankle resting on the opposite knee, hands behind you.",
+        "Lean slightly toward the side of the crossed leg and roll slowly over the buttock.",
+        "Slow down on tender spots and breathe, then switch sides."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "glutes"
+      ],
+      "images": [
+        "Piriformis-SMR/0.jpg",
+        "Piriformis-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Pyramid",
+      "name": "Gym Ball Forward Fold",
+      "steps": [
+        "Kneel behind a gym ball and rest your forearms on it.",
+        "Roll the ball forward a little while you sink your chest toward the floor.",
+        "Breathe for 15 seconds and roll back slowly."
+      ],
+      "equipment": "exercise ball",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "lower back"
+      ],
+      "images": [
+        "Pyramid/0.jpg",
+        "Pyramid/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Quadriceps-SMR",
+      "name": "Thigh Foam Roll",
+      "steps": [
+        "Lie face down with a foam roller under your thighs, on your forearms.",
+        "Roll slowly from the hip to just above the knee.",
+        "Slow down on tender spots and breathe."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "quadriceps"
+      ],
+      "images": [
+        "Quadriceps-SMR/0.jpg",
+        "Quadriceps-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Rhomboids-SMR",
+      "name": "Upper Back Foam Roll",
+      "steps": [
+        "Lie on your back with a foam roller under your shoulder blades, knees bent, arms crossed over your chest.",
+        "Lift the hips slightly and roll a few centimetres up and down.",
+        "Stay on the upper back, away from the neck and the lower back, and breathe."
+      ],
+      "equipment": "foam roll",
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "middle back"
+      ],
+      "images": [
+        "Rhomboids-SMR/0.jpg",
+        "Rhomboids-SMR/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Runners_Stretch",
+      "name": "Runner's Lunge",
+      "steps": [
+        "Step one foot forward into a lunge, hands on the front thigh or a chair.",
+        "Keep the back leg straight and press the back heel toward the floor.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Runners_Stretch/0.jpg",
+        "Runners_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Seated_Calf_Stretch",
+      "name": "Seated Calf Stretch",
+      "steps": [
+        "Sit on the floor or a chair with one leg stretched out in front.",
+        "Pull your toes toward you, keeping the knee soft.",
+        "Hold for 15 seconds, breathing slowly, then switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Seated_Calf_Stretch/0.jpg",
+        "Seated_Calf_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Seated_Overhead_Stretch",
+      "name": "Seated Overhead Stretch",
+      "steps": [
+        "Sit tall on a chair and interlace your fingers.",
+        "Turn your palms to the ceiling and reach up, shoulders down.",
+        "Breathe slowly for 15 seconds and release."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abdominals"
+      ],
+      "images": [
+        "Seated_Overhead_Stretch/0.jpg",
+        "Seated_Overhead_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Shoulder_Stretch",
+      "name": "Cross-Body Shoulder Stretch",
+      "steps": [
+        "Bring one arm across your chest at shoulder height.",
+        "Hold it just above the elbow with the other hand and pull gently toward you.",
+        "Hold for 15 seconds, breathing, then switch arms."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Shoulder_Stretch/0.jpg",
+        "Shoulder_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Side_Lying_Groin_Stretch",
+      "name": "Side-Lying Inner Thigh Stretch",
+      "steps": [
+        "Lie on your side with the top leg bent and its knee resting on a cushion or the floor in front of you.",
+        "Stretch the bottom leg out and let it relax.",
+        "Breathe for 15 seconds, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "adductors"
+      ],
+      "images": [
+        "Side_Lying_Groin_Stretch/0.jpg",
+        "Side_Lying_Groin_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Side_Wrist_Pull",
+      "name": "Side Wrist Pull",
+      "steps": [
+        "Stand tall and clasp one wrist with the other hand in front of you.",
+        "Gently pull that wrist across and down to the side, lengthening the arm and the side of the neck.",
+        "Hold for 15 seconds, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Side_Wrist_Pull/0.jpg",
+        "Side_Wrist_Pull/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Spinal_Stretch",
+      "name": "Seated Spinal Twist",
+      "steps": [
+        "Sit tall on a chair, feet flat, and hold the back of the seat or the backrest.",
+        "Turn your chest slowly to one side, keeping both hips on the chair.",
+        "Hold for 15 seconds, breathing slowly, then turn to the other side."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "middle back"
+      ],
+      "images": [
+        "Spinal_Stretch/0.jpg",
+        "Spinal_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Gastrocnemius_Calf_Stretch",
+      "name": "Standing Calf Stretch",
+      "steps": [
+        "Stand facing a wall, one foot back with the heel on the floor and the leg straight.",
+        "Lean forward until you feel the back calf stretch.",
+        "Hold for 15 seconds, breathe, switch legs."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "calves"
+      ],
+      "images": [
+        "Standing_Gastrocnemius_Calf_Stretch/0.jpg",
+        "Standing_Gastrocnemius_Calf_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Lateral_Stretch",
+      "name": "Standing Side Bend",
+      "steps": [
+        "Stand tall with feet hip-width apart and one arm reaching overhead.",
+        "Lean slowly to the opposite side, lengthening the whole side of the body.",
+        "Hold for 15 seconds, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abdominals"
+      ],
+      "images": [
+        "Standing_Lateral_Stretch/0.jpg",
+        "Standing_Lateral_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Standing_Toe_Touches",
+      "name": "Standing Forward Fold",
+      "steps": [
+        "Stand with feet hip-width apart and knees slightly bent.",
+        "Fold forward from the hips and let your arms hang toward the floor.",
+        "Breathe slowly for 15 seconds, then roll back up slowly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Standing_Toe_Touches/0.jpg",
+        "Standing_Toe_Touches/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "The_Straddle",
+      "name": "Seated Straddle Stretch",
+      "steps": [
+        "Sit on the floor with your legs open in a comfortable V.",
+        "Walk your hands forward with a long back, only as far as feels easy.",
+        "Breathe for 15 seconds and come back up slowly."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "The_Straddle/0.jpg",
+        "The_Straddle/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Torso_Rotation",
+      "name": "Gym Ball Torso Rotation",
+      "steps": [
+        "Lie with your upper back on a gym ball, feet wide, arms stretched up.",
+        "Rotate slowly to one side, keeping the hips still.",
+        "Return to the centre and rotate to the other side, breathing slowly."
+      ],
+      "equipment": "exercise ball",
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "abdominals"
+      ],
+      "images": [
+        "Torso_Rotation/0.jpg",
+        "Torso_Rotation/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Tricep_Side_Stretch",
+      "name": "Triceps Side Stretch",
+      "steps": [
+        "Raise one arm and bend the elbow, hand behind your head.",
+        "Lean gently to the opposite side, letting the elbow point up.",
+        "Hold for 15 seconds, then switch arms."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "triceps"
+      ],
+      "images": [
+        "Tricep_Side_Stretch/0.jpg",
+        "Tricep_Side_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Upper_Back_Stretch",
+      "name": "Upper Back Stretch",
+      "steps": [
+        "Hold your hands together in front of you and round your upper back.",
+        "Let your head drop forward and reach your hands away from you.",
+        "Breathe into the upper back for 15 seconds, then release."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "beginner",
+      "primaryMuscles": [
+        "middle back"
+      ],
+      "images": [
+        "Upper_Back_Stretch/0.jpg",
+        "Upper_Back_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Worlds_Greatest_Stretch",
+      "name": "World's Greatest Stretch",
+      "steps": [
+        "Step into a long lunge and place both hands on the floor inside the front foot.",
+        "Rotate your chest toward the front knee and reach that arm to the ceiling.",
+        "Breathe for a few seconds, return slowly, then switch sides."
+      ],
+      "equipment": null,
+      "category": "stretching",
+      "level": "intermediate",
+      "primaryMuscles": [
+        "hamstrings"
+      ],
+      "images": [
+        "Worlds_Greatest_Stretch/0.jpg",
+        "Worlds_Greatest_Stretch/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Band_Pull_Apart",
+      "name": "Band Pull-Apart",
+      "steps": [
+        "Hold a light resistance band in front of you at chest height, hands shoulder-width apart.",
+        "Pull the band apart by squeezing your shoulder blades together, arms staying straight.",
+        "Return slowly and repeat with the breath, keeping the shoulders down."
+      ],
+      "equipment": "bands",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Band_Pull_Apart/0.jpg",
+        "Band_Pull_Apart/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "External_Rotation_with_Band",
+      "name": "Shoulder External Rotation with Band",
+      "steps": [
+        "Hold a light band with both hands, elbow bent at 90 degrees and tucked against your side.",
+        "Turn the forearm outward slowly, keeping the elbow in place.",
+        "Return slowly. Do the repetitions with one arm, then the other."
+      ],
+      "equipment": "bands",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "External_Rotation_with_Band/0.jpg",
+        "External_Rotation_with_Band/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Internal_Rotation_with_Band",
+      "name": "Shoulder Internal Rotation with Band",
+      "steps": [
+        "Hold a light band with the elbow bent at 90 degrees and tucked against your side.",
+        "Turn the forearm inward across your belly slowly, keeping the elbow in place.",
+        "Return slowly. Do the repetitions with one arm, then the other."
+      ],
+      "equipment": "bands",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Internal_Rotation_with_Band/0.jpg",
+        "Internal_Rotation_with_Band/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": true,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Kettlebell_Pirate_Ships",
+      "name": "Kettlebell Pirate Ship",
+      "steps": [
+        "Stand tall holding a light kettlebell by the handle with both hands.",
+        "Draw a slow, wide arc with it in front of you, from one side to the other, over your head.",
+        "Keep the movement smooth and stay within a comfortable range."
+      ],
+      "equipment": "kettlebells",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "shoulders"
+      ],
+      "images": [
+        "Kettlebell_Pirate_Ships/0.jpg",
+        "Kettlebell_Pirate_Ships/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    },
+    {
+      "id": "Physioball_Hip_Bridge",
+      "name": "Gym Ball Hip Bridge",
+      "steps": [
+        "Lie on your back with your heels on a gym ball and your knees bent.",
+        "Lift your hips slowly until your body forms a line from shoulders to knees.",
+        "Hold for a breath and lower with control."
+      ],
+      "equipment": "exercise ball",
+      "category": "mobility",
+      "level": "beginner",
+      "primaryMuscles": [
+        "glutes"
+      ],
+      "images": [
+        "Physioball_Hip_Bridge/0.jpg",
+        "Physioball_Hip_Bridge/1.jpg"
+      ],
+      "durationSeconds": 30,
+      "unilateral": false,
+      "origin": "free-exercise-db"
+    }
+  ]
+}
