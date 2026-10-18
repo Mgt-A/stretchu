@@ -181,6 +181,16 @@ final class SpriteAnimationTests: XCTestCase {
         XCTAssertEqual(SpriteLibrary.sheet(ref, animation: "Eat")?.name, "Idle")
     }
 
+    func testAMissingSheetTriesTheMomentFallbacksBeforeIdle() throws {
+        try requireSprites()
+        XCTAssertEqual(Moment.wakeUp.fallbacks, ["Wake", "Hop"])
+        XCTAssertEqual(Moment.companion(.hurt).animation, "Hurt")
+        // Hop is shipped for every species: a made-up first choice lands on it, not on Idle.
+        let ref = SpriteRef(dex: 25, shiny: false)
+        XCTAssertEqual(SpriteLibrary.sheet(ref, animation: "Nope", fallbacks: ["AlsoNope", "Hop"])?.name, "Hop")
+        XCTAssertNil(SpriteLibrary.sheet(ref, animation: "Nope", fallbacks: ["Hop"], requireExactFile: true))
+    }
+
     func testAShinyWithoutSheetsFallsBackToTheNormalSprite() throws {
         try requireSprites()
         // No species has shiny sheets for a dex that was never downloaded: the lookup finds nothing.

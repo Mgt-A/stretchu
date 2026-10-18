@@ -281,7 +281,7 @@ private struct ReadyStep: View {
 
         VStack(spacing: 12) {
             // The victory pose when the species has one (Idle otherwise), at the welcome screen's size.
-            SpriteSheetView(sprite: sprite, animation: "Pose", boxWidth: 96, boxHeight: 84, scale: 2).padding(.top, 6)
+            SpriteSheetView(sprite: sprite, animation: "Pose", fallbacks: ["Hop"], boxWidth: 96, boxHeight: 84, scale: 2).padding(.top, 6)
             Text(tr("setup.ready.title")).font(.system(size: 22, weight: .bold))
 
             VStack(spacing: 0) {

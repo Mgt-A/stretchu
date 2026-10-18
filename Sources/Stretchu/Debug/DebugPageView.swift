@@ -87,7 +87,7 @@ struct DebugPageView: View {
                         HStack(alignment: .top, spacing: 12) {
                             SpriteBox(sprite: previewRef, moment: Moment.preview(previewAnimation), width: 100, height: 120, radius: Radius.card, scale: 2)
                             VStack(spacing: 6) {
-                                ForEach(["Idle", "Eat", "LookUp", "DeepBreath", "Hop", "Sleep"], id: \.self) { name in
+                                ForEach(["Idle", "Eat", "LookUp", "DeepBreath", "Hop", "Sleep", "Hurt"], id: \.self) { name in
                                     Button(name) { previewAnimation = name }
                                         .buttonStyle(.secondary)
                                         .opacity(previewAnimation == name ? 1 : 0.7)
@@ -181,6 +181,7 @@ extension Moment {
         case "DeepBreath": .break2
         case "Hop": .levelUp
         case "Sleep": .companion(.sleep)
+        case "Hurt": .companion(.hurt)
         default: .menu
         }
     }
