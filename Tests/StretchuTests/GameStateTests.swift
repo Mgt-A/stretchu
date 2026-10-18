@@ -21,8 +21,8 @@ final class GameStateTests: XCTestCase {
 
     func testTheDaySyncsBeforeTheBreak() {
         var game = GameState()
-        game.streak = Streak(count: 9, breaksToday: 3, currentDay: cal.startOfDay(for: TestCalendar.monday))
-        // Tuesday: Monday had only 3 breaks, the streak falls before the new break.
+        game.streak = Streak(count: 9, breaksToday: 0, currentDay: cal.startOfDay(for: TestCalendar.monday))
+        // Tuesday: Monday had no break, the streak falls before the new break.
         _ = game.apply(.breakCompleted, now: TestCalendar.tuesday, calendar: cal)
         XCTAssertEqual(game.streak.count, 1)
         XCTAssertEqual(game.progression.xp, 2_500)

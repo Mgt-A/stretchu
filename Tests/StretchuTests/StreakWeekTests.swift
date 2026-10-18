@@ -23,13 +23,13 @@ final class StreakWeekTests: XCTestCase {
         XCTAssertLessThanOrEqual(s.history.count, 14)
     }
 
-    func testThursdaysWeekWithThreeMetDays() {
+    func testThursdaysWeekWithTwoMetDays() {
         var s = Streak(count: 15, breaksToday: 7, currentDay: cal.startOfDay(for: TestCalendar.monday))
         s.sync(now: TestCalendar.tuesday, calendar: cal)      // Monday: 7
         s.breaksToday = 5
         s.sync(now: TestCalendar.wednesday, calendar: cal)    // Tuesday: 5
-        s.breaksToday = 2
-        s.sync(now: TestCalendar.thursday, calendar: cal)     // Wednesday: 2
+        s.breaksToday = 0
+        s.sync(now: TestCalendar.thursday, calendar: cal)     // Wednesday: 0
         s.breaksToday = 3
         let week = s.week(now: TestCalendar.thursday, calendar: cal, letters: letters)
         XCTAssertEqual(week.map(\.letter), ["L", "M", "M", "J", "V", "S", "D"])

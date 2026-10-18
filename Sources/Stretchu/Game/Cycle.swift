@@ -15,9 +15,12 @@ struct Cycle: Codable, Equatable {
     var reachedDexes: [Int]
     /// The cycle started after an abandon: no shiny draw, so abandoning can't be used to fish for one.
     var afterAbandon: Bool
+    /// Health counters of the cycle. nil for the cycles that existed before they were counted.
+    var stats: CycleStats?
 
     init(lineId: String = LineCatalog.defaultLineId, startedAt: Date? = nil, endedAt: Date? = nil,
-         shiny: Bool = false, branchDex: Int? = nil, reachedDexes: [Int] = [], afterAbandon: Bool = false) {
+         shiny: Bool = false, branchDex: Int? = nil, reachedDexes: [Int] = [], afterAbandon: Bool = false,
+         stats: CycleStats? = nil) {
         self.lineId = lineId
         self.startedAt = startedAt
         self.endedAt = endedAt
@@ -25,6 +28,7 @@ struct Cycle: Codable, Equatable {
         self.branchDex = branchDex
         self.reachedDexes = reachedDexes
         self.afterAbandon = afterAbandon
+        self.stats = stats
     }
 
     init(from decoder: Decoder) throws {
@@ -36,6 +40,7 @@ struct Cycle: Codable, Equatable {
         branchDex = try c.decodeIfPresent(Int.self, forKey: .branchDex)
         reachedDexes = try c.decodeIfPresent([Int].self, forKey: .reachedDexes) ?? []
         afterAbandon = try c.decodeIfPresent(Bool.self, forKey: .afterAbandon) ?? false
+        stats = try c.decodeIfPresent(CycleStats.self, forKey: .stats)
     }
 
     var pokemon: CurrentPokemon { CurrentPokemon(lineId: lineId, shiny: shiny, branchDex: branchDex) }
@@ -47,6 +52,47 @@ struct Cycle: Codable, Equatable {
         let end = calendar.startOfDay(for: endedAt ?? now)
         return calendar.dateComponents([.day], from: start, to: end).day
     }
+}
+
+/// What the player did during a cycle, counted as it goes. Breaks outside the active hours count
+/// as done (and make their day active); a skip of such a break is not counted.
+struct CycleStats: Codable, Equatable {
+    var breaks = 0
+    var skips = 0
+    /// The longest streak reached during the cycle.
+    var bestStreak = 0
+    /// Days with at least one break.
+    var activeDays = 0
+    /// Most breaks done in one day.
+    var bestDay = 0
+    private var lastDay: Date?
+    private var lastDayBreaks = 0
+
+    init() {}
+
+    mutating func recordBreak(streak: Int, now: Date, calendar: Calendar) {
+        let day = calendar.startOfDay(for: now)
+        if lastDay != day {
+            lastDay = day
+            lastDayBreaks = 0
+            activeDays += 1
+        }
+        breaks += 1
+        lastDayBreaks += 1
+        bestDay = max(bestDay, lastDayBreaks)
+        bestStreak = max(bestStreak, streak)
+    }
+
+    mutating func recordSkip() { skips += 1 }
+
+    /// Share of the breaks that were skipped, 0...1; nil before the first one.
+    var skipRate: Double? {
+        let total = breaks + skips
+        return total == 0 ? nil : Double(skips) / Double(total)
+    }
+
+    /// Breaks per active day; nil before the first one.
+    var breaksPerActiveDay: Double? { activeDays == 0 ? nil : Double(breaks) / Double(activeDays) }
 }
 
 /// Pokédex completion: species whose stage was reached at least once, over the species of the

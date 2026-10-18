@@ -138,7 +138,10 @@ extension AppModel {
         case let .page(name):
             let pages: [String: MenuPage] = ["menu": .menu, "companion": .companion, "settings": .settings, "credits": .credits,
                                              "hof": .hallOfFame, "abandon": .abandon, "debug": .debug]
-            if let page = pages[name] { openMenu(page: page) }
+            if name == "cyclestats" || name == "cyclestats-old" {
+                openMenu(page: .hallOfFame)
+                openCycleStats(name == "cyclestats" ? game.progression.cycles.count - 1 : 0)
+            } else if let page = pages[name] { openMenu(page: page) }
         case .cycleChoice: showCycleChoiceDebug()
         case .branchChoice: showBranchChoiceDebug()
         }

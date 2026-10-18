@@ -139,9 +139,7 @@ struct CompanionView: View {
             HStack {
                 Text(tr("companion.days")).font(.system(size: 12)).foregroundStyle(Color.white.opacity(0.55))
                 Spacer()
-                Text(n >= Streak.breaksPerDayToKeep
-                     ? tr("companion.today.done", n)
-                     : tr("companion.today.progress", n, Streak.breaksPerDayToKeep))
+                Text(trPlural("menu.breaksToday", count: n, n))
                     .font(.system(size: 12)).monospacedDigit()
             }
             HStack(spacing: 6) {

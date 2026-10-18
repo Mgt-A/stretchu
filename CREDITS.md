@@ -12,7 +12,7 @@ The Pokémon Company. Pokémon and Pokémon character names are trademarks of th
   **not in this repository**: `make install` downloads them (`scripts/fetch-sprites.sh`) at a pinned
   commit. The artists are credited in SpriteCollab itself, which the app links to from its Credits page.
   Non commercial use only.
-- Evolution stone pictures: [PokeAPI/sprites](https://github.com/PokeAPI/sprites), downloaded the same way.
+- Evolution stone and Rare Candy pictures: [PokeAPI/sprites](https://github.com/PokeAPI/sprites), downloaded the same way.
   Pokémon names and evolution data: [PokeAPI](https://pokeapi.co).
 
 ## Exercises

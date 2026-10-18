@@ -80,15 +80,15 @@ final class StreakTests: XCTestCase {
 
     // MARK: day change
 
-    func testEndOfDayWith4BreaksResetsTheStreak() {
-        var s = streak(count: 15, breaks: 4, day: TestCalendar.monday)
+    func testEndOfDayWith0BreaksResetsTheStreak() {
+        var s = streak(count: 15, breaks: 0, day: TestCalendar.monday)
         s.sync(now: TestCalendar.tuesday, calendar: cal)
         XCTAssertEqual(s.count, 0)
         XCTAssertEqual(s.breaksToday, 0)
     }
 
-    func testEndOfDayWith5BreaksKeepsTheStreak() {
-        var s = streak(count: 15, breaks: 5, day: TestCalendar.monday)
+    func testEndOfDayWith1BreakKeepsTheStreak() {
+        var s = streak(count: 15, breaks: 1, day: TestCalendar.monday)
         s.sync(now: TestCalendar.tuesday, calendar: cal)
         XCTAssertEqual(s.count, 15)
         XCTAssertEqual(s.breaksToday, 0, "the day's counter starts over at 0")
@@ -107,8 +107,14 @@ final class StreakTests: XCTestCase {
         XCTAssertEqual(s.count, 20, "Saturday and Sunday are ignored")
     }
 
-    func testFridayWith4ThenMondayResetsTheStreak() {
-        var s = streak(count: 20, breaks: 4, day: TestCalendar.friday)
+    func testFridayWith1ThenMondayKeepsTheStreak() {
+        var s = streak(count: 20, breaks: 1, day: TestCalendar.friday)
+        s.sync(now: TestCalendar.nextMonday, calendar: cal)
+        XCTAssertEqual(s.count, 20)
+    }
+
+    func testFridayWith0ThenMondayResetsTheStreak() {
+        var s = streak(count: 20, breaks: 0, day: TestCalendar.friday)
         s.sync(now: TestCalendar.nextMonday, calendar: cal)
         XCTAssertEqual(s.count, 0)
     }

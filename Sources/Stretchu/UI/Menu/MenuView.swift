@@ -15,6 +15,7 @@ struct MenuRoot: View {
             case .credits: CreditsView(model: model)
             case .hallOfFame: HallOfFameView(model: model)
             case .abandon: AbandonView(model: model)
+            case .cycleStats: CycleStatsView(model: model)
             #if STRETCHU_DEBUG
             case .debug: DebugPageView(model: model)
             #endif
@@ -72,13 +73,9 @@ struct MenuView: View {
             .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal, 2)
 
-            HStack {
-                Text(trPlural("menu.breaksToday", count: streak.breaksToday, streak.breaksToday))
-                Spacer()
-                Text(keepStreak(streak))
-            }
-            .font(.system(size: 12)).foregroundStyle(Color.white.opacity(0.6)).monospacedDigit()
-            .padding(.horizontal, 10).padding(.vertical, 4)
+            Text(trPlural("menu.breaksToday", count: streak.breaksToday, streak.breaksToday))
+                .font(.system(size: 12)).foregroundStyle(Color.white.opacity(0.6)).monospacedDigit()
+                .padding(.horizontal, 10).padding(.vertical, 4)
 
             separator()
 
@@ -159,7 +156,8 @@ struct MenuView: View {
         }
         .padding(.horizontal, 10).padding(.vertical, 6)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .card(radius: Radius.control, opacity: 0.07)
+        // Concentric with the panel corner: the menu pads its content by 6.
+        .card(radius: Radius.panel - 6, opacity: 0.07)
     }
     #endif
 
@@ -170,12 +168,30 @@ struct MenuView: View {
                 HStack(alignment: .firstTextBaseline) {
                     Text(model.species.name).font(.system(size: 15, weight: .semibold))
                     Spacer()
+                    if model.game.candies > 0, p.level < Progression.maxLevel { candyButton }
                     Text(tr("menu.level", p.level)).font(.system(size: 13, weight: .semibold)).monospacedDigit()
                 }
                 ProgressBar(value: p.fractionToNextLevel)
                 Text(xpLine(p)).panelCaption().monospacedDigit().minimumScaleFactor(0.8)
             }
         }
+    }
+
+    /// Only there when a Rare Candy is in stock: one click is +1 level.
+    private var candyButton: some View {
+        Button { model.useCandy() } label: {
+            HStack(spacing: 3) {
+                if let candy = SpriteLibrary.stoneImage("rare-candy") {
+                    Image(decorative: candy, scale: 1).interpolation(.none).resizable().frame(width: 20, height: 20)
+                }
+                Text("×\(model.game.candies)").font(.system(size: 12, weight: .semibold)).monospacedDigit()
+            }
+            .padding(.horizontal, 6).padding(.vertical, 1)
+            .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(0.14)))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
+        }
+        .buttonStyle(.plain)
+        .help(tr("menu.candy.help"))
     }
 
     private func xpLine(_ p: Progression) -> String {
@@ -211,11 +227,6 @@ struct MenuView: View {
         .padding(.horizontal, 12).padding(.vertical, 10)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .card(radius: Radius.card)
-    }
-
-    private func keepStreak(_ streak: Streak) -> String {
-        let left = Streak.breaksPerDayToKeep - streak.breaksToday
-        return left <= 0 ? tr("menu.keepStreak.done") : trPlural("menu.keepStreak", count: left, left)
     }
 
     @ViewBuilder

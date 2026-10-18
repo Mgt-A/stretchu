@@ -33,7 +33,7 @@ scheduler, the progression, the streak, the cycles, the state migration. Views o
 - **Active hours.** `ActiveSchedule` (default 8:30 to 18:00, Monday to Friday) gates the work timer in
   `PauseScheduler`; a break asked for outside them gives XP but leaves the streak alone.
 - **Streak.** Multiplier = min(5, 1 + streak): +1 per completed break, ×5 from the fifth. Skipping resets it. At each workday change,
-  fewer than 5 completed breaks (or a whole workday without any) resets it; Saturday and Sunday
+  a workday without any completed break resets it; Saturday and Sunday
   are ignored.
 - **Cycles.** A cycle is one Pokémon from level 1 to level 100. The current cycle is the last of
   `Progression.cycles`; the others are the Hall of Fame. At level 100 the cycle ends and a new one

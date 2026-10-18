@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// `C · Level up`: short panel, closes by itself after 8 s.
+/// `C · Level up`: panel fitted to its content, closes by itself after 8 s.
 struct LevelUpView: View {
     let model: AppModel
 
@@ -10,7 +10,16 @@ struct LevelUpView: View {
         HStack(alignment: .top, spacing: 14) {
             SpriteBox(sprite: model.sprite, moment: .levelUp)
             VStack(alignment: .leading, spacing: 6) {
-                Text(tr("levelup.header")).panelCaption()
+                if gain?.candyEarned == true {
+                    HStack(spacing: 4) {
+                        if let candy = SpriteLibrary.stoneImage("rare-candy") {
+                            Image(decorative: candy, scale: 1).interpolation(.none).resizable().frame(width: 16, height: 16)
+                        }
+                        Text(tr("levelup.candy")).panelCaption().foregroundStyle(Color.accentColor)
+                    }
+                } else {
+                    Text(tr("levelup.header")).panelCaption()
+                }
                 Text(title(gain))
                     .font(.system(size: 22, weight: .bold)).monospacedDigit().lineLimit(1)
                 Text(sentence(gain))
@@ -26,7 +35,7 @@ struct LevelUpView: View {
             }
         }
         .padding(14)
-        .frame(width: PanelSize.width, height: PanelSize.short.height, alignment: .topLeading)
+        .frame(width: PanelSize.width, alignment: .topLeading)
         .foregroundStyle(.white)
     }
 
