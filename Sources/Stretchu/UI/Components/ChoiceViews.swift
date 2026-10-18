@@ -29,9 +29,9 @@ struct EquipmentGridView: View {
                     }
                     .padding(10)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(on ? 0.14 : 0.06)))
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(on ? Color.accentColor : .clear, lineWidth: 1.5))
-                    .contentShape(RoundedRectangle(cornerRadius: 10))
+                    .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(on ? 0.14 : 0.06)))
+                    .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(on ? Color.accentColor : .clear, lineWidth: 1.5))
+                    .contentShape(RoundedRectangle(cornerRadius: Radius.card))
                 }
                 .buttonStyle(.plain)
             }
@@ -100,9 +100,9 @@ struct ProgramChoiceView: View {
             }
             .padding(10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(selected ? 0.12 : 0.06)))
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(selected ? Color.accentColor : .clear, lineWidth: 1.5))
-            .contentShape(RoundedRectangle(cornerRadius: 10))
+            .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(selected ? 0.12 : 0.06)))
+            .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(selected ? Color.accentColor : .clear, lineWidth: 1.5))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.card))
         }
         .buttonStyle(.plain)
     }

@@ -45,7 +45,7 @@ struct SpriteBox: View {
     let moment: Moment
     var width = 56
     var height = 64
-    var radius: CGFloat = 12
+    var radius: CGFloat = Radius.card
     var scale = 1
     /// 1 is the animation's own speed.
     var speed = 1.0

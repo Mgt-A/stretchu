@@ -25,7 +25,7 @@ struct WakeUpView: View {
             }
             .padding(.horizontal, 10).padding(.vertical, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .card(radius: 10, opacity: 0.06)
+            .card(radius: Radius.card, opacity: 0.06)
 
             HStack(spacing: 8) {
                 Button(tr("wake.start")) { model.start() }

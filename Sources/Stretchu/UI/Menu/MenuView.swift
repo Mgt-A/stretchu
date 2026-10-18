@@ -36,8 +36,8 @@ struct PageHeader: View {
                 Image(systemName: "chevron.left")
                     .font(.system(size: 13, weight: .semibold))
                     .frame(width: 28, height: 28)
-                    .background(RoundedRectangle(cornerRadius: 7).fill(Color.white.opacity(0.14)))
-                    .contentShape(RoundedRectangle(cornerRadius: 7))
+                    .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(0.14)))
+                    .contentShape(RoundedRectangle(cornerRadius: Radius.control))
             }
             .buttonStyle(.plain)
             .keyboardShortcut(.escape, modifiers: [])
@@ -159,7 +159,7 @@ struct MenuView: View {
         }
         .padding(.horizontal, 10).padding(.vertical, 6)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .card(radius: 8, opacity: 0.07)
+        .card(radius: Radius.control, opacity: 0.07)
     }
     #endif
 
@@ -196,7 +196,7 @@ struct MenuView: View {
         }
         .padding(.horizontal, 12).padding(.vertical, 10)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .card(radius: 10)
+        .card(radius: Radius.card)
     }
 
     private var nextBreakCard: some View {
@@ -210,7 +210,7 @@ struct MenuView: View {
         }
         .padding(.horizontal, 12).padding(.vertical, 10)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .card(radius: 10)
+        .card(radius: Radius.card)
     }
 
     private func keepStreak(_ streak: Streak) -> String {

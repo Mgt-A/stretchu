@@ -18,7 +18,7 @@ struct Segments<Value: Hashable>: View {
                         .foregroundStyle(active ? Color.white : Color.white.opacity(0.75))
                         .lineLimit(1)
                         .frame(maxWidth: .infinity, minHeight: 24, maxHeight: 24)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(active ? Color.white.opacity(0.22) : .clear))
+                        .background(RoundedRectangle(cornerRadius: Radius.control).fill(active ? Color.white.opacity(0.22) : .clear))
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -26,7 +26,7 @@ struct Segments<Value: Hashable>: View {
         }
         .padding(2)
         .frame(width: width)
-        .background(RoundedRectangle(cornerRadius: 7).fill(Color.white.opacity(0.08)))
+        .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(0.08)))
     }
 }
 
@@ -64,8 +64,8 @@ struct StepRow: View {
         Button(action: action) {
             Image(systemName: symbol).font(.system(size: 11, weight: .semibold))
                 .frame(width: 26, height: 24)
-                .background(RoundedRectangle(cornerRadius: 6).fill(Color.white.opacity(0.14)))
-                .contentShape(RoundedRectangle(cornerRadius: 6))
+                .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(0.14)))
+                .contentShape(RoundedRectangle(cornerRadius: Radius.control))
         }
         .buttonStyle(.plain)
         .opacity(enabled ? 1 : 0.35)
@@ -111,9 +111,9 @@ struct ScheduleEditor: View {
                     Button { toggle(weekday) } label: {
                         Text(L10n.weekdayLetters[index]).font(.system(size: 12, weight: on ? .semibold : .regular))
                             .frame(maxWidth: .infinity, minHeight: 26)
-                            .background(RoundedRectangle(cornerRadius: 6).fill(on ? Color.accentColor : Color.white.opacity(0.1)))
+                            .background(RoundedRectangle(cornerRadius: Radius.control).fill(on ? Color.accentColor : Color.white.opacity(0.1)))
                             .opacity(on ? 1 : 0.6)
-                            .contentShape(RoundedRectangle(cornerRadius: 6))
+                            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
                     }
                     .buttonStyle(.plain)
                 }

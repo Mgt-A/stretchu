@@ -37,7 +37,7 @@ struct SpeciesSprite: View {
                             .padding(.top, CGFloat(place.y))
                     }
             } else {
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: Radius.control)
                     .stroke(Color.white.opacity(0.25), style: StrokeStyle(lineWidth: 1, dash: [3, 3]))
                     .frame(width: boxWidth * 0.6, height: boxHeight * 0.7)
             }
@@ -81,15 +81,15 @@ struct PokemonTile: View {
         }
         .padding(.vertical, 8).padding(.horizontal, 4)
         .frame(maxWidth: .infinity)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(selected ? 0.14 : 0.06)))
-        .overlay(RoundedRectangle(cornerRadius: 10).stroke(selected ? Color.accentColor : .clear, lineWidth: 1.5))
+        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(selected ? 0.14 : 0.06)))
+        .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(selected ? Color.accentColor : .clear, lineWidth: 1.5))
         .overlay(alignment: .topTrailing) {
             if checkmark {
                 Image(systemName: "checkmark").font(.system(size: 9, weight: .bold)).foregroundStyle(Color.accentColor).padding(6)
             }
         }
         .opacity(dimmed ? 0.4 : 1)
-        .contentShape(RoundedRectangle(cornerRadius: 10))
+        .contentShape(RoundedRectangle(cornerRadius: Radius.card))
     }
 }
 
@@ -164,7 +164,7 @@ struct EvolutionStrip: View {
         }
         .padding(.vertical, 6).padding(.horizontal, 4)
         .frame(width: 70)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.06)))
+        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
     }
 }
 

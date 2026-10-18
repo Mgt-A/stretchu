@@ -28,7 +28,7 @@ struct DebugPageView: View {
                     .freeCaption().fixedSize(horizontal: false, vertical: true)
             }
             .padding(10)
-            .card(radius: 12)
+            .card(radius: Radius.card)
 
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
@@ -85,7 +85,7 @@ struct DebugPageView: View {
                         Segments(values: model.game.line.allSpecies.map(\.dex), selection: previewDex ?? model.species.dex,
                                  label: { dex in model.game.line.allSpecies.first { $0.dex == dex }?.name ?? "\(dex)" }) { previewDex = $0 }
                         HStack(alignment: .top, spacing: 12) {
-                            SpriteBox(sprite: previewRef, moment: Moment.preview(previewAnimation), width: 100, height: 120, radius: 14, scale: 2)
+                            SpriteBox(sprite: previewRef, moment: Moment.preview(previewAnimation), width: 100, height: 120, radius: Radius.card, scale: 2)
                             VStack(spacing: 6) {
                                 ForEach(["Idle", "Eat", "LookUp", "DeepBreath", "Hop", "Sleep"], id: \.self) { name in
                                     Button(name) { previewAnimation = name }

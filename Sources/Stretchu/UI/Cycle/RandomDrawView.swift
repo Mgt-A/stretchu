@@ -133,8 +133,8 @@ struct RandomTile: View {
         }
         .padding(.vertical, 8).padding(.horizontal, 4)
         .frame(maxWidth: .infinity)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.06)))
-        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.accentColor.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [3, 3])))
-        .contentShape(RoundedRectangle(cornerRadius: 10))
+        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
+        .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(Color.accentColor.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [3, 3])))
+        .contentShape(RoundedRectangle(cornerRadius: Radius.card))
     }
 }
