@@ -108,9 +108,9 @@ private struct WelcomeStep: View {
                             }
                         }
                         .padding(.horizontal, 12).padding(.vertical, 9)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(model.language == code ? 0.12 : 0.06)))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(model.language == code ? Color.accentColor : .clear, lineWidth: 1.5))
-                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(model.language == code ? 0.12 : 0.06)))
+                        .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(model.language == code ? Color.accentColor : .clear, lineWidth: 1.5))
+                        .contentShape(RoundedRectangle(cornerRadius: Radius.card))
                     }
                     .buttonStyle(.plain)
                 }
@@ -144,7 +144,7 @@ private struct PokemonStep: View {
                 Text(tr("setup.pokemon.locked", game.species.name, game.progression.level))
                     .font(.system(size: 12)).fixedSize(horizontal: false, vertical: true)
                     .padding(10).frame(maxWidth: .infinity, alignment: .leading)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.accentColor.opacity(0.18)))
+                    .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.accentColor.opacity(0.18)))
             }
 
             PokemonGrid(lines: lines, selection: model.pokemonLocked ? game.pokemon.lineId : model.lineId,
@@ -164,7 +164,7 @@ private struct PokemonStep: View {
         Text(title).font(.system(size: 12, weight: active ? .semibold : .regular))
             .foregroundStyle(Color.white.opacity(active ? 1 : 0.4))
             .padding(.horizontal, 10).padding(.vertical, 4)
-            .background(RoundedRectangle(cornerRadius: 6).fill(Color.white.opacity(active ? 0.16 : 0.05)))
+            .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(active ? 0.16 : 0.05)))
     }
 }
 
@@ -264,7 +264,7 @@ private struct AccessStep: View {
         }
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.06)))
+        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
     }
 }
 
@@ -292,11 +292,11 @@ private struct ReadyStep: View {
                 row(tr("setup.ready.program"), programName, .program)
                 row(tr("setup.ready.rhythm", model.workMinutes), "", .program)
             }
-            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.06)))
+            .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
 
             Text(tr("setup.ready.health")).freeCaption().fixedSize(horizontal: false, vertical: true)
                 .padding(10).frame(maxWidth: .infinity, alignment: .leading)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.06)))
+                .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
             Spacer(minLength: 0)
         }
     }

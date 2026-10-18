@@ -16,7 +16,7 @@ struct CompanionView: View {
             PageHeader(title: tr("companion.title"), back: back)
 
             HStack(alignment: .center, spacing: 14) {
-                SpriteBox(sprite: model.sprite, moment: .companion(mood), width: 100, height: 120, radius: 14, scale: 2, speed: 0.5)
+                SpriteBox(sprite: model.sprite, moment: .companion(mood), width: 100, height: 120, radius: Radius.card, scale: 2, speed: 0.5)
                 VStack(alignment: .leading, spacing: 6) {
                     Text(species.name).font(.system(size: 20, weight: .semibold))
                     Text(tr("companion.level", p.level)).font(.system(size: 13, weight: .medium)).monospacedDigit()
@@ -81,8 +81,8 @@ struct CompanionView: View {
                 }
                 .padding(8)
                 .frame(maxWidth: .infinity)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(current ? 0.12 : 0.06)))
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(current ? Color.accentColor : .clear, lineWidth: 1.5))
+                .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(current ? 0.12 : 0.06)))
+                .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(current ? Color.accentColor : .clear, lineWidth: 1.5))
             }
         }
     }
@@ -158,7 +158,7 @@ struct CompanionView: View {
 
     @ViewBuilder
     private func dayCell(_ state: WeekdayCell.State) -> some View {
-        let shape = RoundedRectangle(cornerRadius: 6)
+        let shape = RoundedRectangle(cornerRadius: Radius.control)
         switch state {
         case .met: shape.fill(Color.accentColor)
         case .missed: shape.fill(Color.white.opacity(0.14))

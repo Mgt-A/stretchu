@@ -12,9 +12,9 @@ struct PrimaryButtonStyle: ButtonStyle {
             .minimumScaleFactor(0.85)
             .padding(.horizontal, 10)
             .frame(maxWidth: .infinity, minHeight: 28, maxHeight: 28)
-            .background(RoundedRectangle(cornerRadius: 7).fill(Color.accentColor.opacity(configuration.isPressed ? 0.75 : 1)))
+            .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.accentColor.opacity(configuration.isPressed ? 0.75 : 1)))
             .opacity(isEnabled ? 1 : 0.4)
-            .contentShape(RoundedRectangle(cornerRadius: 7))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
     }
 }
 
@@ -30,9 +30,9 @@ struct SecondaryButtonStyle: ButtonStyle {
             .minimumScaleFactor(0.85)
             .padding(.horizontal, 10)
             .frame(maxWidth: .infinity, minHeight: 28, maxHeight: 28)
-            .background(RoundedRectangle(cornerRadius: 7).fill(Color.white.opacity(configuration.isPressed ? 0.22 : 0.14)))
+            .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(configuration.isPressed ? 0.22 : 0.14)))
             .opacity(isEnabled ? 1 : 0.4)
-            .contentShape(RoundedRectangle(cornerRadius: 7))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
     }
 }
 
@@ -45,8 +45,8 @@ struct DestructiveButtonStyle: ButtonStyle {
             .lineLimit(1)
             .padding(.horizontal, 10)
             .frame(maxWidth: .infinity, minHeight: 28, maxHeight: 28)
-            .overlay(RoundedRectangle(cornerRadius: 7).stroke(Color.red.opacity(0.8), lineWidth: 1))
-            .contentShape(RoundedRectangle(cornerRadius: 7))
+            .overlay(RoundedRectangle(cornerRadius: Radius.control).stroke(Color.red.opacity(0.8), lineWidth: 1))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
     }
 }
 
@@ -75,11 +75,11 @@ struct MenuRowButtonStyle: ButtonStyle {
             .lineLimit(1)
             .padding(.horizontal, 10)
             .frame(maxWidth: .infinity, minHeight: 26, maxHeight: 26, alignment: .leading)
-            .background(RoundedRectangle(cornerRadius: 6).fill(
+            .background(RoundedRectangle(cornerRadius: Radius.control).fill(
                 isPrimary ? Color.accentColor.opacity(configuration.isPressed ? 0.75 : 1)
                           : Color.white.opacity(configuration.isPressed ? 0.12 : 0)))
             .opacity(isEnabled ? 1 : 0.4)
-            .contentShape(RoundedRectangle(cornerRadius: 6))
+            .contentShape(RoundedRectangle(cornerRadius: Radius.control))
     }
 }
 

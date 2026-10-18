@@ -46,7 +46,7 @@ struct HallOfFameView: View {
                 Text(trPlural("hof.summary", count: summary.cycles, summary.linesCompleted, summary.linesTotal, summary.cycles))
                     .panelCaption().monospacedDigit()
             }
-            .padding(10).card(radius: 10)
+            .padding(10).card(radius: Radius.card)
 
             Segments(values: [Tab.history, Tab.pokedex], selection: tab,
                      label: { $0 == .history ? tr("hof.tab.history") : tr("hof.tab.pokedex") }, onSelect: { tab = $0 })
@@ -114,8 +114,8 @@ struct HallOfFameView: View {
             }
         }
         .padding(8)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(row.isCurrent ? 0.1 : 0.06)))
-        .overlay(RoundedRectangle(cornerRadius: 10).stroke(row.isCurrent ? Color.accentColor : .clear, lineWidth: 1.5))
+        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(row.isCurrent ? 0.1 : 0.06)))
+        .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(row.isCurrent ? Color.accentColor : .clear, lineWidth: 1.5))
     }
 
     // MARK: Pokédex
@@ -136,7 +136,7 @@ struct HallOfFameView: View {
                         }
                         .padding(.vertical, 3)
                         .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 6).fill(Color.white.opacity(has ? 0.08 : 0.03)))
+                        .background(RoundedRectangle(cornerRadius: Radius.control).fill(Color.white.opacity(has ? 0.08 : 0.03)))
                         .overlay(alignment: .topLeading) {
                             if shiny.contains(dex) { Text("✦").font(.system(size: 9)).foregroundStyle(Color.accentColor).padding(2) }
                         }

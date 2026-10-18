@@ -117,9 +117,9 @@ struct BranchChoiceView: View {
                         }
                         .padding(.vertical, 8).padding(.horizontal, 4)
                         .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(isSelected ? 0.14 : 0.06)))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(isSelected ? Color.accentColor : .clear, lineWidth: 1.5))
-                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(isSelected ? 0.14 : 0.06)))
+                        .overlay(RoundedRectangle(cornerRadius: Radius.card).stroke(isSelected ? Color.accentColor : .clear, lineWidth: 1.5))
+                        .contentShape(RoundedRectangle(cornerRadius: Radius.card))
                     }
                     .buttonStyle(.plain)
                 }

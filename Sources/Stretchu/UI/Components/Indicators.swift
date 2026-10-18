@@ -19,7 +19,7 @@ struct StepsIndicator: View {
 }
 
 struct CardBackground: ViewModifier {
-    var radius: CGFloat = 12
+    var radius: CGFloat = Radius.card
     var opacity = 0.07
 
     func body(content: Content) -> some View {
@@ -28,7 +28,14 @@ struct CardBackground: ViewModifier {
 }
 
 extension View {
-    func card(radius: CGFloat = 12, opacity: Double = 0.07) -> some View {
+    func card(radius: CGFloat = Radius.card, opacity: Double = 0.07) -> some View {
         modifier(CardBackground(radius: radius, opacity: opacity))
     }
+}
+
+/// Corner radii of the whole UI: three steps, nested inside the 20 pt panel.
+enum Radius {
+    static let panel: CGFloat = 20
+    static let card: CGFloat = 12
+    static let control: CGFloat = 8
 }

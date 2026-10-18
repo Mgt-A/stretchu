@@ -23,14 +23,14 @@ struct ExerciseView: View {
                 // The overlay sprite only makes sense on an illustration: without one, the big
                 // sprite in the middle is enough (no duplicate).
                 if !exercise.images.isEmpty {
-                    SpriteBox(sprite: model.sprite, moment: .break2, radius: 10)
+                    SpriteBox(sprite: model.sprite, moment: .break2, radius: Radius.card)
                         .padding(8)
                 }
             }
             .frame(height: 210)
             .frame(maxWidth: .infinity)
             .background(Color.black.opacity(0.45))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: Radius.card))
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(exercise.name)
