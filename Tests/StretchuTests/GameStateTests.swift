@@ -50,4 +50,24 @@ final class MoodTests: XCTestCase {
         XCTAssertEqual(Mood.forStreak(100, asleep: false), .hop)
         XCTAssertEqual(Mood.forStreak(100, asleep: true), .sleep, "outside the hours it sleeps, whatever the streak")
     }
+
+    func testASkipHurtsUntilTheNextCompletedBreak() {
+        XCTAssertEqual(Mood.forStreak(0, asleep: false, skipped: true), .hurt)
+        XCTAssertEqual(Mood.forStreak(7, asleep: false, skipped: true), .hurt, "it wins over the hop")
+        XCTAssertEqual(Mood.forStreak(0, asleep: true, skipped: true), .sleep, "asleep still wins outside the hours")
+        XCTAssertEqual(Mood.hurt.animationName, "Hurt")
+
+        var streak = Streak(count: 3)
+        streak.skip()
+        XCTAssertTrue(streak.skippedSinceBreak)
+        streak.completeBreak()
+        XCTAssertFalse(streak.skippedSinceBreak)
+        XCTAssertEqual(Mood.forStreak(streak.count, asleep: false, skipped: streak.skippedSinceBreak), .idle)
+    }
+
+    func testAnOldStreakWithoutTheSkipFlagDecodes() throws {
+        let streak = try JSONDecoder().decode(Streak.self, from: Data(#"{"count":2,"breaksToday":1}"#.utf8))
+        XCTAssertEqual(streak.count, 2)
+        XCTAssertFalse(streak.skippedSinceBreak)
+    }
 }

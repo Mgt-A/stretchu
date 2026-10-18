@@ -43,15 +43,19 @@ struct Streak: Codable, Equatable {
     var currentDay: Date?
     /// Breaks of the last finished days (for the companion's week), 14 days at most.
     var history: [DayBreaks] = []
+    /// A break was skipped and none was completed since: the Pokémon looks hurt (`Mood.hurt`).
+    var skippedSinceBreak = false
 
-    init(count: Int = 0, breaksToday: Int = 0, currentDay: Date? = nil, history: [DayBreaks] = []) {
+    init(count: Int = 0, breaksToday: Int = 0, currentDay: Date? = nil, history: [DayBreaks] = [],
+         skippedSinceBreak: Bool = false) {
         self.count = count
+        self.skippedSinceBreak = skippedSinceBreak
         self.breaksToday = breaksToday
         self.currentDay = currentDay
         self.history = history
     }
 
-    private enum CodingKeys: String, CodingKey { case count, breaksToday, currentDay, history }
+    private enum CodingKeys: String, CodingKey { case count, breaksToday, currentDay, history, skippedSinceBreak }
     /// Keys written by the French-named builds, read as a fallback.
     private enum LegacyKeys: String, CodingKey {
         case count = "serie", breaksToday = "pausesDuJour", currentDay = "jourCourant", history = "historique"
@@ -68,6 +72,7 @@ struct Streak: Codable, Equatable {
             ?? old.decodeIfPresent(Date.self, forKey: .currentDay)
         history = try c.decodeIfPresent([DayBreaks].self, forKey: .history)
             ?? old.decodeIfPresent([DayBreaks].self, forKey: .history) ?? []
+        skippedSinceBreak = try c.decodeIfPresent(Bool.self, forKey: .skippedSinceBreak) ?? false
     }
 
     /// min(5, 1 + streak): +1 per completed break.
@@ -134,10 +139,12 @@ struct Streak: Codable, Equatable {
     mutating func completeBreak() {
         count += 1
         breaksToday += 1
+        skippedSinceBreak = false
     }
 
     mutating func skip() {
         count = 0
+        skippedSinceBreak = true
     }
 }
 

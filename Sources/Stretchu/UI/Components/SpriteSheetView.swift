@@ -2,12 +2,14 @@ import AppKit
 import SwiftUI
 
 /// Plays a species' PMD animation: row 0, AnimData.xml durations, integer scale,
-/// no smoothing. Without a sheet for the requested animation, falls back to Idle.
+/// no smoothing. Without a sheet for the requested animation, falls back to `fallbacks`, then Idle.
 /// The sprite is centered in the box on the bounds of the whole animation: a jump keeps
 /// its margin above and below, a still sprite is neither too high nor too low.
 struct SpriteSheetView: View {
     let sprite: SpriteRef
     let animation: String
+    /// Tried in order when `animation` has no sheet, before Idle.
+    var fallbacks: [String] = []
     var boxWidth = 56
     var boxHeight = 64
     /// ×1 in the small boxes, ×2 for the companion.
@@ -17,7 +19,7 @@ struct SpriteSheetView: View {
     var speed = 1.0
 
     var body: some View {
-        if let sheet = SpriteLibrary.sheet(sprite, animation: animation) {
+        if let sheet = SpriteLibrary.sheet(sprite, animation: animation, fallbacks: fallbacks) {
             let place = SpriteLayout.place(spriteWidth: sheet.width, spriteHeight: sheet.height,
                                            boxWidth: boxWidth, boxHeight: boxHeight, requested: scale, margin: margin)
             Color.clear
@@ -53,7 +55,7 @@ struct SpriteBox: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: radius).fill(Color.white.opacity(0.08))
-            SpriteSheetView(sprite: sprite, animation: moment.animation, boxWidth: width, boxHeight: height, scale: scale, speed: speed)
+            SpriteSheetView(sprite: sprite, animation: moment.animation, fallbacks: moment.fallbacks, boxWidth: width, boxHeight: height, scale: scale, speed: speed)
         }
         .frame(width: CGFloat(width), height: CGFloat(height))
         .clipShape(RoundedRectangle(cornerRadius: radius))

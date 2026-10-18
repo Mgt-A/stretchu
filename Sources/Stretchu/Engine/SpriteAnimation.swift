@@ -81,6 +81,15 @@ enum Moment: Equatable {
         case let .companion(mood): mood.animationName
         }
     }
+
+    /// Tried in order when `animation` has no sheet, before the generic Idle and Walk. Eat, LookUp and
+    /// DeepBreath exist for about one species in five: a moment should still look like itself.
+    var fallbacks: [String] {
+        switch self {
+        case .wakeUp: ["Wake", "Hop"]
+        default: []
+        }
+    }
 }
 
 enum SpriteScale {
@@ -227,14 +236,14 @@ enum SpriteLibrary {
         return image
     }
 
-    /// The requested sheet; if the file is missing, Idle, unless `requireExactFile`.
+    /// The requested sheet; if the file is missing, the `fallbacks` in order, then Idle, unless `requireExactFile`.
     /// A shiny whose sheets are missing falls back to the normal sprite.
-    static func sheet(_ ref: SpriteRef, animation: String, requireExactFile: Bool = false) -> SpriteSheet? {
+    static func sheet(_ ref: SpriteRef, animation: String, fallbacks: [String] = [], requireExactFile: Bool = false) -> SpriteSheet? {
         // Idle when the animation is missing; hovering Pokémon (Beedrill, Dragonair…) have no Idle sheet, their Walk is the same pose.
-        let candidates = requireExactFile ? [animation] : [animation, "Idle", "Walk"]
+        let candidates = requireExactFile ? [animation] : [animation] + fallbacks + ["Idle", "Walk"]
         let name = candidates.first { infos(ref)[$0] != nil && image(ref, $0) != nil }
         guard let name, let info = infos(ref)[name], let image = image(ref, name) else {
-            return ref.shiny && !requireExactFile ? sheet(SpriteRef(dex: ref.dex, shiny: false), animation: animation) : nil
+            return ref.shiny && !requireExactFile ? sheet(SpriteRef(dex: ref.dex, shiny: false), animation: animation, fallbacks: fallbacks) : nil
         }
         let key = "\(folder(ref))/\(name)"
         cache.lock.lock(); defer { cache.lock.unlock() }

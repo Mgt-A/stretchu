@@ -6,7 +6,7 @@ import Foundation
 // they are downloaded when present, and the app falls back to Idle otherwise.
 // A hovering species (Beedrill, Dragonair…) has no Idle sheet: its Walk stands for it.
 let required = ["Hop", "Sleep"]
-let optional = ["Idle", "Walk", "Eat", "DeepBreath", "LookUp", "Pose"]
+let optional = ["Idle", "Walk", "Eat", "DeepBreath", "LookUp", "Pose", "Wake", "Hurt", "Rotate"]
 let spriteCollab = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab"
 let pokeAPISprites = "https://raw.githubusercontent.com/PokeAPI/sprites"
 

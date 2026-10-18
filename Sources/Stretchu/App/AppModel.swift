@@ -223,7 +223,7 @@ final class AppModel {
     }
 
     /// How the Pokémon behaves in the menu and the companion.
-    var mood: Mood { Mood.forStreak(game.streak.count, asleep: scheduler.isOutsideHours) }
+    var mood: Mood { Mood.forStreak(game.streak.count, asleep: scheduler.isOutsideHours, skipped: game.streak.skippedSinceBreak) }
 
     /// "Resumes tomorrow at 8:30 AM" while Stretchu is asleep, otherwise nil.
     var resumeText: String? {
