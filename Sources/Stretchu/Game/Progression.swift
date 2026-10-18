@@ -7,6 +7,7 @@ enum GameEvent: Equatable {
     case speciesReached(Species)
     case cycleCompleted(cycle: Int)
     case streakBroken
+    case candyEarned
 }
 
 /// XP and cycles. The XP counts within the current cycle (the last one of `cycles`); see `XPRules`.
@@ -91,7 +92,7 @@ struct Progression: Codable, Equatable {
             syncReached(line: line)
             current.endedAt = now
             xp = 0
-            cycles.append(Cycle(lineId: line.id, startedAt: now))
+            cycles.append(Cycle(lineId: line.id, startedAt: now, stats: CycleStats()))
             syncReached(line: line)
             return [.cycleCompleted(cycle: completedCycles)]
         }

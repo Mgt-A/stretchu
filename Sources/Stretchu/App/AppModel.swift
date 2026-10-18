@@ -4,7 +4,7 @@ import SwiftUI
 
 /// Pages of the menu panel: the companion and settings open in place of the menu.
 enum MenuPage: Equatable {
-    case menu, companion, settings, credits, hallOfFame, abandon
+    case menu, companion, settings, credits, hallOfFame, abandon, cycleStats
     #if STRETCHU_DEBUG
     case debug
     #endif
@@ -144,6 +144,10 @@ final class AppModel {
 
     func go(_ destination: MenuPage) { page = destination; fitMenuLater() }
     func back() { page = .menu; fitMenuLater() }
+
+    /// Index in `progression.cycles` of the cycle shown by the `.cycleStats` page.
+    private(set) var statsCycle = 0
+    func openCycleStats(_ index: Int) { statsCycle = index; go(.cycleStats) }
 
     // MARK: menu (panel)
 
@@ -340,7 +344,7 @@ final class AppModel {
         }
         let line = game.line
         let final = line.species(atLevel: Progression.maxLevel, branchDex: game.pokemon.branchDex)
-        guard let gain = LevelUp.from(results, current: game.species, finalSpecies: final) else { return }
+        guard let gain = LevelUp.from(results, current: game.species, currentLevel: game.progression.level, finalSpecies: final) else { return }
         levelUp = gain
         levelUpEnd = Date().addingTimeInterval(Self.levelUpDuration)
     }
@@ -354,6 +358,12 @@ final class AppModel {
 
     func start() {
         scheduler.start()
+        updatePanels()
+    }
+
+    /// Chevron at step 1: straight to step 2. XP and streak only move on `.breakCompleted`.
+    func skipStep1() {
+        handle(scheduler.skipStep1())
         updatePanels()
     }
 
@@ -425,6 +435,16 @@ final class AppModel {
         branchChoiceOpen = false
         save()
         closeMenu()
+        updatePanels()
+    }
+
+    /// Menu: eats a Rare Candy, +1 level, shown as a level up.
+    func useCandy() {
+        let events = game.useCandy(now: clock.now)
+        guard !events.isEmpty else { return }
+        save()
+        closeMenu()
+        announce(events)
         updatePanels()
     }
 
@@ -638,7 +658,7 @@ final class AppModel {
         case .wakeUp: breakPanel.present(size: .short) { WakeUpView(model: self) }
         case .step1: breakPanel.present(size: .content) { PauseStep1View(model: self) }
         case .step2: breakPanel.present(size: .tall) { ExerciseView(model: self) }
-        case .levelUp: breakPanel.present(size: .short) { LevelUpView(model: self) }
+        case .levelUp: breakPanel.present(size: .content) { LevelUpView(model: self) }
         case .cycleChoice: breakPanel.present(size: .tall) { CycleChoiceView(model: self) }
         case .branchChoice: breakPanel.present(size: .tall) { BranchChoiceView(model: self) }
         case .companion: breakPanel.present(size: .content) { CompanionView(model: self, back: { [unowned self] in self.closeCompanion() }) }
@@ -701,6 +721,49 @@ final class AppModel {
             alreadyPicked: game.dailyPicks.ids(for: clock.now, calendar: calendar), different: nil)
     }
     #endif
+
+    // MARK: export and import
+
+    /// Copies the state file to `url` (Settings, "Export my state…").
+    func exportState(to url: URL) throws {
+        save()
+        try (debugActive ? StateStore(directory: store.directory) : store).export(to: url, fallback: game)
+    }
+
+    /// Replaces the whole state with an imported one and restarts everything that was built from
+    /// the old one: language, timer, mode, exercise, open panels.
+    func importState(_ imported: StateTransfer.Imported) {
+        var state = imported.game
+        if imported.predatesPrograms {
+            ProgramLibrary(userDirectory: store.programsDirectory).migrate(&state)
+        }
+        // The setup belongs to a first launch: an imported state is a player that already did it.
+        state.onboardingCompleted = true
+        game = state
+        game.syncStreak(now: clock.now, calendar: calendar)
+        language = game.language
+        L10n.userLanguage = game.language
+        L10n.setProcessLanguage(game.language)
+        scheduler = PauseScheduler(config: game.settings.clamped().config, clock: clock, calendar: calendar)
+        resolver = ModeResolver(networks: game.networks, defaultMode: game.settings.defaultMode)
+        syncMode()
+        levelUp = nil
+        levelUpEnd = nil
+        cycleChoice = nil
+        branchChoiceOpen = false
+        suspendedUntil = nil
+        pickExercise(different: nil)
+        save()
+        updatePanels()
+    }
+
+    private var debugActive: Bool {
+        #if STRETCHU_DEBUG
+        debugMode
+        #else
+        false
+        #endif
+    }
 
     // MARK: persistence
 

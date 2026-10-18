@@ -34,8 +34,13 @@ enum XPRules {
     static let maxMultiplier = 5.0
     /// The streak at which the multiplier stops growing (1 + 4 = ×5).
     static let streakAtMaxMultiplier = 4
-    /// Completed breaks a workday needs for the streak to survive it.
-    static let breaksPerDayToKeepStreak = 5
+    /// Completed breaks a workday needs for the streak to survive it: just one, so a day without any breaks it.
+    static let breaksPerDayToKeepStreak = 1
+
+    // MARK: Rare Candy
+
+    /// A Rare Candy (super bonbon) every time the streak reaches a multiple of this: 25, 50, 75…
+    static let streakPerCandy = 25
 
     // MARK: migration from the old curve
 

@@ -9,6 +9,8 @@ struct SettingsView: View {
     @State private var launchError: String?
     @State private var equipmentPlace: PlaceMode = .home
     @State private var programMessage: String?
+    @State private var dataMessage: String?
+    @State private var dataFailed = false
 
     var body: some View {
         let settings = model.game.settings
@@ -143,6 +145,17 @@ struct SettingsView: View {
                     }
                     if let launchError { Text(launchError).font(.system(size: 11.5)).foregroundStyle(.red) }
                 }
+
+                PageSection(title: tr("settings.data")) {
+                    HStack(spacing: 8) {
+                        Button(tr("settings.data.export")) { exportState() }.buttonStyle(.secondary).fixedSize()
+                        Button(tr("settings.data.import")) { importState() }.buttonStyle(.secondary).fixedSize()
+                    }
+                    Text(tr("settings.data.note")).freeCaption()
+                    if let dataMessage {
+                        Text(dataMessage).font(.system(size: 11.5)).foregroundStyle(dataFailed ? Color.red : Color.secondary)
+                    }
+                }
                 }
                 .padding(.bottom, 4)
             }
@@ -150,6 +163,29 @@ struct SettingsView: View {
         .padding(14)
         .frame(height: PanelSize.tall.height)
         .onAppear { launch = LaunchAtLogin.status }
+    }
+
+    private func exportState() {
+        guard let url = StateFilePicker.chooseExportURL() else { return }
+        do { try model.exportState(to: url); report(tr("settings.data.exported"), failed: false) }
+        catch { report(tr("data.error.write"), failed: true) }
+    }
+
+    private func importState() {
+        guard let url = StateFilePicker.chooseImportURL() else { return }
+        do {
+            let imported = try StateTransfer.read(from: url)
+            guard StateFilePicker.confirmReplace(with: imported.game) else { return }
+            model.importState(imported)
+            report(tr("settings.data.imported"), failed: false)
+        } catch {
+            report(StateFilePicker.message(for: error), failed: true)
+        }
+    }
+
+    private func report(_ text: String, failed: Bool) {
+        dataMessage = text
+        dataFailed = failed
     }
 
     private func row(_ title: String, value: Int, unit: String, range: ClosedRange<Int>, step: Int,

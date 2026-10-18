@@ -101,6 +101,37 @@ final class PauseSchedulerTests: XCTestCase {
         XCTAssertEqual(scheduler.remaining, 30, accuracy: 0.001)
     }
 
+    func testSkipStep1GoesToStep2WithoutWaiting() {
+        run(25 * 60)
+        scheduler.start()
+        run(5)
+        XCTAssertEqual(scheduler.skipStep1(), [.step2Started])
+        XCTAssertEqual(scheduler.phase, .step2)
+        XCTAssertEqual(scheduler.remaining, 30, accuracy: 0.001, "step 2 starts with its full length")
+    }
+
+    func testSkipStep1CannotFireTwiceNorOutsideStep1() {
+        XCTAssertEqual(scheduler.skipStep1(), [], "from work")
+        run(25 * 60)
+        XCTAssertEqual(scheduler.skipStep1(), [], "from wake-up")
+        scheduler.start()
+        XCTAssertEqual(scheduler.skipStep1(), [.step2Started])
+        XCTAssertEqual(scheduler.skipStep1(), [], "second click")
+        run(30)
+        XCTAssertEqual(scheduler.phase, .step2, "the old step 1 countdown does not fire again")
+        XCTAssertEqual(scheduler.remaining, 0, accuracy: 0.001)
+    }
+
+    func testSkipStep1ThenDoneCountsAsACompletedBreak() {
+        run(25 * 60)
+        scheduler.start()
+        var game = GameState()
+        for e in scheduler.skipStep1() { _ = game.apply(e, now: TestCalendar.monday, calendar: TestCalendar.calendar) }
+        XCTAssertEqual(game.progression.xp, 0, "skipping step 1 gives nothing by itself")
+        for e in scheduler.finish() { _ = game.apply(e, now: TestCalendar.monday, calendar: TestCalendar.calendar) }
+        XCTAssertEqual(game.progression.xp, 2_500, "same XP as a break whose step 1 ran its course")
+    }
+
     func testStep1CountsEvenWithoutActivity() {
         run(25 * 60)
         scheduler.start()

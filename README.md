@@ -78,7 +78,7 @@ Step by step, with examples: **[Create your program](docs/CREATE-YOUR-PROGRAM.md
 | When | What happens |
 | --- | --- |
 | 25 min of activity | The wake-up panel shows under the icon: Let's go / Later · 5 min (twice) / Skip |
-| Step 1 | 30 s: stand up, sit back down, look 6 m or more away. Nothing to click, you can keep typing |
+| Step 1 | 30 s: stand up, take a sip of water, look 6 m or more away. Nothing to click, you can keep typing |
 | Step 2 | 30 s exercise: Done / Hurts (hidden for good) / Another one |
 | Meeting | Mic or camera in use: everything waits for the end of the meeting, the streak is safe |
 | Idle 5 min or locked screen | The timer pauses |
@@ -119,7 +119,7 @@ cd stretchu && git pull && make install
 ```
 
 Your state (level, streak, settings) is kept: it lives in
-`~/Library/Application Support/Stretchu/state.json`, outside the repository.
+`~/Library/Application Support/Stretchu/state.json`, outside the repository. To move to another Mac, use Settings, "Export my state…" then "Import a state…" (level, streak, Pokédex and cycles).
 
 ## Uninstall
 

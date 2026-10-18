@@ -1,3 +1,5 @@
+import AppKit
+import SwiftUI
 import XCTest
 @testable import Stretchu
 
@@ -46,5 +48,34 @@ final class SpritePlacementTests: XCTestCase {
         let top = SpriteScale.topOffset(spriteHeight: hop.height, boxHeight: 64)
         XCTAssertGreaterThanOrEqual(top, 0)
         XCTAssertLessThanOrEqual(top + hop.height, 64)
+    }
+}
+
+@MainActor
+final class LevelUpHeightTests: XCTestCase {
+    private func fittingHeight(language: String) -> CGFloat {
+        let saved = L10n.userLanguage
+        L10n.userLanguage = language
+        defer { L10n.userLanguage = saved }
+        let app = AppModel(store: StateStore(directory: FileManager.default.temporaryDirectory.appendingPathComponent("stretchu-levelup-\(UUID().uuidString)")))
+        app.modifyStateForTests { $0.onboardingCompleted = true }
+        app.completeBreak(forTests: ())
+        let host = NSHostingView(rootView: LevelUpView(model: app))
+        host.layoutSubtreeIfNeeded()
+        return ceil(host.fittingSize.height)
+    }
+
+    func testLevelUpFitsItsContentInsteadOfAFixedHeight() {
+        // No empty band under the buttons: the panel is the height of what it shows,
+        // strictly under the short panel's height (the old fixed one).
+        for language in ["en", "fr"] {
+            let height = fittingHeight(language: language)
+            XCTAssertGreaterThan(height, 0, language)
+            XCTAssertLessThan(height, PanelSize.short.height, language)
+        }
+    }
+
+    func testLevelUpIsPresentedAtContentHeight() {
+        XCTAssertEqual(PanelSize.content.height, 0, "0 means: measure the content")
     }
 }

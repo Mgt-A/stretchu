@@ -154,6 +154,8 @@ if let folders = try? fm.contentsOfDirectory(atPath: out.appendingPathComponent(
 // MARK: evolution stones
 
 var missingStones: Set<String> = []
+// The Rare Candy is not tied to a line: it never drops one.
+_ = download("\(pokeAPISprites)/\(itemsCommit)/sprites/items/rare-candy.png", to: out.appendingPathComponent("items/rare-candy.png"))
 for stone in allStones {
     let url = "\(pokeAPISprites)/\(itemsCommit)/sprites/items/\(stone).png"
     if !download(url, to: out.appendingPathComponent("items/\(stone).png")) { missingStones.insert(stone) }

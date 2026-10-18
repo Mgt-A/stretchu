@@ -21,7 +21,7 @@ struct PauseStep1View: View {
             }
 
             VStack(alignment: .leading, spacing: 6) {
-                ForEach(Array(["break1.stand", "break1.sit", "break1.look"].enumerated()), id: \.offset) { index, key in
+                ForEach(Array(["break1.stand", "break1.sip", "break1.look"].enumerated()), id: \.offset) { index, key in
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
                         Text("\(index + 1)").fontWeight(.semibold).foregroundStyle(Color.accentColor).monospacedDigit()
                         Text(tr(key)).fixedSize(horizontal: false, vertical: true).lineSpacing(2)
@@ -36,6 +36,16 @@ struct PauseStep1View: View {
                         .font(.system(size: 30, weight: .semibold)).monospacedDigit()
                     Spacer()
                     Text(tr("break1.hint")).panelCaption()
+                    Button { model.skipStep1() } label: {
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundStyle(Color.white.opacity(0.45))
+                            .frame(width: 22, height: 22)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .help(tr("break1.skip"))
+                    .accessibilityLabel(tr("break1.skip"))
                 }
                 ProgressBar(value: model.scheduler.stepFraction)
             }

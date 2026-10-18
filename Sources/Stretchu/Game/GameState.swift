@@ -60,6 +60,8 @@ struct GameState: Codable, Equatable {
     var schemaVersion: Int = GameState.currentSchemaVersion
     var progression = Progression()
     var streak = Streak()
+    /// Rare Candies in stock: one every 25 breaks of streak, one candy is +1 level.
+    var candies = 0
     var excludedExercises: [String] = []
     var dailyPicks = DailyPicks()
     /// SSID → mode, entered in the menu and in Settings.
@@ -93,7 +95,7 @@ struct GameState: Codable, Equatable {
     var sprite: SpriteRef { SpriteRef(dex: species.dex, shiny: pokemon.shiny) }
 
     private enum CodingKeys: String, CodingKey {
-        case schemaVersion, progression, streak, excludedExercises, dailyPicks, networks, settings, programId
+        case schemaVersion, progression, streak, candies, excludedExercises, dailyPicks, networks, settings, programId
         case onboardingCompleted, language
         /// Written by schema 3 only, read to migrate.
         case pokemon
@@ -116,6 +118,7 @@ struct GameState: Codable, Equatable {
             .build(version: storedVersion, pokemon: legacyPokemon)
         progression.syncReached()
         streak = try c.decodeIfPresent(Streak.self, forKey: .streak) ?? Streak()
+        candies = try c.decodeIfPresent(Int.self, forKey: .candies) ?? 0
         excludedExercises = try c.decodeIfPresent([String].self, forKey: .excludedExercises)
             ?? old.decodeIfPresent([String].self, forKey: .excludedExercises) ?? []
         dailyPicks = try c.decodeIfPresent(DailyPicks.self, forKey: .dailyPicks)
@@ -136,6 +139,7 @@ struct GameState: Codable, Equatable {
         try c.encode(schemaVersion, forKey: .schemaVersion)
         try c.encode(progression, forKey: .progression)
         try c.encode(streak, forKey: .streak)
+        try c.encode(candies, forKey: .candies)
         try c.encode(excludedExercises, forKey: .excludedExercises)
         try c.encode(dailyPicks, forKey: .dailyPicks)
         try c.encode(networks, forKey: .networks)
@@ -156,18 +160,40 @@ struct GameState: Codable, Equatable {
         case .breakCompleted:
             let multiplier = streak.multiplier // the one from before the increment
             let xp = Streak.earnedXP(base: XPRules.breakXP, streak: streak.count)
-            if !outsideHours { streak.completeBreak() }
+            var candy: [GameEvent] = []
+            if !outsideHours {
+                streak.completeBreak()
+                if streak.count % XPRules.streakPerCandy == 0 {
+                    candies += 1
+                    candy = [.candyEarned]
+                }
+            }
+            progression.current.stats = progression.current.stats ?? CycleStats()
+            progression.current.stats?.recordBreak(streak: streak.count, now: now, calendar: calendar)
             let events = progression.gain(xp, now: now, line: line)
             startNewCycleIfNeeded(after: events, random: random)
-            return [.xpGained(xp, multiplier: multiplier)] + events
+            return [.xpGained(xp, multiplier: multiplier)] + candy + events
         case .skipped:
             guard !outsideHours else { return [] }
             let hadStreak = streak.count > 0
+            progression.current.stats = progression.current.stats ?? CycleStats()
+            progression.current.stats?.recordSkip()
             streak.skip()
             return hadStreak ? [.streakBroken] : []
         case .wakeUp, .wakeUpDeferred, .snoozed, .step2Started:
             return []
         }
+    }
+
+    /// Eats a Rare Candy: +1 level, the XP goes to the threshold of the next one (the bar starts over).
+    /// At level 99 it ends the cycle like any other level 100.
+    mutating func useCandy(now: Date, random: () -> Double = { Double.random(in: 0..<1) }) -> [GameEvent] {
+        guard candies > 0, progression.level < Progression.maxLevel else { return [] }
+        candies -= 1
+        let missing = Progression.totalXP(forLevel: progression.level + 1) - progression.xp
+        let events = progression.gain(missing, now: now, line: line)
+        startNewCycleIfNeeded(after: events, random: random)
+        return [.xpGained(missing, multiplier: 1)] + events
     }
 
     /// Brings the streak to today, with the days the player chose.
@@ -204,7 +230,7 @@ struct GameState: Codable, Equatable {
     mutating func abandonCurrentCycle(now: Date) {
         let lineId = progression.current.lineId
         progression.cycles.removeLast()
-        progression.cycles.append(Cycle(lineId: lineId, startedAt: now, afterAbandon: true))
+        progression.cycles.append(Cycle(lineId: lineId, startedAt: now, afterAbandon: true, stats: CycleStats()))
         progression.xp = 0
         progression.syncReached()
     }

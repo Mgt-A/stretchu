@@ -185,6 +185,16 @@ struct PauseScheduler {
         elapsed = 0
     }
 
+    /// Chevron at step 1: moves on to step 2 right away, as if the countdown had run out.
+    /// Only from step 1, so a double click (or a click racing the countdown) fires nothing twice.
+    mutating func skipStep1() -> [SchedulerEvent] {
+        guard phase == .step1 else { return [] }
+        phase = .step2
+        elapsed = 0
+        lastTick = clock.now
+        return [.step2Started]
+    }
+
     /// Postpones the wake-up by 5 min, 2 times at most per break.
     @discardableResult
     mutating func snooze() -> Bool {

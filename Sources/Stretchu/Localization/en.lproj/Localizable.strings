@@ -23,9 +23,10 @@
 "break1.header" = "Step 1 of 2 · warm-up";
 "break1.title" = "Move and rest your eyes";
 "break1.stand" = "Stand up";
-"break1.sit" = "Sit back down";
+"break1.sip" = "Take a sip of water";
 "break1.look" = "Look 6 m or more away";
 "break1.hint" = "Moves on by itself";
+"break1.skip" = "Go to step 2 now";
 
 /* Break, step 2 */
 "exercise.header" = "Step 2 of 2 · exercise";
@@ -36,6 +37,7 @@
 "exercise.done" = "Done";
 
 /* Level up */
+"levelup.candy" = "Stretchu · +1 Rare Candy";
 "levelup.header" = "Stretchu · level up";
 "levelup.title.fallback" = "Level up!";
 "levelup.title.cycle" = "Cycle complete!";
@@ -50,6 +52,7 @@
 
 /* Menu */
 "menu.debugBanner" = "Debug mode: your real state is kept";
+"menu.candy.help" = "Click to eat a Rare Candy: +1 level";
 "menu.level" = "Lv. %1$@";
 "menu.xpLine" = "%1$@ / %2$@ XP · lv. %3$@ in %4$@ XP";
 "menu.multiplier" = "Multiplier";
@@ -60,9 +63,6 @@
 "menu.nextBreak.inProgress" = "In progress";
 "menu.breaksToday.one" = "%1$@ break today";
 "menu.breaksToday.other" = "%1$@ breaks today";
-"menu.keepStreak.done" = "streak kept tomorrow ✓";
-"menu.keepStreak.one" = "%1$@ more break to keep the streak";
-"menu.keepStreak.other" = "%1$@ more breaks to keep the streak";
 "menu.wifi.line" = "Wi-Fi “%1$@” · %2$@";
 "menu.wifi.home" = "home equipment";
 "menu.wifi.office" = "office equipment";
@@ -93,10 +93,8 @@
 "companion.streak.one" = "streak of %1$@ break";
 "companion.streak.other" = "streak of %1$@ breaks";
 "companion.maxAtStreak" = "×5 at 4";
-"companion.rule" = "A skip resets the streak to 0. So do fewer than 5 breaks in a day.";
-"companion.days" = "Days with 5 breaks or more";
-"companion.today.done" = "today %1$@ ✓";
-"companion.today.progress" = "today %1$@ / %2$@";
+"companion.rule" = "A skip resets the streak to 0. So does a workday without any break.";
+"companion.days" = "Days with at least 1 break";
 "companion.cycles" = "Completed cycles (level 100)";
 
 /* Settings */
@@ -177,7 +175,7 @@
 "menu.credits" = "Credits…";
 "credits.title" = "Credits";
 "credits.sprites" = "Sprites";
-"credits.sprites.body" = "Pokémon sprites from [PMD SpriteCollab](https://github.com/PMDCollab/SpriteCollab), CC BY-NC 4.0, non commercial use. The artists are credited there. They are downloaded when Stretchu is built.";
+"credits.sprites.body" = "Pokémon sprites from [PMD SpriteCollab](https://github.com/PMDCollab/SpriteCollab), CC BY-NC 4.0, non commercial use. The artists are credited there. They are downloaded when Stretchu is built. Evolution stones and the Rare Candy from [PokeAPI/sprites](https://github.com/PokeAPI/sprites).";
 "credits.exercises" = "Exercises";
 "credits.exercises.body" = "Exercise list and pictures from [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (Unlicense). A few illustrations are drawn by the project.";
 "credits.disclaimer" = "Stretchu is not affiliated with Nintendo, Game Freak, Creatures or The Pokémon Company.";
@@ -303,6 +301,18 @@
 "hof.dateRange" = "%1$@ → %2$@";
 "hof.empty" = "No completed cycle yet.";
 "hof.scroll" = "scroll · 001 to 151";
+"cstats.breaks" = "Breaks done";
+"cstats.skipRate" = "Skip rate";
+"cstats.skipped.one" = "%1$@ skipped";
+"cstats.skipped.other" = "%1$@ skipped";
+"cstats.bestStreak" = "Longest streak";
+"cstats.activeDays" = "Active days";
+"cstats.ofDays" = "of %1$@";
+"cstats.perDay" = "Breaks per active day";
+"cstats.bestDay" = "Best day";
+"cstats.bestDayUnit" = "breaks";
+"cstats.live" = "In progress: updated after every break.";
+"cstats.none" = "This cycle predates the stats: nothing was counted.";
 "menu.hallOfFame" = "Hall of Fame";
 "menu.rerunSetup" = "Run the setup again…";
 "menu.chooseStone" = "Choose the stone";
@@ -336,3 +346,20 @@
 "menu.resumeDay" = "Resumes %1$@ at %2$@";
 "menu.nextBreak.asleep" = "Resting";
 "pill.asleep" = "zZ";
+
+"settings.data" = "Your data";
+"settings.data.export" = "Export my state…";
+"settings.data.import" = "Import a state…";
+"settings.data.note" = "Level, streak, Pokédex, cycles and settings, in one file, to move to another Mac.";
+"settings.data.exported" = "State exported.";
+"settings.data.imported" = "State imported.";
+"data.export.panel" = "Choose where to save your Stretchu state.";
+"data.import.panel" = "Choose a Stretchu state file.";
+"data.import.confirm.title" = "Replace your current state?";
+"data.import.confirm.body" = "This file holds level %1$@ and a streak of %2$@. Your current level, streak, Pokédex and cycles will be overwritten and cannot be recovered.";
+"data.import.confirm.replace" = "Replace";
+"data.import.confirm.cancel" = "Cancel";
+"data.error.unreadable" = "This file cannot be read.";
+"data.error.notState" = "This file is not a Stretchu state.";
+"data.error.version" = "This state comes from a newer Stretchu (format %1$@). Update the app first.";
+"data.error.write" = "The file could not be written.";
