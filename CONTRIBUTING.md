@@ -70,7 +70,7 @@ swift test       # pure logic and localization
 make test        # the same, for the release build and for the build with the Debug code
 ```
 
-`make install` needs the Command Line Tools only. Tests that read the downloaded sprites are
+`make install` needs Xcode selected (`xcode-select -p` must not point to CommandLineTools). Tests that read the downloaded sprites are
 skipped when they are missing (`make sprites` downloads them).
 
 ### Debug builds and prepared states
