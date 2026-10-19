@@ -1,5 +1,5 @@
 # Stretchu: build, app assembly, installation.
-# Works with the Command Line Tools alone (no need to open Xcode).
+# Needs Xcode installed (SwiftUI's @State macro plugin ships with it, not with the Command Line Tools).
 
 APP_NAME  := Stretchu
 BUILD_DIR := build
@@ -7,7 +7,7 @@ APP       := $(BUILD_DIR)/$(APP_NAME).app
 INSTALLED := /Applications/$(APP_NAME).app
 SUPPORT   := $(HOME)/Library/Application Support/Stretchu
 
-.PHONY: build run debug demo test app install uninstall clean sprites
+.PHONY: check-xcode build run debug demo test app install uninstall clean sprites
 
 # Debug mode only exists in development builds (compiled with -DSTRETCHU_DEBUG):
 # `make install` never includes it. `make debug` and `make demo` build it apart,
@@ -34,7 +34,13 @@ sprites:
 Resources/Sprites/.fetched: Resources/lines.json scripts/fetch-sprites.swift
 	scripts/fetch-sprites.sh
 
-build:
+check-xcode:
+	@test -e "$$(xcode-select -p)/Platforms/MacOSX.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib" || { \
+	  echo "error: SwiftUIMacros plugin not found in $$(xcode-select -p)."; \
+	  echo "fix: install Xcode, then: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer"; \
+	  exit 1; }
+
+build: check-xcode
 	swift build -c release $(SWIFT_FLAGS) --scratch-path $(SCRATCH)
 
 run:

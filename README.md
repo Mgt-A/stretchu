@@ -35,10 +35,10 @@
 
 ## Install (once per Mac)
 
-Requirements: macOS 14 or later, and the Command Line Tools (no need for Xcode).
+Requirements: macOS 14 or later, and Xcode (the Command Line Tools alone lack the SwiftUI macro plugin behind `@State`).
 
 ```bash
-xcode-select --install   # only if `swift --version` fails
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer   # if `xcode-select -p` shows CommandLineTools
 git clone https://github.com/Mgt-A/stretchu.git && cd stretchu && make install
 ```
 
