@@ -92,20 +92,6 @@ final class HallOfFameTests: XCTestCase {
 }
 
 final class SetupResourcesTests: XCTestCase {
-    func testEveryEquipmentIconIsAPDFAndItsSourceIsKept() throws {
-        for equipment in Equipment.ownable {
-            let name = Equipment.iconName(equipment)
-            let pdf = try XCTUnwrap(AppResources.url("Icons/\(name).pdf"), "\(name).pdf")
-            XCTAssertNotNil(NSImage(contentsOf: pdf), name)
-            XCTAssertNotNil(AppResources.url("Icons/\(name).svg"), "\(name).svg is the source")
-        }
-        XCTAssertNotNil(AppResources.url("Icons/LICENSE-tabler-icons.txt"))
-    }
-
-    func testTheIconsAreTheTablerOnesOfTheDesign() {
-        XCTAssertEqual(Equipment.ownable.map(Equipment.iconName), ["wave-sine", "cylinder", "ball-volleyball", "ball-basketball", "weight", "barbell"])
-    }
-
     func testHoveringSpeciesWithoutAnIdleSheetUseWalk() throws {
         try requireSprites()
         for dex in [15, 148] {

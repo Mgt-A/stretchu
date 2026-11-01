@@ -6,14 +6,12 @@ import Foundation
 enum DebugAction: Equatable {
     // triggers
     case wakeUp, start, complete, skip, meetingStart, meetingEnd, levelUp
-    case ssid(String?)
     // simulated time
     case advance25Minutes, nextWorkday, weekend, realTime
     // state
     case level(Int), xp(Int), streak(Int), breaksToday(Int), cycles(Int)
     case fixture(String), reset
     case line(String), shiny(Bool), branch(Int?)
-    case mode(PlaceMode)
     case iconClick(option: Bool)
     // window
     case openPanel, closePanel, replaySetup
@@ -30,7 +28,6 @@ enum DebugAction: Equatable {
         case "complete": self = .complete
         case "skip": self = .skip
         case "levelup": self = .levelUp
-        case "ssid": self = .ssid(value.isEmpty ? nil : value)
         case "meeting": self = .meetingStart
         case "endmeeting": self = .meetingEnd
         case "advance25": self = .advance25Minutes
@@ -43,8 +40,6 @@ enum DebugAction: Equatable {
         case "breaks": guard let number else { return nil }; self = .breaksToday(number)
         case "cycles": guard let number else { return nil }; self = .cycles(number)
         case "fixture": self = .fixture(value)
-        case "home": self = .mode(.home)
-        case "office": self = .mode(.office)
         case "iconclick": self = .iconClick(option: value == "option")
         case "reset": self = .reset
         case "line": self = .line(value)
@@ -76,9 +71,6 @@ extension AppModel {
             applyToScheduler { $0.skipNow() }
         case .levelUp:
             triggerLevelUpDebug()
-        case let .ssid(name):
-            debugSSID = name
-            readNetwork(name)
         case .meetingStart:
             setFakeMeeting(true)
         case .meetingEnd:
@@ -116,8 +108,6 @@ extension AppModel {
             modifyState { $0.pokemon.shiny = on && LineCatalog.hasShiny($0.line) }
         case let .branch(dex):
             modifyState { $0.pokemon.branchDex = dex }
-        case let .mode(m):
-            toggleMode(m)
         case let .iconClick(option):
             // Simulated click on the status bar icon (NSApp.sendEvent, no accessibility permission).
             for w in NSApp.windows where w.className.contains("StatusBar") {

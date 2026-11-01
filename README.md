@@ -21,8 +21,8 @@
   or records.
 - **A companion that levels up.** Every break gives XP. Your Pokémon evolves, enters the Hall of
   Fame at level 100, and you pick the next one, or let chance pick it (shiny included).
-- **Your own program.** Describe your tight spots to an AI assistant, get a program file, import
-  it. See [Create your program](docs/CREATE-YOUR-PROGRAM.md).
+- **Simple stretches only.** A fixed list of 28 easy exercises (neck, shoulders, chest against a
+  wall, back, wrists, calves), all done standing or sitting, no equipment, no floor.
 - **100 % local.** Native Swift, no account, no network access while it runs, no dependency.
 
 > **Health notice.** Stretchu is not medical advice and does not replace a doctor or a
@@ -46,32 +46,14 @@ git clone https://github.com/Mgt-A/stretchu.git && cd stretchu && make install
 commit; `make sprites` runs it again), then builds in release mode, assembles `Stretchu.app`, signs it
 ad hoc, copies it to `/Applications` and launches it. The icon shows in the menu bar, nothing in the Dock.
 
-The first time, a setup window opens in the middle of the screen: language, Pokémon, equipment (home
-and office), program, active hours, what Stretchu uses, a summary. Every step has a default and
+The first time, a setup window opens in the middle of the screen: language, Pokémon, rhythm and
+active hours, what Stretchu uses, a summary. Every step has a default and
 "Skip" applies them all. The icon appears when it is finished, with the menu open once under it.
 
 Once per Mac:
 
-1. **Location**: accept the prompt on first launch. macOS requires it to read the Wi-Fi name
-   (Home or Office mode). If you refuse, everything works with the mode chosen by hand in the
-   menu. The ad hoc signature changes with every `make install`, so macOS may ask again after
-   an update.
-2. **Networks**: the first time you join a network, the menu offers "This network is: Home /
-   Office". Everything can be changed in Settings (⌘,).
-3. **Launch at login**: Settings, "Launch Stretchu at login". If macOS asks, approve it in
+- **Launch at login**: Settings, "Launch Stretchu at login". If macOS asks, approve it in
    System Settings, General, Login Items.
-
-## Create your program
-
-Stretchu ships one program, `general` (desk mobility, no equipment). To get one made for you, tell an
-AI assistant where you feel tight and what you want from your breaks: it picks exercises from the
-catalog and writes a small JSON file you import in Settings, Program.
-
-- **With Claude Code**: a ready-made skill is in [`skill/stretchu-program`](skill/stretchu-program).
-- **With any other assistant**: a prompt to paste.
-
-Step by step, with examples: **[Create your program](docs/CREATE-YOUR-PROGRAM.md)**. File format:
-[docs/PROGRAM.md](docs/PROGRAM.md).
 
 ## How it works
 
@@ -95,7 +77,7 @@ at level 50. You can give a cycle up from the Hall of Fame: it disappears from t
 Pokédex, your streak is kept. "Run the setup again…" in the menu replays the setup without touching
 your progression.
 
-The menu shows the level, the multiplier, the next break, Home / Office mode, "Take a break now"
+The menu shows the level, the multiplier, the next break, "Take a break now"
 (⌘P), "Pause for 1 hour", the companion (⌘L) and settings (⌘,). The companion and settings open
 in place of the menu, with a back arrow (or Esc).
 
@@ -110,7 +92,6 @@ The interface is available in English and French and follows the system language
 - Meetings are detected by asking macOS whether a microphone or camera is *in use*
   (`DeviceIsRunningSomewhere`). Stretchu never records or accesses audio or video, and macOS
   shows no permission prompt for it.
-- Location is optional and only used by macOS to let the app read the Wi-Fi name.
 
 ## Update
 
@@ -153,8 +134,7 @@ entry, no Debug dot on the icon, no `state.debug.json`.
 In a development build, Debug is reached from the "Debug" row of the menu or by ⌥ clicking the
 icon. The page has a toggle; it sets level, XP, streak, today's breaks and cycles, triggers
 wake-up / level up / fake meeting / completed break / skip, simulates time (+25 min,
-next workday, weekend) without touching the Mac's clock, forces each animation and the Home /
-Office mode. Debug works on a copy (`state.debug.json`); turning the toggle off gives your real
+next workday, weekend) without touching the Mac's clock, forces each animation. Debug works on a copy (`state.debug.json`); turning the toggle off gives your real
 state back.
 
 A development build launched by `make debug` also accepts commands from a terminal:
@@ -167,7 +147,7 @@ DistributedNotificationCenter.default().postNotificationName(
 
 Commands: `wakeup`, `start`, `complete`, `skip`, `meeting`, `endmeeting`, `advance25`, `day`,
 `weekend`, `real`, `level:N`, `xp:N`, `streak:N`, `breaks:N`, `cycles:N`, `fixture:<name>`,
-`levelup`, `ssid:<name>`, `home`, `office`, `reset`, `panel`, `close`.
+`levelup`, `reset`, `panel`, `close`.
 
 ### Interface texts
 
@@ -175,12 +155,12 @@ English is the source: `Sources/Stretchu/Localization/en.lproj/Localizable.strin
 translation is in `fr.lproj`. A test fails if a key is missing from one of them or used in the
 code without a string.
 
-### Exercises and programs
+### Exercises
 
-`Resources/Exercises/catalog.json` is the English catalog (90 exercises, from
-[free-exercise-db](https://github.com/yuhonas/free-exercise-db) plus a few made for the app), with
-`catalog.fr.json` for the French texts and the pictures next to them (about 6 MB, committed).
-Program format: [docs/PROGRAM.md](docs/PROGRAM.md).
+`Resources/Exercises/catalog.json` is the English catalog (28 exercises, all from
+[free-exercise-db](https://github.com/yuhonas/free-exercise-db), standing or seated, no equipment),
+with `catalog.fr.json` for the French texts and the pictures next to them (about 1 MB, committed).
+The list is static: the app draws from all of it, minus the exercises the player hides.
 
 ### Pokémon lines and sprites
 

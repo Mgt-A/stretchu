@@ -35,10 +35,10 @@ final class StateTransferTests: XCTestCase {
         try source.export(to: file, fallback: GameState())
 
         let imported = try StateTransfer.read(from: file)
-        XCTAssertEqual(imported.game, game)
-        XCTAssertEqual(imported.game.progression.level, game.progression.level)
-        XCTAssertEqual(imported.game.streak.count, 7)
-        XCTAssertEqual(imported.game.progression.cycles, game.progression.cycles)
+        XCTAssertEqual(imported, game)
+        XCTAssertEqual(imported.progression.level, game.progression.level)
+        XCTAssertEqual(imported.streak.count, 7)
+        XCTAssertEqual(imported.progression.cycles, game.progression.cycles)
 
         // The other Mac: its own state is replaced, and survives a restart.
         let target = StateStore(directory: dir.appendingPathComponent("mac-b"))
@@ -54,7 +54,7 @@ final class StateTransferTests: XCTestCase {
         let file = dir.appendingPathComponent("out.json")
         let game = try richState()
         try StateStore(directory: dir.appendingPathComponent("empty")).export(to: file, fallback: game)
-        XCTAssertEqual(try StateTransfer.read(from: file).game, game)
+        XCTAssertEqual(try StateTransfer.read(from: file), game)
     }
 
     func testCorruptFileIsRefused() {
@@ -94,8 +94,8 @@ final class StateTransferTests: XCTestCase {
         for name in names {
             let data = try Data(contentsOf: fixturesDir.appendingPathComponent(name))
             let imported = try StateTransfer.validate(data)
-            XCTAssertEqual(imported.game, try StateStore.decoder.decode(GameState.self, from: data), name)
-            XCTAssertEqual(imported.game.schemaVersion, GameState.currentSchemaVersion, name)
+            XCTAssertEqual(imported, try StateStore.decoder.decode(GameState.self, from: data), name)
+            XCTAssertEqual(imported.schemaVersion, GameState.currentSchemaVersion, name)
         }
     }
 }

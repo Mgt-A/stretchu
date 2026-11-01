@@ -80,8 +80,6 @@ struct MenuView: View {
             separator()
 
             VStack(alignment: .leading, spacing: 8) {
-                ModePicker(mode: model.mode) { model.toggleMode($0) }
-                wifiLines
                 meetingLine
                 if let resume = model.resumeText {
                     Text(resume).font(.system(size: 12)).foregroundStyle(Color.white.opacity(0.6)).lineLimit(1).minimumScaleFactor(0.85)
@@ -227,35 +225,6 @@ struct MenuView: View {
         .padding(.horizontal, 12).padding(.vertical, 10)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .card(radius: Radius.card)
-    }
-
-    @ViewBuilder
-    private var wifiLines: some View {
-        if let ssid = model.ssid {
-            Text(tr("menu.wifi.line", ssid, model.mode == .home ? tr("menu.wifi.home") : tr("menu.wifi.office")))
-                .panelCaption().minimumScaleFactor(0.85)
-            if model.networkUnlinked {
-                HStack(spacing: 8) {
-                    Text(tr("menu.network.is")).panelCaption()
-                    ForEach(PlaceMode.allCases, id: \.self) { mode in
-                        Button(mode.name) { model.linkNetwork(to: mode) }.buttonStyle(.secondary).fixedSize()
-                    }
-                }
-            }
-        } else {
-            switch model.wifiAuthorization {
-            case .notRequested:
-                HStack {
-                    Text(tr("menu.wifi.notRead")).panelCaption()
-                    Spacer()
-                    Button(tr("menu.wifi.allow")) { model.requestWifiAuthorization() }.buttonStyle(.secondary).fixedSize()
-                }
-            case .denied:
-                Text(tr("menu.wifi.denied")).panelCaption()
-            case .granted:
-                Text(tr("menu.wifi.none")).panelCaption()
-            }
-        }
     }
 
     private var meetingLine: some View {

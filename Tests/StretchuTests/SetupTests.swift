@@ -42,15 +42,12 @@ final class SetupTests: XCTestCase {
         let app = makeApp()
         let model = OnboardingModel(app: app, mode: .firstLaunch)
         model.lineId = "charmander"
-        model.homeEquipment = ["bands"]
         var finished: Bool?
         model.onDone = { finished = $0 }
         model.skip()
         XCTAssertEqual(finished, true)
         XCTAssertTrue(app.onboardingCompleted)
         XCTAssertEqual(app.game.pokemon.lineId, "pikachu", "Skip ignores what was picked")
-        XCTAssertEqual(app.game.programId, "general")
-        XCTAssertEqual(app.game.settings.homeEquipment, [])
         XCTAssertNil(app.game.language)
     }
 
@@ -61,15 +58,11 @@ final class SetupTests: XCTestCase {
         model.go(to: .pokemon)
         model.lineId = "charmander"
         model.next()
-        model.homeEquipment = ["bands", "foam roll"]
-        model.officeEquipment = ["exercise ball"]
         model.workMinutes = 30
         model.step2Seconds = 45
         model.finish()
         XCTAssertEqual(app.game.pokemon.lineId, "charmander")
         XCTAssertFalse(app.game.pokemon.shiny)
-        XCTAssertEqual(app.game.settings.homeEquipment, ["bands", "foam roll"])
-        XCTAssertEqual(app.game.settings.officeEquipment, ["exercise ball"])
         XCTAssertEqual(app.game.settings.workMinutes, 30)
         XCTAssertEqual(app.game.settings.step2Seconds, 45)
         XCTAssertTrue(app.onboardingCompleted)
@@ -98,11 +91,11 @@ final class SetupTests: XCTestCase {
         XCTAssertTrue(app.game.pokemon.shiny)
     }
 
-    func testTheFiveStepsComeInOrderAndBackWorks() {
+    func testTheStepsComeInOrderAndBackWorks() {
         let model = OnboardingModel(app: makeApp(), mode: .firstLaunch)
-        XCTAssertEqual(OnboardingModel.Step.allCases, [.welcome, .pokemon, .equipment, .program, .access, .ready])
+        XCTAssertEqual(OnboardingModel.Step.allCases, [.welcome, .pokemon, .rhythm, .access, .ready])
         var seen: [OnboardingModel.Step] = [model.step]
-        for _ in 0..<5 { model.next(); seen.append(model.step) }
+        for _ in 0..<4 { model.next(); seen.append(model.step) }
         XCTAssertEqual(seen, OnboardingModel.Step.allCases)
         model.next()
         XCTAssertEqual(model.step, .ready, "no step after the last")
@@ -120,18 +113,15 @@ final class SetupTests: XCTestCase {
         model.setLanguage("en")
         XCTAssertEqual(L10n.languageCode, "en")
         XCTAssertEqual(tr("setup.continue"), "Continue")
-        XCTAssertEqual(tr("setup.equipment.title"), "Your equipment")
-        XCTAssertEqual(PlaceMode.home.name, "Home")
-        XCTAssertEqual(Equipment.gridLabel("bands"), "Resistance band")
+        XCTAssertEqual(tr("setup.rhythm.title"), "Your rhythm")
         XCTAssertEqual(PokemonLine.charmander.base.name, "Charmander")
         XCTAssertEqual(Format.xp(1_234), "1,234")
         model.setLanguage("fr")
         XCTAssertEqual(tr("setup.continue"), "Continuer")
-        XCTAssertEqual(PlaceMode.home.name, "Maison")
         XCTAssertEqual(PokemonLine.charmander.base.name, "Salamèche")
-        XCTAssertEqual(ExerciseCatalog.catalog.first { $0.id == "Chin_Tucks" }?.name, "Menton rentré")
+        XCTAssertEqual(ExerciseCatalog.catalog.first { $0.id == "Chin_To_Chest_Stretch" }?.name, "Menton vers la poitrine")
         model.setLanguage("en")
-        XCTAssertEqual(ExerciseCatalog.catalog.first { $0.id == "Chin_Tucks" }?.name, "Chin Tucks", "the exercises follow the language too")
+        XCTAssertEqual(ExerciseCatalog.catalog.first { $0.id == "Chin_To_Chest_Stretch" }?.name, "Chin to Chest Stretch", "the exercises follow the language too")
     }
 
     func testTheChosenLanguageIsSavedAndUsedAfterTheSetup() {
@@ -166,11 +156,11 @@ final class SetupTests: XCTestCase {
         XCTAssertTrue(model.pokemonLocked)
         XCTAssertNil(model.choices.lineId)
         model.lineId = "squirtle"
-        model.homeEquipment = ["bands"]
+        model.workMinutes = 31
         model.finish()
         XCTAssertEqual(app.game.pokemon.lineId, "charmander")
         XCTAssertEqual(app.game.progression.xp, 50_000, "the progression is never touched")
-        XCTAssertEqual(app.game.settings.homeEquipment, ["bands"], "the other choices are applied")
+        XCTAssertEqual(app.game.settings.workMinutes, 31, "the other choices are applied")
     }
 
     func testReplayingEvenAtLevelOneLocksThePokemon() {
@@ -182,11 +172,9 @@ final class SetupTests: XCTestCase {
 
     func testReplayingStartsFromTheCurrentValues() {
         let app = makeApp()
-        app.modifyStateForTests { $0.settings.homeEquipment = ["foam roll"]; $0.settings.workMinutes = 40; $0.programId = "general" }
+        app.modifyStateForTests { $0.settings.workMinutes = 40 }
         let model = OnboardingModel(app: app, mode: .relaunch)
-        XCTAssertEqual(model.homeEquipment, ["foam roll"])
         XCTAssertEqual(model.workMinutes, 40)
-        XCTAssertEqual(model.programId, "general")
     }
 
     func testClosingAReplayChangesNothing() {
@@ -194,7 +182,6 @@ final class SetupTests: XCTestCase {
         OnboardingModel(app: app, mode: .firstLaunch).finish()
         let before = app.game
         let model = OnboardingModel(app: app, mode: .relaunch)
-        model.homeEquipment = ["bands"]
         model.workMinutes = 77
         model.setLanguage(L10n.systemLanguageCode == "en" ? "fr" : "en")
         var finished: Bool?
@@ -216,7 +203,7 @@ final class SetupTests: XCTestCase {
         XCTAssertTrue(game.onboardingCompleted)
     }
 
-    func testSettingsKeepTheProgramsRhythmWithinBounds() {
+    func testTheRhythmStaysWithinBounds() {
         var game = GameState()
         var choices = OnboardingChoices.defaults
         choices.workMinutes = 999
@@ -234,33 +221,6 @@ final class SetupTests: XCTestCase {
         choices.apply(to: &game)
         XCTAssertTrue(game.pokemon.shiny)
         XCTAssertEqual(game.progression.current.reachedDexes, [4])
-    }
-
-    func testImportingAProgramInTheSetupNamesItAndKeepsTheFileForLater() throws {
-        let app = makeApp()
-        let model = OnboardingModel(app: app, mode: .firstLaunch)
-        let file = FileManager.default.temporaryDirectory.appendingPathComponent("my-program-\(UUID().uuidString).json")
-        try Data(#"{"schemaVersion":1,"name":"Neck","exercises":["Chin_Tucks","Nope"],"settings":{"workMinutes":30}}"#.utf8).write(to: file)
-        defer { try? FileManager.default.removeItem(at: file) }
-        model.importProgram(from: file)
-        XCTAssertEqual(model.customProgram?.program.name, "Neck")
-        XCTAssertEqual(model.customProgram?.importResult.unknownCount, 1)
-        XCTAssertEqual(model.programId, model.customProgram?.id)
-        XCTAssertEqual(model.workMinutes, 30)
-        model.finish()
-        XCTAssertEqual(app.game.programId, model.customProgram?.id)
-        XCTAssertEqual(app.activeProgram?.exercises, ["Chin_Tucks"])
-        try? FileManager.default.removeItem(at: app.programsDirectory.deletingLastPathComponent())
-    }
-
-    func testABrokenProgramFileGivesAMessageAndChangesNothing() throws {
-        let model = OnboardingModel(app: makeApp(), mode: .firstLaunch)
-        let file = FileManager.default.temporaryDirectory.appendingPathComponent("bad-\(UUID().uuidString).json")
-        try Data("nope".utf8).write(to: file)
-        defer { try? FileManager.default.removeItem(at: file) }
-        model.importProgram(from: file)
-        XCTAssertNotNil(model.programMessage)
-        XCTAssertEqual(model.programId, "general")
     }
 }
 

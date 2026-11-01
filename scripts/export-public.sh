@@ -25,9 +25,8 @@ mkdir -p "$DEST"
 DEST="$(cd "$DEST" && pwd)"
 
 # --- the allow list ---------------------------------------------------------------------------
-DIRS=(Sources Tests Resources scripts skill)
+DIRS=(Sources Tests Resources scripts)
 FILES=(Makefile Package.swift Info.plist README.md LICENSE CREDITS.md CONTRIBUTING.md .gitignore)
-DOCS=(docs/PROGRAM.md docs/CREATE-YOUR-PROGRAM.md)
 # README pictures: the icon and the screenshots, nothing else from docs/images.
 IMAGES=(docs/images/icon.png docs/images/menu.png docs/images/break.png docs/images/hall-of-fame.png)
 
@@ -40,9 +39,6 @@ for file in "${FILES[@]}"; do
   [ -f "$file" ] && cp "$file" "$DEST/$file"
 done
 mkdir -p "$DEST/docs"
-for doc in "${DOCS[@]}"; do
-  [ -f "$doc" ] && cp "$doc" "$DEST/$doc"
-done
 mkdir -p "$DEST/docs/images"
 for image in "${IMAGES[@]}"; do
   [ -f "$image" ] && cp "$image" "$DEST/$image"
@@ -52,8 +48,8 @@ done
 fail=0
 problem() { echo "export check failed: $1" >&2; fail=1; }
 
-# 1. docs/ holds the program guide and format, and the README pictures, nothing else.
-allowed_docs=" ${DOCS[*]} ${IMAGES[*]} "
+# 1. docs/ holds the README pictures, nothing else.
+allowed_docs=" ${IMAGES[*]} "
 while IFS= read -r path; do
   [[ "$allowed_docs" == *" $path "* ]] || problem "$path must not be exported"
 done < <(cd "$DEST" && find docs -type f | sort)

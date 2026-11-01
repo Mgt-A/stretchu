@@ -120,15 +120,8 @@ struct DebugPageView: View {
                         }
                     }
 
-                    PageSection(title: tr("debug.exercisesWifi")) {
-                        ModePicker(mode: model.mode) { model.execute(.mode($0)) }
+                    PageSection(title: tr("debug.exercise.title")) {
                         Text(tr("debug.exercise", model.exercise.name)).freeCaption().lineLimit(1)
-                        Text(tr("debug.network", model.ssid ?? tr("debug.network.none"))).freeCaption()
-                        HStack(spacing: 8) {
-                            Button("Home-5G") { model.execute(.ssid("Home-5G")) }.buttonStyle(.secondary)
-                            Button("Office-Corp") { model.execute(.ssid("Office-Corp")) }.buttonStyle(.secondary)
-                            Button(tr("debug.network.noneButton")) { model.execute(.ssid(nil)) }.buttonStyle(.secondary)
-                        }
                     }
 
                     PageSection(title: tr("debug.setup")) {

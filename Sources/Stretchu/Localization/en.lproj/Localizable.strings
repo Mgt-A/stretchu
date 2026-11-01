@@ -17,7 +17,6 @@
 "wake.start" = "Let's go";
 "wake.snooze" = "Later · 5 min";
 "wake.skip" = "Skip";
-"wake.mode" = "%1$@ mode";
 
 /* Break, step 1 */
 "break1.header" = "Step 1 of 2 · warm-up";
@@ -63,14 +62,6 @@
 "menu.nextBreak.inProgress" = "In progress";
 "menu.breaksToday.one" = "%1$@ break today";
 "menu.breaksToday.other" = "%1$@ breaks today";
-"menu.wifi.line" = "Wi-Fi “%1$@” · %2$@";
-"menu.wifi.home" = "home equipment";
-"menu.wifi.office" = "office equipment";
-"menu.network.is" = "This network is:";
-"menu.wifi.notRead" = "Wi-Fi not read: mode chosen by hand";
-"menu.wifi.allow" = "Allow";
-"menu.wifi.denied" = "Location denied: mode chosen by hand";
-"menu.wifi.none" = "No Wi-Fi connected: mode chosen by hand";
 "menu.meeting.waiting" = "In a meeting · your break waits until it ends";
 "menu.meeting.active" = "In a meeting · mic or camera in use";
 "menu.meeting.none" = "Not in a meeting · mic and camera free";
@@ -105,14 +96,6 @@
 "settings.step2" = "Step 2 · exercise";
 "settings.snooze" = "“Later” snooze";
 "settings.defaults" = "Reset to defaults";
-"settings.defaultMode" = "Default mode";
-"settings.defaultMode.note" = "Used when the Wi-Fi is unknown or unreadable.";
-"settings.networks" = "Wi-Fi networks";
-"settings.networks.none" = "No network linked.";
-"settings.networks.remove" = "Remove this network";
-"settings.networks.quoted" = "“%1$@”";
-"settings.networks.current" = "Current network: pick its mode to link it.";
-"settings.networks.hint" = "A new network is added here as soon as you join it and pick its mode.";
 "settings.excluded" = "Hidden exercises";
 "settings.excluded.none" = "None. “Hurts” hides an exercise, it shows up here.";
 "settings.excluded.restore" = "Restore";
@@ -160,11 +143,8 @@
 "debug.animations" = "Animations";
 "debug.noSheet" = "No sheet";
 "debug.sheetInfo" = "%1$@ %2$@, %3$@ frames";
-"debug.exercisesWifi" = "Exercises and Wi-Fi";
+"debug.exercise.title" = "Exercise";
 "debug.exercise" = "Exercise: %1$@";
-"debug.network" = "Network: %1$@";
-"debug.network.none" = "none";
-"debug.network.noneButton" = "None";
 "debug.fixtures" = "Prepared states";
 "debug.reset" = "Reset (Pichu level 1)";
 "fixture.lv99" = "Raichu lv. 99, streak 39, ready for the egg";
@@ -191,12 +171,6 @@
 "fixture.flareonShiny" = "Shiny Flareon level 60";
 "debug.hallOfFame" = "the Hall of Fame";
 "debug.pokedex" = "Pokédex: %1$@ / %2$@";
-"equipment.bands" = "band";
-"equipment.foamRoll" = "foam roller";
-"equipment.exerciseBall" = "gym ball";
-"equipment.medicineBall" = "medicine ball";
-"equipment.kettlebells" = "kettlebell";
-"equipment.dumbbell" = "dumbbells";
 
 /* Setup, cycles, Hall of Fame */
 "setup.skip" = "Skip";
@@ -216,12 +190,8 @@
 "setup.pokemon.evolutions" = "Evolutions";
 "setup.pokemon.level" = "Lv. %1$@";
 "setup.pokemon.locked" = "Cycle in progress: %1$@ lv. %2$@. You can pick a new Pokémon at the end of this cycle.";
-"setup.equipment.title" = "Your equipment";
-"setup.equipment.note" = "You can change it any time in Settings.";
-"setup.equipment.count.one" = "%1$@ exercise";
-"setup.equipment.count.other" = "%1$@ exercises";
-"setup.program.title" = "Your program";
-"setup.program.body" = "Drawn at random at each break.";
+"setup.rhythm.title" = "Your rhythm";
+"setup.rhythm.body" = "A short, easy stretch every time. You can change it in Settings.";
 "setup.rhythm" = "Rhythm";
 "setup.rhythm.work" = "Break every";
 "setup.rhythm.exercise" = "Exercise";
@@ -230,39 +200,11 @@
 "setup.ready.title" = "All set";
 "setup.ready.language" = "Language";
 "setup.ready.pokemon" = "Pokémon";
-"setup.ready.program" = "Program";
 "setup.ready.rhythm" = "Break every %1$@ min";
-"setup.ready.bodyweight" = "Bodyweight";
 "setup.ready.health" = "Stretchu is not medical advice. Stretch gently, stop if it hurts, and see a professional if pain persists.";
-"place.home" = "Home";
-"place.office" = "Office";
-"equipment.grid.bands" = "Resistance band";
-"equipment.grid.foamRoll" = "Foam roller";
-"equipment.grid.exerciseBall" = "Gym ball";
-"equipment.grid.medicineBall" = "Medicine ball";
-"equipment.grid.kettlebells" = "Kettlebell";
-"equipment.grid.dumbbell" = "Dumbbells";
-"program.general.name" = "General";
-"program.general.desc" = "Neck, shoulders, back, hips, wrists.";
-"program.exerciseCount.one" = "%1$@ exercise";
-"program.exerciseCount.other" = "%1$@ exercises";
-"program.custom.name" = "Custom";
-"program.custom.desc" = "A .json made by an AI.";
-"program.chooseFile" = "Choose a file…";
-"program.howTo" = "How to create one";
-"program.unknownIgnored.one" = "%1$@ unknown exercise ignored";
-"program.unknownIgnored.other" = "%1$@ unknown exercises ignored";
-"program.error.unreadable" = "This file is not a Stretchu program.";
-"program.error.noExercise" = "None of its exercises is in the catalog.";
-"program.error.version" = "Program format %1$@ is not supported.";
 "access.micro.title" = "Microphone and camera";
 "access.micro.badge" = "No permission";
 "access.micro.desc" = "We only know whether they are on, so we never interrupt you in a meeting. Nothing is listened to or filmed.";
-"access.location.title" = "Location";
-"access.location.allow" = "Allow";
-"access.location.granted" = "Allowed";
-"access.location.denied" = "Denied · System Settings";
-"access.location.desc" = "macOS requires it to read the Wi-Fi name and switch to Home or Office mode by itself. Optional. If denied, you pick Home or Office by hand in the menu.";
 "access.login.title" = "Launch at login";
 "access.login.desc" = "macOS may ask you to approve it in System Settings.";
 "access.internet.title" = "Internet";
@@ -318,8 +260,6 @@
 "menu.chooseStone" = "Choose the stone";
 "settings.language" = "Language";
 "settings.language.auto" = "Automatic";
-"settings.equipment" = "Equipment";
-"settings.program" = "Program";
 "debug.replaySetup" = "Replay the setup";
 "fixture.hof4" = "Hall of Fame, 4 cycles";
 "debug.setup" = "Setup";

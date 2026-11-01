@@ -30,17 +30,6 @@ struct Segments<Value: Hashable>: View {
     }
 }
 
-/// Two segments Home / Office.
-struct ModePicker: View {
-    let mode: PlaceMode
-    var width: CGFloat? = nil
-    let onSelect: (PlaceMode) -> Void
-
-    var body: some View {
-        Segments(values: PlaceMode.allCases, selection: mode, label: \.name, width: width, onSelect: onSelect)
-    }
-}
-
 /// "title · value · − +" row: settings durations, Debug levels and streaks.
 struct StepRow: View {
     let title: String

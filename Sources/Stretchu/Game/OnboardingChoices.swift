@@ -8,24 +8,19 @@ struct OnboardingChoices: Equatable {
     var lineId: String?
     /// The shiny drawn when the player pressed Continue on the Pokémon step; nil draws now.
     var shiny: Bool?
-    var homeEquipment: [String]
-    var officeEquipment: [String]
-    var programId: String
     var workMinutes: Int
     var step2Seconds: Int
     var schedule = ActiveSchedule()
 
-    /// Pikachu, the general program, no equipment, the standard rhythm.
+    /// Pikachu and the standard rhythm.
     static let defaults = OnboardingChoices(
-        language: nil, lineId: LineCatalog.defaultLineId, shiny: nil, homeEquipment: [], officeEquipment: [],
-        programId: ProgramLibrary.generalId, workMinutes: 25, step2Seconds: 30)
+        language: nil, lineId: LineCatalog.defaultLineId, shiny: nil, workMinutes: 25, step2Seconds: 30)
 
     /// The current values, to replay the setup without losing anything.
     static func current(of game: GameState) -> OnboardingChoices {
         OnboardingChoices(
             language: game.language, lineId: nil, shiny: nil,
-            homeEquipment: game.settings.homeEquipment, officeEquipment: game.settings.officeEquipment,
-            programId: game.programId, workMinutes: game.settings.workMinutes, step2Seconds: game.settings.step2Seconds,
+            workMinutes: game.settings.workMinutes, step2Seconds: game.settings.step2Seconds,
             schedule: game.settings.schedule)
     }
 
@@ -44,9 +39,6 @@ struct OnboardingChoices: Equatable {
             game.progression.current = cycle
             game.progression.syncReached(line: line)
         }
-        game.settings.homeEquipment = Equipment.ownable.filter(Set(homeEquipment).contains)
-        game.settings.officeEquipment = Equipment.ownable.filter(Set(officeEquipment).contains)
-        game.programId = programId
         game.settings.workMinutes = workMinutes
         game.settings.step2Seconds = step2Seconds
         game.settings.schedule = schedule

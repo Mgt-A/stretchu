@@ -1,19 +1,11 @@
 import Foundation
 
-enum PlaceMode: String, Codable, Equatable, CaseIterable {
-    case home, office
-
-    var name: String { self == .home ? tr("place.home") : tr("place.office") }
-}
-
 /// One exercise of the bundled catalog (Resources/Exercises/catalog.json).
 struct Exercise: Codable, Equatable, Identifiable {
     let id: String
     let name: String
     /// 3 steps at most, second person, gentle, never to the point of pain.
     let steps: [String]
-    /// The `equipment` value of free-exercise-db, as is: nil or "body only" need nothing.
-    let equipment: String?
     /// "stretching" or "mobility".
     let category: String
     let level: String
@@ -25,76 +17,13 @@ struct Exercise: Codable, Equatable, Identifiable {
     /// "free-exercise-db" or "stretchu" (made for the app).
     let origin: String
 
-    init(id: String, name: String, steps: [String], equipment: String? = nil, category: String = "stretching",
+    init(id: String, name: String, steps: [String], category: String = "stretching",
          level: String = "beginner", primaryMuscles: [String] = [], images: [String] = [],
          durationSeconds: Int = 30, unilateral: Bool = false, origin: String = "stretchu") {
-        self.id = id; self.name = name; self.steps = steps; self.equipment = equipment
+        self.id = id; self.name = name; self.steps = steps
         self.category = category; self.level = level; self.primaryMuscles = primaryMuscles
         self.images = images; self.durationSeconds = durationSeconds; self.unilateral = unilateral
         self.origin = origin
-    }
-}
-
-/// What an exercise needs, and what the player owns.
-enum Equipment {
-    /// Values of free-exercise-db's `equipment` the app lets the player own. "body only" is always
-    /// there; "other", "machine", "cable" and "barbell" have no place in a desk break.
-    static let ownable = ["bands", "foam roll", "exercise ball", "medicine ball", "kettlebells", "dumbbell"]
-
-    static func isAvailable(_ equipment: String?, owned: Set<String>) -> Bool {
-        guard let equipment, equipment != "body only" else { return true }
-        return owned.contains(equipment)
-    }
-
-    /// Equipment values the catalog actually uses and the player can own, in `ownable` order.
-    static func inCatalog(_ catalog: [Exercise]) -> [String] {
-        let used = Set(catalog.compactMap(\.equipment))
-        return ownable.filter(used.contains)
-    }
-
-    /// SVG/PDF name (Resources/Icons, Tabler Icons) and label of each ownable equipment, for the grids.
-    static func iconName(_ equipment: String) -> String {
-        switch equipment {
-        case "bands": "wave-sine"
-        case "foam roll": "cylinder"
-        case "exercise ball": "ball-volleyball"
-        case "medicine ball": "ball-basketball"
-        case "kettlebells": "weight"
-        default: "barbell"
-        }
-    }
-
-    static func gridLabel(_ equipment: String) -> String {
-        switch equipment {
-        case "bands": tr("equipment.grid.bands")
-        case "foam roll": tr("equipment.grid.foamRoll")
-        case "exercise ball": tr("equipment.grid.exerciseBall")
-        case "medicine ball": tr("equipment.grid.medicineBall")
-        case "kettlebells": tr("equipment.grid.kettlebells")
-        default: tr("equipment.grid.dumbbell")
-        }
-    }
-
-    /// Exercises of a program the equipment allows.
-    static func availableCount(in program: Program, catalog: [Exercise], owned: Set<String>) -> Int {
-        catalog.filter { program.exercises.contains($0.id) && isAvailable($0.equipment, owned: owned) }.count
-    }
-
-    static func count(of equipment: String, in catalog: [Exercise]) -> Int {
-        catalog.filter { $0.equipment == equipment }.count
-    }
-
-    /// Label shown next to an exercise ("Home · foam roller"); nil when nothing is needed.
-    static func label(_ equipment: String?) -> String? {
-        switch equipment {
-        case "bands": tr("equipment.bands")
-        case "foam roll": tr("equipment.foamRoll")
-        case "exercise ball": tr("equipment.exerciseBall")
-        case "medicine ball": tr("equipment.medicineBall")
-        case "kettlebells": tr("equipment.kettlebells")
-        case "dumbbell": tr("equipment.dumbbell")
-        default: nil
-        }
     }
 }
 
@@ -149,7 +78,7 @@ enum ExerciseCatalog {
         let table = translations(language: language)
         return english.map { exercise in
             guard let t = table[exercise.id], !t.name.isEmpty, !t.steps.isEmpty else { return exercise }
-            return Exercise(id: exercise.id, name: t.name, steps: t.steps, equipment: exercise.equipment,
+            return Exercise(id: exercise.id, name: t.name, steps: t.steps,
                             category: exercise.category, level: exercise.level, primaryMuscles: exercise.primaryMuscles,
                             images: exercise.images, durationSeconds: exercise.durationSeconds,
                             unilateral: exercise.unilateral, origin: exercise.origin)
@@ -179,21 +108,12 @@ enum ExerciseCatalog {
     /// The app's catalog in the interface language (which the player can change at any time).
     static var catalog: [Exercise] { catalog(language: L10n.languageCode) }
 
-    /// Picks an exercise among the program's (all of the catalog without a program) that the
-    /// player's equipment allows, outside the exclusions, not already picked today, different
-    /// from `different`. When nothing is left, the filters relax in this order: the program's
-    /// exercises that need no equipment, then the catalog's, then the whole catalog; and within the
-    /// candidates, start the day over, then ignore the exclusions.
-    static func pick(from catalog: [Exercise] = ExerciseCatalog.catalog, program: Program? = nil,
-                     equipment owned: Set<String>, excluded: Set<String>, alreadyPicked: Set<String>,
-                     different: String?) -> Exercise {
-        let inProgram = program.map { p in catalog.filter { p.exercises.contains($0.id) } } ?? catalog
-        let candidates: [Exercise] = [
-            inProgram.filter { Equipment.isAvailable($0.equipment, owned: owned) },
-            inProgram.filter { Equipment.isAvailable($0.equipment, owned: []) },
-            catalog.filter { Equipment.isAvailable($0.equipment, owned: []) },
-            catalog,
-        ].first { !$0.isEmpty } ?? builtIn
+    /// Picks an exercise outside the exclusions, not already picked today, different from
+    /// `different`. When nothing is left, the filters relax in this order: start the day over,
+    /// then ignore the exclusions.
+    static func pick(from catalog: [Exercise] = ExerciseCatalog.catalog, excluded: Set<String>,
+                     alreadyPicked: Set<String>, different: String?) -> Exercise {
+        let candidates = catalog.isEmpty ? builtIn : catalog
         let levels: [(Exercise) -> Bool] = [
             { !excluded.contains($0.id) && !alreadyPicked.contains($0.id) && $0.id != different },
             { !excluded.contains($0.id) && $0.id != different },

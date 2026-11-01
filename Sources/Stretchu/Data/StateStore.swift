@@ -24,16 +24,6 @@ struct StateStore {
         self.fileName = fileName
     }
 
-    /// Where the player's program files live, next to the state.
-    var programsDirectory: URL { directory.appendingPathComponent("programs", isDirectory: true) }
-
-    /// A file written before programs existed (no `programId`, schema below 5).
-    static func predatesPrograms(_ data: Data) -> Bool {
-        struct Peek: Decodable { var schemaVersion: Int?; var programId: String? }
-        guard let peek = try? JSONDecoder().decode(Peek.self, from: data) else { return false }
-        return peek.programId == nil && (peek.schemaVersion ?? 1) < 5
-    }
-
     func remove() {
         try? FileManager.default.removeItem(at: fileURL)
     }
@@ -56,11 +46,7 @@ struct StateStore {
     func load() -> GameState {
         guard let data = try? Data(contentsOf: fileURL) else { return GameState() }
         do {
-            var game = try Self.decoder.decode(GameState.self, from: data)
-            if Self.predatesPrograms(data) {
-                ProgramLibrary(userDirectory: programsDirectory).migrate(&game)
-            }
-            return game
+            return try Self.decoder.decode(GameState.self, from: data)
         } catch {
             let stamp = Int(Date().timeIntervalSince1970)
             let base = (fileName as NSString).deletingPathExtension

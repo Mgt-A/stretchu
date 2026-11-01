@@ -52,7 +52,7 @@ struct GameState: Codable, Equatable {
     /// 1: French-named keys (`serie`, `reglages`…). 2: English keys; the old ones are still read.
     /// 3: the current Pokémon (`pokemon`); a state without it was a Pichu and becomes a Pikachu.
     /// 6: `onboardingCompleted` and `language`.
-    /// 5: the program (`programId`) and the equipment of the home and the office.
+    /// 5: the program and the equipment (both gone since: old files still read, the keys are ignored).
     /// 4: XP on the 100 × n² curve, and the Hall of Fame is the list of `progression.cycles`
     /// (the current Pokémon lives in the last cycle). Older files are migrated when read.
     static let currentSchemaVersion = 6
@@ -64,11 +64,7 @@ struct GameState: Codable, Equatable {
     var candies = 0
     var excludedExercises: [String] = []
     var dailyPicks = DailyPicks()
-    /// SSID → mode, entered in the menu and in Settings.
-    var networks: [String: PlaceMode] = [:]
     var settings = UserSettings()
-    /// "general", or the name (without extension) of a file of the user's programs folder.
-    var programId = ProgramLibrary.generalId
     /// False until the setup window was finished (or skipped). A state file that exists without
     /// the key comes from before the setup existed: it is done.
     var onboardingCompleted = false
@@ -95,7 +91,7 @@ struct GameState: Codable, Equatable {
     var sprite: SpriteRef { SpriteRef(dex: species.dex, shiny: pokemon.shiny) }
 
     private enum CodingKeys: String, CodingKey {
-        case schemaVersion, progression, streak, candies, excludedExercises, dailyPicks, networks, settings, programId
+        case schemaVersion, progression, streak, candies, excludedExercises, dailyPicks, settings
         case onboardingCompleted, language
         /// Written by schema 3 only, read to migrate.
         case pokemon
@@ -104,7 +100,7 @@ struct GameState: Codable, Equatable {
     /// Keys written by the French-named builds, read as a fallback.
     private enum LegacyKeys: String, CodingKey {
         case excludedExercises = "exercicesExclus", dailyPicks = "exercicesDuJour"
-        case networks = "reseaux", settings = "reglages"
+        case settings = "reglages"
     }
 
     // Older states (and fixtures) don't have every key: defaults apply. Whatever was read is
@@ -123,11 +119,8 @@ struct GameState: Codable, Equatable {
             ?? old.decodeIfPresent([String].self, forKey: .excludedExercises) ?? []
         dailyPicks = try c.decodeIfPresent(DailyPicks.self, forKey: .dailyPicks)
             ?? old.decodeIfPresent(DailyPicks.self, forKey: .dailyPicks) ?? DailyPicks()
-        networks = try c.decodeIfPresent([String: PlaceMode].self, forKey: .networks)
-            ?? old.decodeIfPresent([String: PlaceMode].self, forKey: .networks) ?? [:]
         settings = try c.decodeIfPresent(UserSettings.self, forKey: .settings)
             ?? old.decodeIfPresent(UserSettings.self, forKey: .settings) ?? UserSettings()
-        programId = try c.decodeIfPresent(String.self, forKey: .programId) ?? ProgramLibrary.generalId
         onboardingCompleted = try c.decodeIfPresent(Bool.self, forKey: .onboardingCompleted) ?? true
         language = try c.decodeIfPresent(String.self, forKey: .language)
         schemaVersion = Self.currentSchemaVersion
@@ -142,9 +135,7 @@ struct GameState: Codable, Equatable {
         try c.encode(candies, forKey: .candies)
         try c.encode(excludedExercises, forKey: .excludedExercises)
         try c.encode(dailyPicks, forKey: .dailyPicks)
-        try c.encode(networks, forKey: .networks)
         try c.encode(settings, forKey: .settings)
-        try c.encode(programId, forKey: .programId)
         try c.encode(onboardingCompleted, forKey: .onboardingCompleted)
         try c.encodeIfPresent(language, forKey: .language)
     }

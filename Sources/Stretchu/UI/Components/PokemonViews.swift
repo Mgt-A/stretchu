@@ -46,20 +46,6 @@ struct SpeciesSprite: View {
     }
 }
 
-/// Tabler icon of an equipment (Resources/Icons/*.pdf), tinted like text.
-struct EquipmentIcon: View {
-    let equipment: String
-    var size: CGFloat = 22
-
-    var body: some View {
-        if let url = AppResources.url("Icons/\(Equipment.iconName(equipment)).pdf"), let image = NSImage(contentsOf: url) {
-            Image(nsImage: image).renderingMode(.template).resizable().scaledToFit().frame(width: size, height: size)
-        } else {
-            Color.clear.frame(width: size, height: size)
-        }
-    }
-}
-
 /// A cell of a Pokémon grid: sprite, name and a small caption, with an accent outline when selected.
 struct PokemonTile: View {
     let dex: Int

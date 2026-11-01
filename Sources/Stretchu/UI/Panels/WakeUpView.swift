@@ -37,12 +37,8 @@ struct WakeUpView: View {
                 Button(tr("wake.skip")) { model.skip() }.buttonStyle(.text)
             }
 
-            HStack {
-                Text("+\(Format.xp(model.expectedBreakXP)) XP · \(Format.multiplier(model.game.streak.multiplier))")
-                Spacer()
-                Text(tr("wake.mode", model.mode.name))
-            }
-            .panelCaption().monospacedDigit()
+            Text("+\(Format.xp(model.expectedBreakXP)) XP · \(Format.multiplier(model.game.streak.multiplier))")
+                .panelCaption().monospacedDigit()
         }
         .padding(14)
         .frame(width: PanelSize.width, height: PanelSize.short.height, alignment: .topLeading)
