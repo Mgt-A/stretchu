@@ -41,11 +41,10 @@ final class StateStoreTests: XCTestCase {
         var game = GameState()
         game.streak = Streak(count: 4, breaksToday: 2, currentDay: TestCalendar.calendar.startOfDay(for: TestCalendar.monday))
         game.excludedExercises = ["Chin_Tucks"]
-        game.networks = ["Home-5G": .home]
         try store.save(game)
         let json = try String(contentsOf: store.fileURL, encoding: .utf8)
         for key in ["schemaVersion", "cycles", "lineId", "breaksToday", "currentDay", "excludedExercises",
-                    "dailyPicks", "networks", "settings", "workMinutes", "snoozeMinutes", "defaultMode"] {
+                    "dailyPicks", "settings", "workMinutes", "snoozeMinutes"] {
             XCTAssertTrue(json.contains("\"\(key)\""), key)
         }
         for oldKey in ["cyclesTermines", "completedCycles", "hallOfFame", "pausesDuJour", "jourCourant", "serie", "exercicesExclus",

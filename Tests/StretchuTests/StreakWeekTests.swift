@@ -59,12 +59,4 @@ final class StreakWeekTests: XCTestCase {
         XCTAssertEqual(s.breaksToday, 2)
         XCTAssertTrue(s.history.isEmpty)
     }
-
-    func testLinkedNetworksArePersisted() throws {
-        var game = GameState()
-        game.networks["Home-5G"] = .home
-        game.networks["Office-Corp"] = .office
-        let decoded = try StateStore.decoder.decode(GameState.self, from: StateStore.encoder.encode(game))
-        XCTAssertEqual(decoded.networks, game.networks)
-    }
 }

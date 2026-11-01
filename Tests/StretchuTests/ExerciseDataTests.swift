@@ -13,8 +13,23 @@ final class ExerciseDataTests: XCTestCase {
         return try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
     }
 
-    func testTheCatalogIsAFewDozenExercises() throws {
-        XCTAssertGreaterThanOrEqual(try load().count, 80)
+    func testTheCatalogIsAShortStaticList() throws {
+        let count = try load().count
+        XCTAssertGreaterThanOrEqual(count, 20)
+        XCTAssertLessThanOrEqual(count, 30)
+    }
+
+    func testEveryExerciseComesFromTheLibraryWithItsPictures() throws {
+        for e in try load() {
+            XCTAssertEqual(e.origin, "free-exercise-db", e.id)
+            XCTAssertFalse(e.images.isEmpty, e.id)
+            XCTAssertTrue(e.images.allSatisfy { $0.hasSuffix(".jpg") }, e.id)
+        }
+    }
+
+    func testNoExerciseNeedsEquipmentOrAFloor() throws {
+        let exercises = try XCTUnwrap(raw()["exercises"] as? [[String: Any]])
+        for e in exercises { XCTAssertNil(e["equipment"], e["id"] as? String ?? "") }
     }
 
     func testTheCatalogRecordsItsSource() throws {
@@ -36,39 +51,9 @@ final class ExerciseDataTests: XCTestCase {
         }
     }
 
-    func testNoMachineCableOrBarbell() throws {
-        let banned: Set<String> = ["machine", "cable", "barbell", "e-z curl bar", "other"]
-        for e in try load() { XCTAssertFalse(banned.contains(e.equipment ?? ""), "\(e.id): \(e.equipment ?? "")") }
-    }
-
-    func testEquipmentIsEitherNothingBodyOnlyOrSomethingThePlayerCanOwn() throws {
-        for e in try load() {
-            guard let equipment = e.equipment, equipment != "body only" else { continue }
-            XCTAssertTrue(Equipment.ownable.contains(equipment), "\(e.id): \(equipment)")
-        }
-    }
-
-    func testEquipmentIsKeptAsFreeExerciseDbWritesIt() throws {
-        let all = try load()
-        XCTAssertEqual(all.first { $0.id == "Calves-SMR" }?.equipment, "foam roll")
-        XCTAssertEqual(all.first { $0.id == "Hug_A_Ball" }?.equipment, "exercise ball")
-        XCTAssertNil(all.first { $0.id == "Cat_Stretch" }?.equipment)
-        XCTAssertEqual(all.first { $0.id == "Band_Pull_Apart" }?.equipment, "bands")
-        XCTAssertEqual(all.first { $0.id == "Kettlebell_Pirate_Ships" }?.equipment, "kettlebells")
-    }
-
     func testThereIsNoSpaceField() throws {
         let exercises = try XCTUnwrap(raw()["exercises"] as? [[String: Any]])
         for e in exercises { XCTAssertNil(e["space"]); XCTAssertNil(e["modes"]) }
-    }
-
-    func testEveryEquipmentOfTheGridHasExercisesInTheCatalog() throws {
-        let all = try load()
-        let inCatalog = Equipment.inCatalog(all)
-        for needed in ["bands", "foam roll", "exercise ball"] {
-            XCTAssertTrue(inCatalog.contains(needed), needed)
-            XCTAssertGreaterThanOrEqual(Equipment.count(of: needed, in: all), 3, needed)
-        }
     }
 
     func testThreeStepsAndAOneLineName() throws {
@@ -86,16 +71,6 @@ final class ExerciseDataTests: XCTestCase {
             for image in e.images {
                 XCTAssertNotNil(AppResources.url("Exercises/\(image)"), "\(e.id): \(image) missing")
             }
-        }
-    }
-
-    func testTheHomeMadeIllustrationsAreKept() throws {
-        let all = try load()
-        for id in ["Chin_Tucks", "Couch_Stretch", "Doorway_Pec_Stretch_Low", "Ninety_Ninety_Hip_Switch",
-                   "Thoracic_Extension_Foam_Roller", "Wall_Slides"] {
-            let e = try XCTUnwrap(all.first { $0.id == id }, id)
-            XCTAssertEqual(e.origin, "stretchu", id)
-            XCTAssertTrue(e.images.allSatisfy { $0.hasSuffix(".svg") }, id)
         }
     }
 
@@ -165,10 +140,10 @@ final class ExerciseTranslationTests: XCTestCase {
 
     func testTheLocalizedCatalogUsesTheFrenchTexts() throws {
         let fr = ExerciseCatalog.localized(english, language: "fr")
-        let chin = try XCTUnwrap(fr.first { $0.id == "Chin_Tucks" })
-        XCTAssertEqual(chin.name, "Menton rentré")
-        XCTAssertEqual(chin.equipment, english.first { $0.id == "Chin_Tucks" }?.equipment, "everything but the texts is kept")
-        XCTAssertEqual(chin.images, english.first { $0.id == "Chin_Tucks" }?.images)
+        let chin = try XCTUnwrap(fr.first { $0.id == "Chin_To_Chest_Stretch" })
+        XCTAssertFalse(chin.name.isEmpty)
+        XCTAssertNotEqual(chin.name, english.first { $0.id == "Chin_To_Chest_Stretch" }?.name)
+        XCTAssertEqual(chin.images, english.first { $0.id == "Chin_To_Chest_Stretch" }?.images, "everything but the texts is kept")
     }
 
     func testAMissingTranslationFallsBackToEnglish() {

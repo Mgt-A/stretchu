@@ -36,8 +36,6 @@ struct ExerciseView: View {
                 Text(exercise.name)
                     .font(.system(size: 17, weight: .semibold)).lineLimit(1).minimumScaleFactor(0.8)
                 HStack(spacing: 8) {
-                    Text([model.mode.name, Equipment.label(exercise.equipment)].compactMap { $0 }.joined(separator: " · "))
-                        .panelCaption()
                     Text(tr("exercise.badge"))
                         .font(.system(size: 11)).foregroundStyle(Color.white.opacity(0.7))
                         .padding(.horizontal, 7).padding(.vertical, 1)

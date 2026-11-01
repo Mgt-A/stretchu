@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The setup, in a 340 × 620 window: six steps, a default everywhere, "Skip" always possible.
+/// The setup, in a 340 × 620 window: four steps, a default everywhere, "Skip" always possible.
 struct OnboardingView: View {
     let model: OnboardingModel
 
@@ -24,8 +24,7 @@ struct OnboardingView: View {
                 switch model.step {
                 case .welcome: WelcomeStep(model: model)
                 case .pokemon: PokemonStep(model: model)
-                case .equipment: EquipmentStep(model: model)
-                case .program: ProgramStep(model: model)
+                case .rhythm: RhythmStep(model: model)
                 case .access: AccessStep(model: model)
                 case .ready: ReadyStep(model: model)
                 }
@@ -168,34 +167,14 @@ private struct PokemonStep: View {
     }
 }
 
-// MARK: A3 · equipment
+// MARK: A3 · rhythm
 
-private struct EquipmentStep: View {
-    let model: OnboardingModel
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            StepTitle(title: tr("setup.equipment.title"), body: tr("setup.equipment.note")).bodyView
-            ModePicker(mode: model.equipmentPlace) { model.equipmentPlace = $0 }
-            EquipmentGridView(owned: Binding(get: { model.ownedAtCurrentPlace }, set: { model.setEquipment($0) }))
-                .id(model.equipmentPlace)
-            Spacer(minLength: 0)
-        }
-    }
-}
-
-// MARK: A4 · program and rhythm
-
-private struct ProgramStep: View {
+private struct RhythmStep: View {
     let model: OnboardingModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            StepTitle(title: tr("setup.program.title"), body: tr("setup.program.body")).bodyView
-            ProgramChoiceView(general: model.generalProgram, custom: model.customProgram, selectedId: model.programId,
-                              owned: model.allEquipment, message: model.programMessage,
-                              onSelect: { model.selectProgram($0) },
-                              onChooseFile: { if let url = ProgramFilePicker.choose() { model.importProgram(from: url) } })
+            StepTitle(title: tr("setup.rhythm.title"), body: tr("setup.rhythm.body")).bodyView
             PageSection(title: tr("setup.rhythm")) {
                 StepRow(title: tr("setup.rhythm.work"), value: "\(model.workMinutes) min",
                         canDecrease: model.workMinutes > UserSettings.workRange.lowerBound,
@@ -216,7 +195,7 @@ private struct ProgramStep: View {
     }
 }
 
-// MARK: A5 · access
+// MARK: A4 · access
 
 private struct AccessStep: View {
     let model: OnboardingModel
@@ -225,27 +204,12 @@ private struct AccessStep: View {
         VStack(alignment: .leading, spacing: 8) {
             StepTitle(title: tr("setup.access.title"), body: tr("setup.access.note")).bodyView
             card(icon: "mic.slash", title: tr("access.micro.title"), badge: tr("access.micro.badge"), text: tr("access.micro.desc"))
-            card(icon: "location", title: tr("access.location.title"), text: tr("access.location.desc")) {
-                locationControl
-            }
             card(icon: "power", title: tr("access.login.title"), text: tr("access.login.desc")) {
                 Toggle("", isOn: Binding(get: { model.launchAtLogin }, set: { model.setLaunchAtLogin($0) }))
                     .labelsHidden().toggleStyle(.switch)
             }
             card(icon: "wifi.slash", title: tr("access.internet.title"), badge: tr("access.internet.badge"), text: tr("access.internet.desc"))
             Spacer(minLength: 0)
-        }
-    }
-
-    @ViewBuilder
-    private var locationControl: some View {
-        switch model.app.wifiAuthorization {
-        case .notRequested:
-            Button(tr("access.location.allow")) { model.app.requestWifiAuthorization() }.buttonStyle(.secondary).fixedSize()
-        case .granted:
-            Text(tr("access.location.granted")).font(.system(size: 12)).foregroundStyle(Color.green)
-        case .denied:
-            Text(tr("access.location.denied")).font(.system(size: 12)).foregroundStyle(Color.orange)
         }
     }
 
@@ -268,7 +232,7 @@ private struct AccessStep: View {
     }
 }
 
-// MARK: A6 · ready
+// MARK: A5 · ready
 
 private struct ReadyStep: View {
     let model: OnboardingModel
@@ -287,10 +251,7 @@ private struct ReadyStep: View {
             VStack(spacing: 0) {
                 row(tr("setup.ready.language"), LanguageChoice.name(model.language), .welcome)
                 row(tr("setup.ready.pokemon"), name, .pokemon)
-                row(PlaceMode.home.name, equipmentSummary(model.homeEquipment), .equipment)
-                row(PlaceMode.office.name, equipmentSummary(model.officeEquipment), .equipment)
-                row(tr("setup.ready.program"), programName, .program)
-                row(tr("setup.ready.rhythm", model.workMinutes), "", .program)
+                row(tr("setup.ready.rhythm", model.workMinutes), "", .rhythm)
             }
             .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
 
@@ -299,16 +260,6 @@ private struct ReadyStep: View {
                 .background(RoundedRectangle(cornerRadius: Radius.card).fill(Color.white.opacity(0.06)))
             Spacer(minLength: 0)
         }
-    }
-
-    private var programName: String {
-        if model.programId == ProgramLibrary.generalId { return tr("program.general.name") }
-        return model.programs.first { $0.id == model.programId }?.program.name ?? tr("program.custom.name")
-    }
-
-    private func equipmentSummary(_ set: Set<String>) -> String {
-        let names = Equipment.ownable.filter(set.contains).map(Equipment.gridLabel)
-        return names.isEmpty ? tr("setup.ready.bodyweight") : names.joined(separator: ", ")
     }
 
     private func row(_ title: String, _ value: String, _ step: OnboardingModel.Step) -> some View {

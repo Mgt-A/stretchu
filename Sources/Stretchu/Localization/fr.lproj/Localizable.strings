@@ -17,7 +17,6 @@
 "wake.start" = "C'est parti";
 "wake.snooze" = "Plus tard · 5 min";
 "wake.skip" = "Passer";
-"wake.mode" = "Mode %1$@";
 
 /* Pause, étape 1 */
 "break1.header" = "Étape 1 sur 2 · mise en route";
@@ -63,14 +62,6 @@
 "menu.nextBreak.inProgress" = "En cours";
 "menu.breaksToday.one" = "%1$@ pause aujourd'hui";
 "menu.breaksToday.other" = "%1$@ pauses aujourd'hui";
-"menu.wifi.line" = "Wi-Fi « %1$@ » · %2$@";
-"menu.wifi.home" = "matériel de la maison";
-"menu.wifi.office" = "matériel du bureau";
-"menu.network.is" = "Ce réseau est :";
-"menu.wifi.notRead" = "Wi-Fi non lu : mode choisi à la main";
-"menu.wifi.allow" = "Autoriser";
-"menu.wifi.denied" = "Localisation refusée : mode choisi à la main";
-"menu.wifi.none" = "Pas de Wi-Fi connecté : mode choisi à la main";
 "menu.meeting.waiting" = "En meeting · ta pause attend la fin";
 "menu.meeting.active" = "En meeting · micro ou caméra utilisés";
 "menu.meeting.none" = "Pas en meeting · micro et caméra libres";
@@ -105,14 +96,6 @@
 "settings.step2" = "Étape 2 · exercice";
 "settings.snooze" = "Report « Plus tard »";
 "settings.defaults" = "Valeurs par défaut";
-"settings.defaultMode" = "Mode par défaut";
-"settings.defaultMode.note" = "Utilisé quand le Wi-Fi est inconnu ou illisible.";
-"settings.networks" = "Réseaux Wi-Fi";
-"settings.networks.none" = "Aucun réseau associé.";
-"settings.networks.remove" = "Retirer ce réseau";
-"settings.networks.quoted" = "« %1$@ »";
-"settings.networks.current" = "Réseau actuel : choisis son mode pour l'associer.";
-"settings.networks.hint" = "Un nouveau réseau s'ajoute ici dès que tu t'y connectes et que tu choisis son mode.";
 "settings.excluded" = "Exercices écartés";
 "settings.excluded.none" = "Aucun. « Ça tire » écarte un exercice, il revient ici.";
 "settings.excluded.restore" = "Réactiver";
@@ -160,11 +143,8 @@
 "debug.animations" = "Animations";
 "debug.noSheet" = "Aucune feuille";
 "debug.sheetInfo" = "%1$@ %2$@, %3$@ images";
-"debug.exercisesWifi" = "Exercices et Wi-Fi";
+"debug.exercise.title" = "Exercice";
 "debug.exercise" = "Exercice : %1$@";
-"debug.network" = "Réseau : %1$@";
-"debug.network.none" = "aucun";
-"debug.network.noneButton" = "Aucun";
 "debug.fixtures" = "États préparés";
 "debug.reset" = "Réinitialiser (Pichu niveau 1)";
 "fixture.lv99" = "Raichu niv. 99, série 39, prêt pour l'œuf";
@@ -191,12 +171,6 @@
 "fixture.flareonShiny" = "Pyroli shiny niveau 60";
 "debug.hallOfFame" = "le Hall of Fame";
 "debug.pokedex" = "Pokédex : %1$@ / %2$@";
-"equipment.bands" = "bandeau";
-"equipment.foamRoll" = "rouleau";
-"equipment.exerciseBall" = "ballon de gym";
-"equipment.medicineBall" = "medicine ball";
-"equipment.kettlebells" = "kettlebell";
-"equipment.dumbbell" = "haltères";
 
 /* Setup, cycles, Hall of Fame */
 "setup.skip" = "Passer";
@@ -216,12 +190,8 @@
 "setup.pokemon.evolutions" = "Évolutions";
 "setup.pokemon.level" = "Niv. %1$@";
 "setup.pokemon.locked" = "Cycle en cours : %1$@ niv. %2$@. Tu pourras choisir un nouveau Pokémon à la fin de ce cycle.";
-"setup.equipment.title" = "Ton équipement";
-"setup.equipment.note" = "Modifiable à tout moment dans Réglages.";
-"setup.equipment.count.one" = "%1$@ exercice";
-"setup.equipment.count.other" = "%1$@ exercices";
-"setup.program.title" = "Ton programme";
-"setup.program.body" = "Tirés au sort à chaque pause.";
+"setup.rhythm.title" = "Ton rythme";
+"setup.rhythm.body" = "Un étirement court et facile à chaque pause. Modifiable dans Réglages.";
 "setup.rhythm" = "Rythme";
 "setup.rhythm.work" = "Pause toutes les";
 "setup.rhythm.exercise" = "Exercice";
@@ -230,39 +200,11 @@
 "setup.ready.title" = "Tout est prêt";
 "setup.ready.language" = "Langue";
 "setup.ready.pokemon" = "Pokémon";
-"setup.ready.program" = "Programme";
 "setup.ready.rhythm" = "Pause toutes les %1$@ min";
-"setup.ready.bodyweight" = "Poids du corps";
 "setup.ready.health" = "Stretchu n'est pas un avis médical. Étire-toi en douceur, arrête si ça fait mal, et consulte un professionnel si une douleur persiste.";
-"place.home" = "Maison";
-"place.office" = "Bureau";
-"equipment.grid.bands" = "Bande élastique";
-"equipment.grid.foamRoll" = "Rouleau de massage";
-"equipment.grid.exerciseBall" = "Ballon de gym";
-"equipment.grid.medicineBall" = "Medicine ball";
-"equipment.grid.kettlebells" = "Kettlebell";
-"equipment.grid.dumbbell" = "Haltères";
-"program.general.name" = "Général";
-"program.general.desc" = "Cou, épaules, dos, hanches, poignets.";
-"program.exerciseCount.one" = "%1$@ exercice";
-"program.exerciseCount.other" = "%1$@ exercices";
-"program.custom.name" = "Sur mesure";
-"program.custom.desc" = "Un .json généré par une IA.";
-"program.chooseFile" = "Choisir un fichier…";
-"program.howTo" = "Comment le créer";
-"program.unknownIgnored.one" = "%1$@ exercice inconnu ignoré";
-"program.unknownIgnored.other" = "%1$@ exercices inconnus ignorés";
-"program.error.unreadable" = "Ce fichier n'est pas un programme Stretchu.";
-"program.error.noExercise" = "Aucun de ses exercices n'est dans le catalogue.";
-"program.error.version" = "Le format de programme %1$@ n'est pas pris en charge.";
 "access.micro.title" = "Micro et caméra";
 "access.micro.badge" = "Aucune autorisation";
 "access.micro.desc" = "On sait seulement s'ils sont allumés, pour ne jamais t'interrompre en meeting. Rien n'est écouté ni filmé.";
-"access.location.title" = "Localisation";
-"access.location.allow" = "Autoriser";
-"access.location.granted" = "Autorisée";
-"access.location.denied" = "Refusée · Réglages Système";
-"access.location.desc" = "macOS l'exige pour lire le nom du Wi-Fi et passer seul en mode Maison ou Bureau. Facultatif. Refusée, Maison / Bureau se choisit à la main dans le menu.";
 "access.login.title" = "Lancer à l'ouverture de session";
 "access.login.desc" = "macOS peut te demander de valider dans Réglages Système.";
 "access.internet.title" = "Internet";
@@ -318,8 +260,6 @@
 "menu.chooseStone" = "Choisir la pierre";
 "settings.language" = "Langue";
 "settings.language.auto" = "Automatique";
-"settings.equipment" = "Équipement";
-"settings.program" = "Programme";
 "debug.replaySetup" = "Rejouer la configuration";
 "fixture.hof4" = "Hall of Fame, 4 cycles";
 "debug.setup" = "Configuration";

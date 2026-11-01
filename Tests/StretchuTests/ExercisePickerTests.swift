@@ -2,17 +2,14 @@ import XCTest
 @testable import Stretchu
 
 final class ExercisePickerTests: XCTestCase {
-    private func exercise(_ id: String, equipment: String? = nil) -> Exercise {
-        Exercise(id: id, name: id, steps: ["a"], equipment: equipment)
+    private func exercise(_ id: String) -> Exercise {
+        Exercise(id: id, name: id, steps: ["a"])
     }
 
-    private lazy var catalog = [exercise("a"), exercise("b"), exercise("c", equipment: "body only"),
-                                exercise("band", equipment: "bands"), exercise("roller", equipment: "foam roll")]
+    private lazy var catalog = [exercise("a"), exercise("b"), exercise("c")]
 
-    private func pick(owned: Set<String> = [], program: Program? = nil, excluded: Set<String> = [],
-                      already: Set<String> = [], different: String? = nil) -> Exercise {
-        ExerciseCatalog.pick(from: catalog, program: program, equipment: owned, excluded: excluded,
-                             alreadyPicked: already, different: different)
+    private func pick(excluded: Set<String> = [], already: Set<String> = [], different: String? = nil) -> Exercise {
+        ExerciseCatalog.pick(from: catalog, excluded: excluded, alreadyPicked: already, different: different)
     }
 
     func testTheBuiltInFallbackHasThreeTextExercises() {
@@ -23,68 +20,10 @@ final class ExercisePickerTests: XCTestCase {
         }
     }
 
-    // MARK: equipment
-
-    func testExercisesWithoutEquipmentAreAlwaysAvailable() {
-        XCTAssertTrue(Equipment.isAvailable(nil, owned: []))
-        XCTAssertTrue(Equipment.isAvailable("body only", owned: []))
-        XCTAssertFalse(Equipment.isAvailable("bands", owned: []))
-        XCTAssertTrue(Equipment.isAvailable("bands", owned: ["bands"]))
-        XCTAssertFalse(Equipment.isAvailable("foam roll", owned: ["bands"]))
-    }
-
-    func testWithoutEquipmentOnlyBodyweightExercisesAreDrawn() {
+    func testEveryExerciseOfTheCatalogCanBeDrawn() {
         var seen = Set<String>()
         for _ in 0..<300 { seen.insert(pick().id) }
         XCTAssertEqual(seen, ["a", "b", "c"])
-    }
-
-    func testOwnedEquipmentOpensItsExercises() {
-        var seen = Set<String>()
-        for _ in 0..<500 { seen.insert(pick(owned: ["bands"]).id) }
-        XCTAssertEqual(seen, ["a", "b", "c", "band"])
-        seen = []
-        for _ in 0..<500 { seen.insert(pick(owned: ["bands", "foam roll"]).id) }
-        XCTAssertEqual(seen, ["a", "b", "c", "band", "roller"])
-    }
-
-    func testHomeAndOfficeHaveTheirOwnEquipment() {
-        var settings = UserSettings()
-        settings.homeEquipment = ["bands"]
-        XCTAssertEqual(settings.equipment(for: .home), ["bands"])
-        XCTAssertEqual(settings.equipment(for: .office), [])
-        settings.officeEquipment = ["foam roll"]
-        XCTAssertEqual(settings.equipment(for: .office), ["foam roll"])
-    }
-
-    func testTheEquipmentIsPersisted() throws {
-        var game = GameState()
-        game.settings.homeEquipment = ["bands", "foam roll"]
-        game.settings.officeEquipment = ["exercise ball"]
-        let decoded = try StateStore.decoder.decode(GameState.self, from: StateStore.encoder.encode(game))
-        XCTAssertEqual(decoded.settings.homeEquipment, ["bands", "foam roll"])
-        XCTAssertEqual(decoded.settings.officeEquipment, ["exercise ball"])
-    }
-
-    // MARK: program
-
-    func testOnlyTheProgramsExercisesAreDrawn() {
-        let program = Program(name: "p", exercises: ["a", "band"])
-        var seen = Set<String>()
-        for _ in 0..<300 { seen.insert(pick(owned: ["bands"], program: program).id) }
-        XCTAssertEqual(seen, ["a", "band"])
-    }
-
-    func testTheProgramsEquipmentExercisesNeedTheEquipment() {
-        let program = Program(name: "p", exercises: ["a", "band"])
-        for _ in 0..<100 { XCTAssertEqual(pick(program: program).id, "a") }
-    }
-
-    func testAProgramWhoseExercisesAreAllOutOfReachFallsBackToBodyweightOnes() {
-        let program = Program(name: "p", exercises: ["band", "roller"])
-        var seen = Set<String>()
-        for _ in 0..<300 { seen.insert(pick(program: program).id) }
-        XCTAssertEqual(seen, ["a", "b", "c"], "nothing in the program is available: bodyweight exercises of the catalog")
     }
 
     // MARK: exclusions and history
@@ -112,14 +51,14 @@ final class ExercisePickerTests: XCTestCase {
     }
 
     func testEverythingHiddenStillGivesSomethingAvailable() {
-        let picked = pick(excluded: ["a", "b", "c", "band", "roller"])
-        XCTAssertTrue(["a", "b", "c"].contains(picked.id), "no band exercise without a band, even as a last resort")
+        let picked = pick(excluded: ["a", "b", "c"])
+        XCTAssertTrue(["a", "b", "c"].contains(picked.id))
     }
 
-    func testTheRealCatalogAlwaysGivesSomethingWithoutEquipment() throws {
+    func testTheRealCatalogAlwaysGivesSomething() throws {
         for _ in 0..<200 {
-            let e = ExerciseCatalog.pick(equipment: [], excluded: [], alreadyPicked: [], different: nil)
-            XCTAssertTrue(Equipment.isAvailable(e.equipment, owned: []), e.id)
+            let e = ExerciseCatalog.pick(excluded: [], alreadyPicked: [], different: nil)
+            XCTAssertTrue(ExerciseCatalog.english.contains { $0.id == e.id }, e.id)
         }
     }
 

@@ -191,9 +191,8 @@ final class MigrationTests: XCTestCase {
         XCTAssertEqual(game.excludedExercises, ["Wall_Slides"])
         XCTAssertEqual(game.dailyPicks.ids, ["Chin_Tucks", "Wrist_Circles"])
         XCTAssertNotNil(game.dailyPicks.day)
-        XCTAssertEqual(game.networks, ["HomeNetwork": .home, "OfficeNetwork": .office])
         XCTAssertEqual(game.settings, UserSettings(workMinutes: 30, step1Seconds: 25, step2Seconds: 40,
-                                                   snoozeMinutes: 7, defaultMode: .office))
+                                                   snoozeMinutes: 7))
         let again = try StateStore.decoder.decode(GameState.self, from: StateStore.encoder.encode(game))
         XCTAssertEqual(again, game)
     }

@@ -13,7 +13,7 @@ final class PublicTreeTests: XCTestCase {
     private func textFiles() -> [URL] {
         var urls: [URL] = []
         let fm = FileManager.default
-        for dir in ["Sources", "Tests", "scripts", "Resources", "skill"] {
+        for dir in ["Sources", "Tests", "scripts", "Resources"] {
             guard let walker = fm.enumerator(at: root.appendingPathComponent(dir), includingPropertiesForKeys: [.isRegularFileKey]) else { continue }
             for case let url as URL in walker {
                 let path = url.path

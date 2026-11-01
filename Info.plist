@@ -31,9 +31,5 @@
     <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
-    <key>NSLocationUsageDescription</key>
-    <string>Stretchu reads the Wi-Fi network name to switch between Home and Office modes by itself.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Stretchu reads the Wi-Fi network name to switch between Home and Office modes by itself.</string>
 </dict>
 </plist>

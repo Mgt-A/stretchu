@@ -18,7 +18,6 @@ The Pokémon Company. Pokémon and Pokémon character names are trademarks of th
 ## Exercises
 
 - Exercise list and pictures: [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (Unlicense), at the commit recorded in `Resources/Exercises/catalog.json`. The steps are rewritten for Stretchu, in English and French.
-- Hand-drawn SVG illustrations for a few exercises: the author's own.
 
 ## Fonts and icons
 

@@ -29,7 +29,6 @@ final class AppModel {
     @ObservationIgnored private let debugStore: StateStore
     #endif
     @ObservationIgnored private let idle = IdleMonitor()
-    @ObservationIgnored private let wifi = WifiModeDetector()
     @ObservationIgnored private var timer: Timer?
     @ObservationIgnored private let breakPanel = PanelController()
     @ObservationIgnored private var shownPanel: Panel = .none
@@ -42,10 +41,8 @@ final class AppModel {
     @ObservationIgnored var onMenuClose: (() -> Void)?
     #if STRETCHU_DEBUG
     @ObservationIgnored private var debug: DebugSupport?
-    @ObservationIgnored var debugSSID: String?
     #endif
     @ObservationIgnored private var tracker: MeetingTracker
-    @ObservationIgnored private var resolver: ModeResolver
     /// Last states read from the hardware, refreshed every 5 s.
     @ObservationIgnored private var hardwareInUse = false
     @ObservationIgnored private var lastPoll: Date?
@@ -60,11 +57,6 @@ final class AppModel {
     /// Fake meeting from the Debug panel.
     private(set) var fakeMeeting = false
     #endif
-    /// Home: all exercises. Office: no band, roller, floor or stick.
-    private(set) var mode: PlaceMode = .home
-    private(set) var ssid: String?
-    private(set) var networkUnlinked = false
-    private(set) var wifiAuthorization: WifiModeDetector.Authorization = .notRequested
     private(set) var levelUp: LevelUp?
     private(set) var companionOpen = false
     private(set) var suspendedUntil: Date?
@@ -104,20 +96,13 @@ final class AppModel {
         self.game = loaded
         self.scheduler = PauseScheduler(config: loaded.settings.clamped().config, clock: clock, calendar: calendar)
         self.tracker = MeetingTracker(clock: clock)
-        self.resolver = ModeResolver(networks: loaded.networks, defaultMode: loaded.settings.defaultMode)
         self.exercise = ExerciseCatalog.pick(
-            program: ProgramLibrary(userDirectory: store.programsDirectory).entry(id: loaded.programId)?.program,
-            equipment: loaded.settings.equipment(for: .home),
             excluded: Set(loaded.excludedExercises), alreadyPicked: [], different: nil)
         game.syncStreak(now: clock.now, calendar: calendar)
-        wifiAuthorization = wifi.authorization
-        wifi.onChange = { [weak self] in self?.wifiAuthorization = self?.wifi.authorization ?? .notRequested }
         language = loaded.language
         L10n.userLanguage = loaded.language
         L10n.setProcessLanguage(loaded.language)
-        // The permission prompt belongs to the setup (step "Access"); a player who already did
-        // the setup is not asked again.
-        if loaded.onboardingCompleted { wifi.requestAuthorization(); startRunning() }
+        if loaded.onboardingCompleted { startRunning() }
 
         #if STRETCHU_DEBUG
         if ProcessInfo.processInfo.environment["STRETCHU_DEBUG"] == "1" { debug = DebugSupport(model: self) }
@@ -256,7 +241,7 @@ final class AppModel {
         streak.sync(now: now, calendar: calendar, days: game.settings.schedule.days)
         if streak != game.streak { game.streak = streak; save() }
 
-        updateMeetingAndWifi()
+        updateMeeting()
 
         if let end = suspendedUntil {
             if now >= end {
@@ -276,18 +261,12 @@ final class AppModel {
         onUpdate?()
     }
 
-    /// Hardware and Wi-Fi polling every 5 s (real time), tracker sample on every tick.
-    private func updateMeetingAndWifi() {
+    /// Hardware polling every 5 s (real time), tracker sample on every tick.
+    private func updateMeeting() {
         let current = Date()
         if lastPoll.map({ current.timeIntervalSince($0) >= 5 }) ?? true {
             hardwareInUse = MeetingDetector.micOrCameraInUse()
             lastPoll = current
-            wifiAuthorization = wifi.authorization
-            #if STRETCHU_DEBUG
-            readNetwork(debugSSID ?? wifi.ssid())
-            #else
-            readNetwork(wifi.ssid())
-            #endif
         }
         #if STRETCHU_DEBUG
         tracker.sample(inUse: hardwareInUse || fakeMeeting)
@@ -295,17 +274,6 @@ final class AppModel {
         tracker.sample(inUse: hardwareInUse)
         #endif
         if tracker.inMeeting != inMeeting { inMeeting = tracker.inMeeting }
-    }
-
-    func readNetwork(_ read: String?) {
-        resolver.networkChanged(ssid: read)
-        syncMode()
-    }
-
-    private func syncMode() {
-        if ssid != resolver.ssid { ssid = resolver.ssid }
-        if mode != resolver.mode { mode = resolver.mode }
-        if networkUnlinked != resolver.networkUnlinked { networkUnlinked = resolver.networkUnlinked }
     }
 
     func handle(_ events: [SchedulerEvent]) {
@@ -391,16 +359,15 @@ final class AppModel {
         pickExercise(different: exercise.id)
     }
 
-    /// "Another one": a different exercise of the same mode, no penalty.
+    /// "Another one": a different exercise, no penalty.
     func anotherExercise() {
         pickExercise(different: exercise.id)
     }
 
-    /// Picks from the catalog: current mode, outside exclusions, no repeat within the day.
+    /// Picks from the catalog: outside exclusions, no repeat within the day.
     private func pickExercise(different: String?) {
         let now = clock.now
         let picked = ExerciseCatalog.pick(
-            program: activeProgram, equipment: game.settings.equipment(for: mode),
             excluded: Set(game.excludedExercises),
             alreadyPicked: game.dailyPicks.ids(for: now, calendar: calendar), different: different)
         game.dailyPicks.record(picked.id, now: now, calendar: calendar)
@@ -503,9 +470,7 @@ final class AppModel {
         language = game.language
         L10n.userLanguage = game.language
         L10n.setProcessLanguage(game.language)
-        resolver.defaultMode = game.settings.defaultMode
         scheduler.apply(game.settings.config)
-        syncMode()
         pickExercise(different: nil)
         save()
         if !wasDone { startRunning() }
@@ -517,45 +482,6 @@ final class AppModel {
         save()
     }
 
-    // MARK: programs
-
-    var programsDirectory: URL { store.programsDirectory }
-    var programLibrary: ProgramLibrary { ProgramLibrary(userDirectory: store.programsDirectory) }
-
-    /// The program drawn from: the shipped one, or a file of the programs folder.
-    var activeProgram: Program? {
-        let library = ProgramLibrary(userDirectory: store.programsDirectory)
-        return (library.entry(id: game.programId) ?? library.general())?.program
-    }
-
-    /// Programs the player can choose from, the shipped one first.
-    var availablePrograms: [ProgramEntry] {
-        ProgramLibrary(userDirectory: store.programsDirectory).entries()
-    }
-
-    /// Chooses a program. The durations it asks for replace the current ones (clamped).
-    func selectProgram(id: String) {
-        guard let entry = availablePrograms.first(where: { $0.id == id }) else { return }
-        game.programId = id
-        game.settings = entry.program.applying(to: game.settings)
-        scheduler.apply(game.settings.config)
-        save()
-    }
-
-    /// Imports a program file (copied into the programs folder) and chooses it.
-    @discardableResult
-    func importProgram(from url: URL) throws -> ProgramEntry {
-        let entry = try ProgramLibrary(userDirectory: store.programsDirectory).importFile(at: url)
-        selectProgram(id: entry.id)
-        return entry
-    }
-
-    func setEquipment(_ equipment: [String], for mode: PlaceMode) {
-        let ordered = Equipment.ownable.filter(Set(equipment).contains)
-        if mode == .home { game.settings.homeEquipment = ordered } else { game.settings.officeEquipment = ordered }
-        save()
-    }
-
     // MARK: settings
 
     func updateSettings(_ change: (inout UserSettings) -> Void) {
@@ -563,49 +489,12 @@ final class AppModel {
         change(&s)
         game.settings = s.clamped()
         scheduler.apply(game.settings.config)
-        resolver.defaultMode = game.settings.defaultMode
-        syncMode()
         save()
     }
 
     func restoreExercise(_ id: String) {
         game.excludedExercises.removeAll { $0 == id }
         save()
-    }
-
-    func setNetwork(_ ssid: String, _ mode: PlaceMode) {
-        guard !ssid.isEmpty else { return }
-        game.networks[ssid] = mode
-        resolver.networks = game.networks
-        save()
-        syncMode()
-    }
-
-    func removeNetwork(_ ssid: String) {
-        game.networks[ssid] = nil
-        resolver.networks = game.networks
-        save()
-        syncMode()
-    }
-
-    // MARK: Home / Office mode
-
-    /// Manual toggle: wins until the next network change.
-    func toggleMode(_ new: PlaceMode) {
-        resolver.toggle(to: new)
-        syncMode()
-    }
-
-    /// Links the current network to a mode (entered at first launch).
-    func linkNetwork(to new: PlaceMode) {
-        resolver.linkCurrentNetwork(to: new)
-        game.networks = resolver.networks
-        save()
-        syncMode()
-    }
-
-    func requestWifiAuthorization() {
-        wifi.requestAuthorization()
     }
 
     // MARK: suspension, companion, level up
@@ -679,9 +568,6 @@ final class AppModel {
         if debugStore.exists {
             game = debugStore.load()
             game.syncStreak(now: clock.now, calendar: calendar)
-            resolver.networks = game.networks
-            resolver.defaultMode = game.settings.defaultMode
-            syncMode()
         }
         enterDebug()
     }
@@ -700,13 +586,10 @@ final class AppModel {
         game.syncStreak(now: Date(), calendar: calendar)
         clock.reset()
         fakeMeeting = false
-        debugSSID = nil
         hardwareInUse = false
         tracker = MeetingTracker(clock: clock)
         inMeeting = false
         scheduler = PauseScheduler(config: game.settings.clamped().config, clock: clock, calendar: calendar)
-        resolver = ModeResolver(networks: game.networks, defaultMode: game.settings.defaultMode)
-        syncMode()
         levelUp = nil
         levelUpEnd = nil
         suspendedUntil = nil
@@ -716,7 +599,6 @@ final class AppModel {
 
     private func pickExerciseWithoutRecording() {
         exercise = ExerciseCatalog.pick(
-            program: activeProgram, equipment: game.settings.equipment(for: mode),
             excluded: Set(game.excludedExercises),
             alreadyPicked: game.dailyPicks.ids(for: clock.now, calendar: calendar), different: nil)
     }
@@ -732,11 +614,8 @@ final class AppModel {
 
     /// Replaces the whole state with an imported one and restarts everything that was built from
     /// the old one: language, timer, mode, exercise, open panels.
-    func importState(_ imported: StateTransfer.Imported) {
-        var state = imported.game
-        if imported.predatesPrograms {
-            ProgramLibrary(userDirectory: store.programsDirectory).migrate(&state)
-        }
+    func importState(_ imported: GameState) {
+        var state = imported
         // The setup belongs to a first launch: an imported state is a player that already did it.
         state.onboardingCompleted = true
         game = state
@@ -745,8 +624,6 @@ final class AppModel {
         L10n.userLanguage = game.language
         L10n.setProcessLanguage(game.language)
         scheduler = PauseScheduler(config: game.settings.clamped().config, clock: clock, calendar: calendar)
-        resolver = ModeResolver(networks: game.networks, defaultMode: game.settings.defaultMode)
-        syncMode()
         levelUp = nil
         levelUpEnd = nil
         cycleChoice = nil
@@ -793,8 +670,6 @@ final class AppModel {
     func replaceState(_ state: GameState) {
         game = state
         game.syncStreak(now: clock.now, calendar: calendar)
-        resolver.networks = game.networks
-        syncMode()
         save()
     }
 
